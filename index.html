@@ -141,7 +141,7 @@
 
                 <!-- Mobile Navigation Button -->
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -179,7 +179,7 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow">
 
-        <!-- ================= PAGE 1: HOME PAGE (WIREFRAME 3) ================= -->
+        <!-- ================= PAGE 1: HOME PAGE ================= -->
         <section id="page-home" class="page-section">
             <!-- Hero Banner -->
             <div class="bg-gradient-to-r from-fern via-pistachio to-bluebell text-white py-20 px-4 sm:px-6 lg:px-8 shadow-inner relative overflow-hidden">
@@ -205,7 +205,6 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-                <!-- Section Grid Matching Wireframe Sketch Layout -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     
                     <!-- General Tips Card -->
@@ -281,7 +280,7 @@
             </div>
         </section>
 
-        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG (WIREFRAME 2) ================= -->
+        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG ================= -->
         <section id="page-catalog" class="page-section hidden">
             <!-- Catalog Hero Header -->
             <div id="catalog-hero" class="bg-gradient-to-r from-pistachio via-fennel to-bluebell py-12 px-4 sm:px-6 lg:px-8 text-slate-800">
@@ -307,7 +306,7 @@
                     </div>
                 </div>
 
-                <!-- Card Grid Matching Wireframe Sketch Layout -->
+                <!-- Card Grid -->
                 <div id="card-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Dynamic Cards Loaded via JavaScript -->
                 </div>
@@ -364,19 +363,19 @@
                     </div>
                 </div>
 
-                <!-- "Why" Section & Instagram-Style Carousel -->
+                <!-- "Why" Section & Carousel -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     <!-- Why Section -->
                     <div class="glass-card rounded-3xl p-8 space-y-4">
                         <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <i data-lucide="target" class="w-6 h-6 text-peony"></i>
-                            Why We Created Vitality <br>
+                            Why We Created Vitality
                         </h2>
                         <p class="text-slate-600 leading-relaxed">
-                            In today's fast-paced environment, finding reliable, structured, and simple lifestyle information can be overwhelming due to conflicting advice and overly complex trends. <br><br><br>
+                            In today's fast-paced environment, finding reliable, structured, and simple lifestyle information can be overwhelming due to conflicting advice and overly complex trends.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to 70 curated recipes and 50 targeted workout routines, all organized cleanly in one place. <br><br><br>
+                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to 70 curated recipes and 50 targeted workout routines, all organized cleanly in one place.
                         </p>
                         <div class="p-4 bg-honey/20 border border-honey/50 rounded-2xl">
                             <h4 class="font-semibold text-slate-800 text-sm">Core Pillars</h4>
@@ -384,7 +383,7 @@
                         </div>
                     </div>
 
-                    <!-- Instagram-Style Multi-Slide Image Carousel for Global Issue -->
+                    <!-- Instagram-Style Carousel for Global Issue -->
                     <div class="glass-card rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -404,10 +403,8 @@
 
                             <!-- Carousel Container -->
                             <div class="relative overflow-hidden rounded-2xl bg-slate-900 group shadow-md" style="aspect-ratio: 4/3;">
-                                <!-- Slide Image -->
                                 <img id="carousel-img" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Global Issue Slide" class="w-full h-full object-cover transition-all duration-500 opacity-90">
                                 
-                                <!-- Slide Content Overlay -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end text-white space-y-1">
                                     <span id="carousel-tag" class="inline-block self-start text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-peony text-slate-900">
                                         Issue 01: Malnutrition & Inequality
@@ -420,18 +417,15 @@
                                     </p>
                                 </div>
 
-                                <!-- Left Arrow Button -->
                                 <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
                                     <i data-lucide="chevron-left" class="w-5 h-5"></i>
                                 </button>
 
-                                <!-- Right Arrow Button -->
                                 <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
                                     <i data-lucide="chevron-right" class="w-5 h-5"></i>
                                 </button>
                             </div>
 
-                            <!-- Carousel Dots Indicator -->
                             <div class="flex justify-center items-center gap-1.5 mt-4" id="carousel-dots">
                                 <!-- Dynamic dots rendered via JS -->
                             </div>
@@ -443,71 +437,6 @@
 
     </main>
 
-    <!-- DETAIL MODAL DRAWER -->
-    <div id="detail-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar p-6 sm:p-8 relative shadow-2xl border border-fennel">
-            <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-fennel/30 text-slate-500 transition">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div id="modal-content">
-                <!-- Content dynamically injected via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- FLOATING CHATBOT WIDGET -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <!-- Chat Toggle Button -->
-        <button id="chatbot-toggle-btn" onclick="toggleChatbot()" class="w-14 h-14 rounded-full bg-fern text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 relative group">
-            <i data-lucide="message-square" class="w-6 h-6"></i>
-            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-peony border-2 border-white rounded-full"></span>
-        </button>
-
-        <!-- Chatbot Floating Window -->
-        <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-fennel flex flex-col overflow-hidden transition-all duration-300" style="height: 480px;">
-            <!-- Header -->
-            <div class="p-4 bg-gradient-to-r from-fern to-pistachio text-white flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
-                        <i data-lucide="bot" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm">Vitality HealthBot</h4>
-                        <span class="text-[10px] text-white/90">Interactive Assistant</span>
-                    </div>
-                </div>
-                <button onclick="toggleChatbot()" class="text-white/80 hover:text-white">
-                    <i data-lucide="minus" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Messages Container -->
-            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto custom-scrollbar space-y-3 bg-fennel/10 text-xs">
-                <div class="flex items-start gap-2">
-                    <div class="w-6 h-6 rounded-full bg-fern text-white flex items-center justify-center text-[10px] flex-shrink-0">Bot</div>
-                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-fennel max-w-[80%] text-slate-700 leading-relaxed">
-                        Hello! 👋 I'm your Vitality Assistant. Ask me about anti-inflammatory diets, gut health tips, high-protein workouts, or weight loss recipes!
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quick Suggestions -->
-            <div class="p-2 bg-white border-t border-fennel flex gap-1.5 overflow-x-auto text-[11px] custom-scrollbar">
-                <button onclick="sendQuickMessage('What is an anti-inflammatory diet?')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Anti-inflammatory?</button>
-                <button onclick="sendQuickMessage('Give me a gut health tip')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Gut Health Tip</button>
-                <button onclick="sendQuickMessage('Best HIIT workout')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">HIIT Workout</button>
-            </div>
-
-            <!-- Input Box -->
-            <form onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-fennel flex gap-2">
-                <input type="text" id="chat-input" placeholder="Ask about recipes or workouts..." class="flex-grow px-3 py-2 rounded-xl border border-fennel text-xs focus:outline-none focus:ring-1 focus:ring-fern">
-                <button type="submit" class="p-2 rounded-xl bg-fern text-white hover:bg-slate-700 transition">
-                    <i data-lucide="send" class="w-4 h-4"></i>
-                </button>
-            </form>
-        </div>
-    </div>
-
     <!-- FOOTER -->
     <footer class="bg-slate-800 text-white/70 py-8 border-t border-slate-700 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4 space-y-2">
@@ -516,7 +445,7 @@
         </div>
     </footer>
 
-    <!-- JAVASCRIPT APPLICATION LOGIC & DATASET -->
+    <!-- JAVASCRIPT APPLICATION LOGIC -->
     <script>
         // CAROUSEL SLIDES DATASET
         const globalIssueSlides = [
@@ -550,13 +479,18 @@
 
         function updateCarousel() {
             const slide = globalIssueSlides[currentSlideIndex];
-            document.getElementById('carousel-img').src = slide.img;
-            document.getElementById('carousel-tag').innerText = slide.tag;
-            document.getElementById('carousel-title').innerText = slide.title;
-            document.getElementById('carousel-desc').innerText = slide.desc;
-            document.getElementById('carousel-counter').innerText = `${currentSlideIndex + 1} / ${globalIssueSlides.length}`;
+            const imgEl = document.getElementById('carousel-img');
+            const tagEl = document.getElementById('carousel-tag');
+            const titleEl = document.getElementById('carousel-title');
+            const descEl = document.getElementById('carousel-desc');
+            const counterEl = document.getElementById('carousel-counter');
+
+            if (imgEl) imgEl.src = slide.img;
+            if (tagEl) tagEl.innerText = slide.tag;
+            if (titleEl) titleEl.innerText = slide.title;
+            if (descEl) descEl.innerText = slide.desc;
+            if (counterEl) counterEl.innerText = `${currentSlideIndex + 1} / ${globalIssueSlides.length}`;
             
-            // Render Dots
             const dotsContainer = document.getElementById('carousel-dots');
             if (dotsContainer) {
                 dotsContainer.innerHTML = globalIssueSlides.map((_, i) => `
@@ -581,7 +515,7 @@
             updateCarousel();
         }
 
-        // NAVIGATION LOGIC
+        // PAGE NAVIGATION LOGIC
         function navigateTo(pageId) {
             document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
             const activePage = document.getElementById(`page-${pageId}`);
@@ -593,12 +527,49 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // SUB-TAB NAVIGATION HANDLER
+        function navigateToCategory(section, subCategory) {
+            navigateTo('catalog');
+
+            const titleEl = document.getElementById('catalog-title');
+            const subtitleEl = document.getElementById('catalog-subtitle');
+
+            if (titleEl && subtitleEl) {
+                titleEl.innerText = `${section} — ${subCategory}`;
+                subtitleEl.innerText = `Showing all verified plans and items for ${subCategory}.`;
+            }
+
+            const filterContainer = document.getElementById('filter-pills');
+            if (filterContainer) {
+                filterContainer.innerHTML = `
+                    <button class="px-4 py-1.5 rounded-full text-xs font-semibold bg-fern text-white">${subCategory}</button>
+                    <button onclick="navigateToCategory('${section}', 'All')" class="px-4 py-1.5 rounded-full text-xs font-semibold bg-fennel/40 text-slate-700 hover:bg-fennel">Show All</button>
+                `;
+            }
+
+            const grid = document.getElementById('card-grid');
+            if (grid) {
+                grid.innerHTML = `
+                    <div class="glass-card rounded-2xl p-6 space-y-3">
+                        <span class="text-xs font-bold text-fern uppercase">${section}</span>
+                        <h3 class="text-lg font-bold text-slate-800">${subCategory} Plan 1</h3>
+                        <p class="text-xs text-slate-600">Sample structured guide and metrics for ${subCategory}.</p>
+                    </div>
+                    <div class="glass-card rounded-2xl p-6 space-y-3">
+                        <span class="text-xs font-bold text-fern uppercase">${section}</span>
+                        <h3 class="text-lg font-bold text-slate-800">${subCategory} Plan 2</h3>
+                        <p class="text-xs text-slate-600">Sample structured guide and metrics for ${subCategory}.</p>
+                    </div>
+                `;
+            }
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
         }
 
-        // Initialize lucide icons on load
+        // Initialize icons on load
         window.addEventListener('DOMContentLoaded', () => {
             if (window.lucide) lucide.createIcons();
             updateCarousel();
