@@ -7,12 +7,14 @@
   <style>
     :root {
       --primary-color: #2c3e50;
-      --accent-color: #6b8e23;
-      --accent-hover: #556b2f;
+      --accent-color: #556b2f;
+      --accent-light: #6b8e23;
       --bg-color: #f4f6f8;
       --card-bg: #ffffff;
       --text-color: #333333;
-      --border-color: #e0e0e0;
+      --border-color: #e2e8f0;
+      --badge-bg: #e8f5e9;
+      --badge-text: #2e7d32;
     }
 
     * {
@@ -28,7 +30,7 @@
       line-height: 1.6;
     }
 
-    /* Top Navigation Bar */
+    /* Navigation Bar */
     header {
       background-color: #ffffff;
       box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -71,8 +73,8 @@
     }
 
     .nav-link:hover, .nav-link.active {
-      color: var(--accent-color);
-      border-bottom-color: var(--accent-color);
+      color: var(--accent-light);
+      border-bottom-color: var(--accent-light);
     }
 
     .arrow-icon {
@@ -86,14 +88,14 @@
       transform: rotate(180deg);
     }
 
-    /* Dropdown Menus */
+    /* Dropdowns */
     .dropdown-menu {
       position: absolute;
       top: 100%;
       left: 50%;
       transform: translateX(-50%);
       background-color: #ffffff;
-      min-width: 200px;
+      min-width: 210px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       border-radius: 8px;
       padding: 10px 0;
@@ -117,13 +119,13 @@
 
     .dropdown-menu a:hover {
       background-color: #f0f4f0;
-      color: var(--accent-color);
+      color: var(--accent-light);
     }
 
-    /* Hero Banner & Pill Buttons */
+    /* Hero Banner */
     .hero {
       background: linear-gradient(135deg, #a3b18a 0%, #588157 100%);
-      padding: 80px 20px;
+      padding: 70px 20px;
       text-align: center;
       color: white;
     }
@@ -136,7 +138,7 @@
     .hero p {
       font-size: 1.1rem;
       margin-bottom: 30px;
-      opacity: 0.9;
+      opacity: 0.95;
     }
 
     .cta-button-group {
@@ -169,17 +171,17 @@
     }
 
     .btn-filled {
-      background-color: #9cb08f;
+      background-color: #899e7c;
       color: #ffffff;
       border: 2px solid rgba(255, 255, 255, 0.4);
     }
 
     .btn-filled:hover {
-      background-color: #899e7c;
+      background-color: #768a6a;
       transform: translateY(-2px);
     }
 
-    /* Main Content Sections */
+    /* Main Container */
     .container {
       max-width: 1200px;
       margin: 40px auto;
@@ -200,36 +202,102 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    .content-card {
+    .section-header {
+      margin-bottom: 30px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 8px;
+    }
+
+    .section-header p {
+      color: #666;
+      font-size: 1.05rem;
+    }
+
+    /* Card Grid System */
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
       background: var(--card-bg);
       border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      margin-bottom: 25px;
-    }
-
-    .content-card h2 {
-      margin-bottom: 15px;
-      color: var(--primary-color);
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
-    }
-
-    .grid-item {
-      background: #f9fbf9;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.06);
       border: 1px solid var(--border-color);
-      border-radius: 8px;
-      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .grid-item h3 {
-      color: var(--accent-color);
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    }
+
+    .card-img-wrapper {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      background-color: #e0e0e0;
+    }
+
+    .card-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--primary-color);
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      color: var(--primary-color);
       margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    .card-desc {
+      font-size: 0.92rem;
+      color: #555;
+      margin-bottom: 15px;
+      flex-grow: 1;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.85rem;
+      color: #666;
+      font-weight: 600;
     }
 
     footer {
@@ -258,7 +326,7 @@
             <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
           </a>
           <ul class="dropdown-menu" id="diet-menu">
-            <li><a onclick="switchTab(event, 'specialized-diets')">Keto Diet</a></li>
+            <li><a onclick="switchTab(event, 'specialized-diets')">Ketogenic Diet</a></li>
             <li><a onclick="switchTab(event, 'specialized-diets')">Vegan & Plant-Based</a></li>
             <li><a onclick="switchTab(event, 'specialized-diets')">Mediterranean Diet</a></li>
           </ul>
@@ -270,9 +338,9 @@
             <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
           </a>
           <ul class="dropdown-menu" id="recipe-menu">
-            <li><a onclick="switchTab(event, 'healthy-recipes')">Quick Breakfasts</a></li>
-            <li><a onclick="switchTab(event, 'healthy-recipes')">High-Protein Meals</a></li>
-            <li><a onclick="switchTab(event, 'healthy-recipes')">Low-Calorie Desserts</a></li>
+            <li><a onclick="switchTab(event, 'healthy-recipes')">Breakfast & Bowls</a></li>
+            <li><a onclick="switchTab(event, 'healthy-recipes')">High-Protein Dinners</a></li>
+            <li><a onclick="switchTab(event, 'healthy-recipes')">Low-Calorie Snacks</a></li>
           </ul>
         </li>
 
@@ -284,7 +352,7 @@
           <ul class="dropdown-menu" id="workout-menu">
             <li><a onclick="switchTab(event, 'sport-workouts')">Strength Training</a></li>
             <li><a onclick="switchTab(event, 'sport-workouts')">Cardio & HIIT</a></li>
-            <li><a onclick="switchTab(event, 'sport-workouts')">Flexibility & Yoga</a></li>
+            <li><a onclick="switchTab(event, 'sport-workouts')">Core & Mobility</a></li>
           </ul>
         </li>
 
@@ -295,10 +363,10 @@
     </div>
   </header>
 
-  <!-- Hero Section with Buttons -->
+  <!-- Hero Section -->
   <section class="hero">
-    <h1>Empower Your Health Journey</h1>
-    <p>Discover tailored nutrition plans, wholesome recipes, and top workout routines.</p>
+    <h1>Empower Your Health & Fitness Journey</h1>
+    <p>Discover expert-curated nutrition plans, wholesome recipes, and high-performance workouts.</p>
     <div class="cta-button-group">
       <button class="btn-pill btn-outline" onclick="switchTab(event, 'healthy-recipes')">Explore Recipes</button>
       <button class="btn-pill btn-filled" onclick="switchTab(event, 'sport-workouts')">Sport Workout Plans</button>
@@ -310,21 +378,44 @@
     
     <!-- Tab 1: Homepage -->
     <section id="homepage" class="tab-content active">
-      <div class="content-card">
+      <div class="section-header">
         <h2>Welcome to Your Health Hub</h2>
-        <p>Explore our vast collection of specialized nutrition guides, delicious recipes, and targeted fitness routines to reach your wellness goals.</p>
-        <div class="grid-3">
-          <div class="grid-item">
-            <h3>Specialized Diets</h3>
-            <p>Tailored meal strategies for weight management, energy enhancement, and overall well-being.</p>
+        <p>Explore curated diets, nutritious recipes, and targeted sport workouts all in one place.</p>
+      </div>
+      <div class="grid-container">
+        <div class="card" onclick="switchTab(event, 'specialized-diets')" style="cursor: pointer;">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=80" alt="Specialized Diets">
+            <span class="card-badge">Nutrition</span>
           </div>
-          <div class="grid-item">
-            <h3>Healthy Recipes</h3>
-            <p>Nutritious and easy-to-cook recipes designed by culinary experts and nutritionists.</p>
+          <div class="card-body">
+            <h3 class="card-title">Specialized Diets</h3>
+            <p class="card-desc">Tailored nutrition guidelines for Keto, Vegan, Mediterranean, and protein-focused eating habits.</p>
+            <div class="card-meta"><span>3 Custom Guides</span><span>Read More &rarr;</span></div>
           </div>
-          <div class="grid-item">
-            <h3>Sport Workouts</h3>
-            <p>Comprehensive exercise plans built for all fitness levels, from beginner to athletic training.</p>
+        </div>
+
+        <div class="card" onclick="switchTab(event, 'healthy-recipes')" style="cursor: pointer;">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Healthy Recipes">
+            <span class="card-badge">10 Recipes</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Healthy Recipes</h3>
+            <p class="card-desc">Discover 10 delicious, high-nutrient meals crafted to power your daily energy and wellness goals.</p>
+            <div class="card-meta"><span>10-30 Mins Prep</span><span>View Collection &rarr;</span></div>
+          </div>
+        </div>
+
+        <div class="card" onclick="switchTab(event, 'sport-workouts')" style="cursor: pointer;">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Sport Workouts">
+            <span class="card-badge">10 Plans</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Sport Workout Plans</h3>
+            <p class="card-desc">Access 10 full workout routines ranging from strength training and HIIT to flexibility and recovery.</p>
+            <div class="card-meta"><span>All Fitness Levels</span><span>Start Training &rarr;</span></div>
           </div>
         </div>
       </div>
@@ -332,82 +423,348 @@
 
     <!-- Tab 2: Specialized Diets -->
     <section id="specialized-diets" class="tab-content">
-      <div class="content-card">
+      <div class="section-header">
         <h2>Specialized Diets</h2>
-        <p>Choose the nutrition path that aligns best with your body's needs and daily lifestyle.</p>
-        <div class="grid-3">
-          <div class="grid-item">
-            <h3>Ketogenic Plan</h3>
-            <p>Low-carb, high-fat meal planning designed to help body fat management.</p>
+        <p>Understand the fundamentals of targeted dietary strategies.</p>
+      </div>
+      <div class="grid-container">
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Keto Diet">
+            <span class="card-badge">Low Carb</span>
           </div>
-          <div class="grid-item">
-            <h3>Plant-Based & Vegan</h3>
-            <p>Nutrient-dense, cruelty-free meal ideas packed with vital vitamins and minerals.</p>
+          <div class="card-body">
+            <h3 class="card-title">Ketogenic Diet</h3>
+            <p class="card-desc">High-fat, low-carb regimen focusing on avocados, healthy oils, and high-quality protein to maintain ketosis.</p>
+            <div class="card-meta"><span>Fat: 75% | Protein: 20% | Carb: 5%</span></div>
           </div>
-          <div class="grid-item">
-            <h3>Mediterranean Diet</h3>
-            <p>Heart-healthy eating patterns featuring wholesome grains, healthy fats, and fresh produce.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Vegan Diet">
+            <span class="card-badge">100% Plant-Based</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Vegan & Plant-Based</h3>
+            <p class="card-desc">Whole foods centered around legumes, grains, seeds, and fresh vegetables for optimal health and sustainability.</p>
+            <div class="card-meta"><span>Rich in Fiber & Antioxidants</span></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=600&q=80" alt="Mediterranean Diet">
+            <span class="card-badge">Heart Healthy</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Mediterranean Diet</h3>
+            <p class="card-desc">Emphasizes extra virgin olive oil, seafood, whole grains, and leafy greens for longevity and cardiovascular fitness.</p>
+            <div class="card-meta"><span>Balanced Macro Profile</span></div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Tab 3: Healthy Recipes -->
+    <!-- Tab 3: Healthy Recipes (10 ITEMS) -->
     <section id="healthy-recipes" class="tab-content">
-      <div class="content-card">
+      <div class="section-header">
         <h2>Healthy Recipes</h2>
-        <p>Delicious, wholesome meals that are easy to prepare without compromising on taste.</p>
-        <div class="grid-3">
-          <div class="grid-item">
-            <h3>Avocado Toast & Eggs</h3>
-            <p>Protein-packed breakfast options to power your mornings effectively.</p>
+        <p>10 nutritious, easy-to-cook recipes with detailed macros and prep times.</p>
+      </div>
+      <div class="grid-container">
+
+        <!-- Recipe 1 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1525351484163-7529414344d8?auto=format&fit=crop&w=600&q=80" alt="Avocado Egg Toast">
+            <span class="card-badge">Breakfast</span>
           </div>
-          <div class="grid-item">
-            <h3>Grilled Salmon Bowl</h3>
-            <p>Rich in Omega-3 fatty acids and serving a complete balanced dinner option.</p>
-          </div>
-          <div class="grid-item">
-            <h3>Berry Protein Smoothie</h3>
-            <p>Quick post-workout fuel packed with antioxidants and quality proteins.</p>
+          <div class="card-body">
+            <h3 class="card-title">1. Avocado & Poached Egg Toast</h3>
+            <p class="card-desc">Whole-grain sourdough topped with smashed avocado, poached eggs, red pepper flakes, and microgreens.</p>
+            <div class="card-meta"><span>380 kcal</span><span>10 mins prep</span></div>
           </div>
         </div>
+
+        <!-- Recipe 2 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1467003909585-2f8a72700288?auto=format&fit=crop&w=600&q=80" alt="Grilled Salmon Power Bowl">
+            <span class="card-badge">High Protein</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">2. Grilled Salmon Power Bowl</h3>
+            <p class="card-desc">Wild salmon served over quinoa, steamed broccoli, edamame, and sesame-ginger dressing.</p>
+            <div class="card-meta"><span>520 kcal</span><span>20 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 3 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=80" alt="Mediterranean Chickpea Salad">
+            <span class="card-badge">Vegan</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">3. Mediterranean Chickpea Salad</h3>
+            <p class="card-desc">Fresh chickpeas, cucumbers, cherry tomatoes, Kalamata olives, and feta in lemon-herb olive oil.</p>
+            <div class="card-meta"><span>340 kcal</span><span>12 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 4 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=600&q=80" alt="Chicken Breast & Sweet Potato">
+            <span class="card-badge">Muscle Meal</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">4. Herb Roasted Chicken & Yam</h3>
+            <p class="card-desc">Lean roasted chicken breast served with sweet potato wedges and asparagus spears.</p>
+            <div class="card-meta"><span>450 kcal</span><span>25 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 5 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=600&q=80" alt="Acai Berry Smoothie Bowl">
+            <span class="card-badge">Antioxidant</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">5. Berry Superfood Acai Bowl</h3>
+            <p class="card-desc">Blended acai berries topped with chia seeds, sliced bananas, granola, and almond butter.</p>
+            <div class="card-meta"><span>310 kcal</span><span>8 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 6 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1543339308-43e59d6b73a6?auto=format&fit=crop&w=600&q=80" alt="Turkey & Avocado Wrap">
+            <span class="card-badge">Quick Lunch</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">6. Roasted Turkey & Avocado Wrap</h3>
+            <p class="card-desc">Spinach tortilla packed with sliced turkey, fresh avocado, romaine lettuce, and Greek yogurt spread.</p>
+            <div class="card-meta"><span>390 kcal</span><span>10 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 7 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=600&q=80" alt="Garlic Shrimp & Zucchini Noodles">
+            <span class="card-badge">Keto / Low Carb</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">7. Garlic Butter Shrimp & Zoodles</h3>
+            <p class="card-desc">Pan-seared jumbo shrimp sauteed in garlic butter over fresh zucchini spiral noodles.</p>
+            <div class="card-meta"><span>290 kcal</span><span>15 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 8 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=600&q=80" alt="Overnight Oats">
+            <span class="card-badge">Pre-Workout</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">8. Chia & Protein Overnight Oats</h3>
+            <p class="card-desc">Rolled oats soaked in almond milk, vanilla whey protein, chia seeds, and fresh blueberry topping.</p>
+            <div class="card-meta"><span>360 kcal</span><span>5 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 9 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1580013759032-c96505e24c1f?auto=format&fit=crop&w=600&q=80" alt="Tofu Veggie Stir Fry">
+            <span class="card-badge">Vegan</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">9. Crisp Tofu & Vegetable Stir-Fry</h3>
+            <p class="card-desc">Crispy baked tofu with snap peas, bell peppers, and broccoli in a tamari-sesame glaze.</p>
+            <div class="card-meta"><span>370 kcal</span><span>20 mins prep</span></div>
+          </div>
+        </div>
+
+        <!-- Recipe 10 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1509722747041-616f39b57569?auto=format&fit=crop&w=600&q=80" alt="Greek Yogurt Parfait">
+            <span class="card-badge">Snack</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">10. High-Protein Berry Parfait</h3>
+            <p class="card-desc">Non-fat Greek yogurt layered with raw honey, walnuts, strawberries, and flax seeds.</p>
+            <div class="card-meta"><span>260 kcal</span><span>5 mins prep</span></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
-    <!-- Tab 4: Sport Workouts -->
+    <!-- Tab 4: Sport Workouts (10 ITEMS) -->
     <section id="sport-workouts" class="tab-content">
-      <div class="content-card">
-        <h2>Sport Workouts</h2>
-        <p>Structured workout programs aimed at strengthening muscles, building endurance, and improving flexibility.</p>
-        <div class="grid-3">
-          <div class="grid-item">
-            <h3>Full-Body Strength</h3>
-            <p>Target major muscle groups with compound exercises built for progressive overload.</p>
+      <div class="section-header">
+        <h2>Sport Workout Plans</h2>
+        <p>10 targeted workout programs engineered for endurance, strength, and body composition.</p>
+      </div>
+      <div class="grid-container">
+
+        <!-- Workout 1 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80" alt="Full Body Strength">
+            <span class="card-badge">Strength</span>
           </div>
-          <div class="grid-item">
-            <h3>HIIT Cardio Blast</h3>
-            <p>High-intensity interval routines engineered for max calorie burning in minimal time.</p>
-          </div>
-          <div class="grid-item">
-            <h3>Recovery Yoga Flow</h3>
-            <p>Enhance joint mobility, relieve muscular tension, and accelerate recovery times.</p>
+          <div class="card-body">
+            <h3 class="card-title">1. Full-Body Strength Circuit</h3>
+            <p class="card-desc">Squats, deadlifts, bench presses, and bent-over rows designed for total body hypertrophy.</p>
+            <div class="card-meta"><span>45 mins</span><span>Intermediate</span></div>
           </div>
         </div>
+
+        <!-- Workout 2 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1601422407692-ec4eeec1d9b3?auto=format&fit=crop&w=600&q=80" alt="HIIT Cardio Burn">
+            <span class="card-badge">Fat Burn</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">2. High-Intensity Fat Burn</h3>
+            <p class="card-desc">Tabata-style intervals: burpees, mountain climbers, kettlebell swings, and jump squats.</p>
+            <div class="card-meta"><span>25 mins</span><span>All Levels</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 3 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=600&q=80" alt="Yoga Flow">
+            <span class="card-badge">Mobility</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">3. Active Recovery Yoga Flow</h3>
+            <p class="card-desc">Gentle Vinyasa sequences focused on hip openers, hamstring stretches, and spinal mobility.</p>
+            <div class="card-meta"><span>30 mins</span><span>Beginner</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 4 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=600&q=80" alt="Hypertrophy Arms & Shoulders">
+            <span class="card-badge">Hypertrophy</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">4. Hypertrophy Arms & Shoulders</h3>
+            <p class="card-desc">Targeted dumbbell overhead presses, lateral raises, hammer curls, and tricep dips.</p>
+            <div class="card-meta"><span>40 mins</span><span>Intermediate</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 5 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80" alt="Core Shredder">
+            <span class="card-badge">Core</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">5. Core & Abdominal Shredder</h3>
+            <p class="card-desc">Hanging leg raises, plank variations, Russian twists, and bicycle crunches for core stability.</p>
+            <div class="card-meta"><span>20 mins</span><span>All Levels</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 6 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1434596922112-19c563067271?auto=format&fit=crop&w=600&q=80" alt="Endurance Running">
+            <span class="card-badge">Cardio</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">6. Endurance Running & Tempo</h3>
+            <p class="card-desc">Structured 5k/10k training intervals mixing easy pace warmups with 80% max HR tempo blocks.</p>
+            <div class="card-meta"><span>50 mins</span><span>Advanced</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 7 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=600&q=80" alt="Lower Body Power">
+            <span class="card-badge">Power</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">7. Lower-Body Leg & Glute Power</h3>
+            <p class="card-desc">Barbell hip thrusts, Bulgarian split squats, Romanian deadlifts, and calf raises.</p>
+            <div class="card-meta"><span>45 mins</span><span>Intermediate</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 8 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1599058945522-28d584b6f0ff?auto=format&fit=crop&w=600&q=80" alt="Calisthenics Bodyweight">
+            <span class="card-badge">Bodyweight</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">8. Bodyweight Calisthenics Master</h3>
+            <p class="card-desc">Pull-ups, push-ups, bodyweight dips, pistol squats, and hollow body holds. Equipment free.</p>
+            <div class="card-meta"><span>35 mins</span><span>All Levels</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 9 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=600&q=80" alt="Plyometric Agility">
+            <span class="card-badge">Athletic</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">9. Athletic Plyometrics & Agility</h3>
+            <p class="card-desc">Box jumps, lateral bounding, ladder drills, and explosive medicine ball throws for power output.</p>
+            <div class="card-meta"><span>30 mins</span><span>Advanced</span></div>
+          </div>
+        </div>
+
+        <!-- Workout 10 -->
+        <div class="card">
+          <div class="card-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1518310383802-640c2de311b2?auto=format&fit=crop&w=600&q=80" alt="Pilates & Functional Mobility">
+            <span class="card-badge">Pilates</span>
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">10. Mat Pilates & Spine Mobility</h3>
+            <p class="card-desc">Low-impact series strengthening posture muscles, glute medius, and deep core stabilizers.</p>
+            <div class="card-meta"><span>35 mins</span><span>Beginner</span></div>
+          </div>
+        </div>
+
       </div>
     </section>
 
     <!-- Tab 5: About Us / Global Issues -->
     <section id="about-us" class="tab-content">
-      <div class="content-card">
+      <div class="section-header">
         <h2>About Us & Global Health Issues</h2>
-        <p>Our mission is to make health information accessible globally while raising awareness about sustainable food sourcing, nutrition equity, and active living worldwide.</p>
+        <p>Our mission and focus on global wellness.</p>
+      </div>
+      <div class="card" style="padding: 30px;">
+        <h3 style="color: var(--primary-color); margin-bottom: 15px;">Promoting Global Fitness & Sustainable Nutrition</h3>
+        <p style="margin-bottom: 15px;">We believe access to quality fitness guidance and health education is a universal need. Our platform focuses on raising awareness around global physical inactivity, nutrition equity, and sustainable food sourcing.</p>
+        <p>By offering simple, actionable workouts and plant-rich meal options, we aim to help individuals lower their lifestyle health risks while encouraging sustainable living habits.</p>
       </div>
     </section>
 
   </main>
 
   <footer>
-    <p>&copy; 2026 Health & Fitness Portal. All rights reserved.</p>
+    <p>&copy; 2026 Health & Fitness Hub. All rights reserved.</p>
   </footer>
 
   <script>
@@ -416,7 +773,7 @@
         event.preventDefault();
       }
 
-      // Hide all tab contents
+      // Hide all tabs
       const contents = document.querySelectorAll('.tab-content');
       contents.forEach(content => content.classList.remove('active'));
 
@@ -426,11 +783,10 @@
         targetContent.classList.add('active');
       }
 
-      // Update active nav item styling
+      // Update active menu link styling
       const navLinks = document.querySelectorAll('.nav-link');
       navLinks.forEach(link => link.classList.remove('active'));
 
-      // Find matching nav tab or parent nav item to highlight
       if (event && event.currentTarget) {
         const clickedLink = event.currentTarget.closest('.nav-item');
         if (clickedLink) {
@@ -439,12 +795,12 @@
         }
       }
 
-      // Close open dropdowns
       closeAllDropdowns();
 
-      // Scroll to content view on mobile / lower viewports
+      // Smooth scroll to main content top
+      const mainOffset = document.querySelector('main').offsetTop - 80;
       window.scrollTo({
-        top: document.querySelector('main').offsetTop - 80,
+        top: mainOffset,
         behavior: 'smooth'
       });
     }
@@ -468,7 +824,7 @@
       dropdowns.forEach(menu => menu.classList.remove('show'));
     }
 
-    // Close dropdowns when clicking anywhere outside
+    // Close dropdowns on outside clicks
     document.addEventListener('click', function(e) {
       if (!e.target.closest('.dropdown')) {
         closeAllDropdowns();
