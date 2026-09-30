@@ -141,7 +141,7 @@
 
                 <!-- Mobile Navigation Button -->
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -179,9 +179,8 @@
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow">
 
-        <!-- ================= PAGE 1: HOME PAGE (WIREFRAME 3) ================= -->
+        <!-- ================= PAGE 1: HOME PAGE ================= -->
         <section id="page-home" class="page-section">
-            <!-- Hero Banner -->
             <div class="bg-gradient-to-r from-fern via-pistachio to-bluebell text-white py-20 px-4 sm:px-6 lg:px-8 shadow-inner relative overflow-hidden">
                 <div class="max-w-4xl mx-auto text-center space-y-5 relative z-10">
                     <span class="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white font-medium text-xs tracking-wider uppercase backdrop-blur-md">
@@ -205,10 +204,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-                <!-- Section Grid Matching Wireframe Sketch Layout -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    
-                    <!-- General Tips Card -->
                     <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center space-x-3 mb-6">
                             <div class="p-3 bg-cherry/40 rounded-2xl text-slate-800">
@@ -236,7 +232,6 @@
                         </ul>
                     </div>
 
-                    <!-- General Information Section Card -->
                     <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition">
                         <div class="flex items-center space-x-3 mb-6">
                             <div class="p-3 bg-pistachio/50 rounded-2xl text-slate-800">
@@ -259,7 +254,6 @@
                     </div>
                 </div>
 
-                <!-- Global Significance Section -->
                 <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-fern bg-gradient-to-r from-white to-fennel/20">
                     <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
                         <div class="space-y-3 max-w-3xl">
@@ -281,9 +275,8 @@
             </div>
         </section>
 
-        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG (WIREFRAME 2) ================= -->
+        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG ================= -->
         <section id="page-catalog" class="page-section hidden">
-            <!-- Catalog Hero Header -->
             <div id="catalog-hero" class="bg-gradient-to-r from-pistachio via-fennel to-bluebell py-12 px-4 sm:px-6 lg:px-8 text-slate-800">
                 <div class="max-w-4xl mx-auto text-center space-y-2">
                     <h1 id="catalog-title" class="text-3xl font-extrabold tracking-tight">Healthy Recipes & Specialized Diets</h1>
@@ -296,32 +289,26 @@
                 <div class="flex flex-col lg:flex-row gap-4 items-center justify-between bg-white p-4 rounded-3xl border border-fennel shadow-sm">
                     <!-- Subtab / Filter Pills -->
                     <div class="flex flex-wrap gap-2 justify-center lg:justify-start" id="filter-pills">
-                        <!-- Dynamic Filters inserted via JS -->
+                        <!-- Dynamic Subtab Pills Injected via JS -->
                     </div>
 
                     <!-- Search Input -->
                     <div class="relative w-full lg:w-72">
-                        <input type="text" id="catalog-search" placeholder="Search titles, ingredients, goals..." 
+                        <input type="text" id="catalog-search" oninput="handleSearch(this.value)" placeholder="Search titles, ingredients, goals..." 
                             class="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-fennel bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-fern focus:bg-white transition">
                         <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
                     </div>
                 </div>
 
-                <!-- Card Grid Matching Wireframe Sketch Layout -->
+                <!-- Card Grid Layout -->
                 <div id="card-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Dynamic Cards Loaded via JavaScript -->
-                </div>
-
-                <!-- Pagination Control -->
-                <div id="pagination-controls" class="flex justify-center items-center gap-2 pt-6">
-                    <!-- Dynamic Pagination -->
+                    <!-- Dynamic Cards Loaded via JS -->
                 </div>
             </div>
         </section>
 
-        <!-- ================= PAGE 4: ABOUT US & GLOBAL ISSUES CAROUSEL ================= -->
+        <!-- ================= PAGE 4: ABOUT US & GLOBAL ISSUES ================= -->
         <section id="page-about" class="page-section hidden">
-            <!-- Hero Section -->
             <div class="bg-gradient-to-r from-peony via-cherry to-honey py-12 px-4 text-slate-800">
                 <div class="max-w-4xl mx-auto text-center space-y-2">
                     <h1 class="text-3xl sm:text-4xl font-extrabold">About Our Health Mission</h1>
@@ -330,14 +317,12 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-                <!-- Our Team Section -->
                 <div class="glass-card rounded-3xl p-8 shadow-sm">
                     <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                         <i data-lucide="users" class="w-6 h-6 text-fern"></i>
                         Our Team
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Member 1 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-fern/20 flex items-center justify-center text-fern text-2xl font-bold">
                                 T1
@@ -345,7 +330,6 @@
                             <h3 class="font-bold text-slate-800 text-lg">Chloe Kehoe</h3>
                             <p class="text-xs text-fern font-semibold uppercase tracking-wider">Planning and Design</p>
                         </div>
-                        <!-- Member 2 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-peony/30 flex items-center justify-center text-peony text-2xl font-bold">
                                 T2
@@ -353,7 +337,6 @@
                             <h3 class="font-bold text-slate-800 text-lg">Mazen Abdelhameed</h3>
                             <p class="text-xs text-peony font-semibold uppercase tracking-wider">Planning and Web Development</p>
                         </div>
-                        <!-- Member 3 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-bluebell/40 flex items-center justify-center text-bluebell text-2xl font-bold">
                                 T3
@@ -364,9 +347,7 @@
                     </div>
                 </div>
 
-                <!-- "Why" Section & Instagram-Style Carousel -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <!-- Why Section -->
                     <div class="glass-card rounded-3xl p-8 space-y-4">
                         <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <i data-lucide="target" class="w-6 h-6 text-peony"></i>
@@ -376,7 +357,7 @@
                             In today's fast-paced environment, finding reliable, structured, and simple lifestyle information can be overwhelming due to conflicting advice and overly complex trends.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to 70 curated recipes and 50 targeted workout routines—all organized cleanly in one place.
+                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to curated recipes and targeted workout routines—all organized cleanly in one place.
                         </p>
                         <div class="p-4 bg-honey/20 border border-honey/50 rounded-2xl">
                             <h4 class="font-semibold text-slate-800 text-sm">Core Pillars</h4>
@@ -384,7 +365,7 @@
                         </div>
                     </div>
 
-                    <!-- Instagram-Style Multi-Slide Image Carousel for Global Issue -->
+                    <!-- Instagram-Style Multi-Slide Image Carousel -->
                     <div class="glass-card rounded-3xl p-6 shadow-sm flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-4">
@@ -402,12 +383,9 @@
                                 </span>
                             </div>
 
-                            <!-- Carousel Container -->
                             <div class="relative overflow-hidden rounded-2xl bg-slate-900 group shadow-md" style="aspect-ratio: 4/3;">
-                                <!-- Slide Image -->
                                 <img id="carousel-img" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Global Issue Slide" class="w-full h-full object-cover transition-all duration-500 opacity-90">
                                 
-                                <!-- Slide Content Overlay -->
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end text-white space-y-1">
                                     <span id="carousel-tag" class="inline-block self-start text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-peony text-slate-900">
                                         Issue 01: Malnutrition & Inequality
@@ -420,21 +398,16 @@
                                     </p>
                                 </div>
 
-                                <!-- Left Arrow Button -->
                                 <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
                                     <i data-lucide="chevron-left" class="w-5 h-5"></i>
                                 </button>
 
-                                <!-- Right Arrow Button -->
                                 <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
                                     <i data-lucide="chevron-right" class="w-5 h-5"></i>
                                 </button>
                             </div>
 
-                            <!-- Carousel Dots Indicator -->
-                            <div class="flex justify-center items-center gap-1.5 mt-4" id="carousel-dots">
-                                <!-- Dynamic dots rendered via JS -->
-                            </div>
+                            <div class="flex justify-center items-center gap-1.5 mt-4" id="carousel-dots"></div>
                         </div>
                     </div>
                 </div>
@@ -444,67 +417,12 @@
     </main>
 
     <!-- DETAIL MODAL DRAWER -->
-    <div id="detail-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div id="detail-modal" onclick="closeModalOnBackdrop(event)" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
         <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar p-6 sm:p-8 relative shadow-2xl border border-fennel">
             <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-fennel/30 text-slate-500 transition">
                 <i data-lucide="x" class="w-6 h-6"></i>
             </button>
-            <div id="modal-content">
-                <!-- Content dynamically injected via JS -->
-            </div>
-        </div>
-    </div>
-
-    <!-- FLOATING CHATBOT WIDGET -->
-    <div class="fixed bottom-6 right-6 z-50">
-        <!-- Chat Toggle Button -->
-        <button id="chatbot-toggle-btn" onclick="toggleChatbot()" class="w-14 h-14 rounded-full bg-fern text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 relative group">
-            <i data-lucide="message-square" class="w-6 h-6"></i>
-            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-peony border-2 border-white rounded-full"></span>
-        </button>
-
-        <!-- Chatbot Floating Window -->
-        <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-fennel flex flex-col overflow-hidden transition-all duration-300" style="height: 480px;">
-            <!-- Header -->
-            <div class="p-4 bg-gradient-to-r from-fern to-pistachio text-white flex items-center justify-between">
-                <div class="flex items-center space-x-2">
-                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
-                        <i data-lucide="bot" class="w-5 h-5"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-sm">Vitality HealthBot</h4>
-                        <span class="text-[10px] text-white/90">Interactive Assistant</span>
-                    </div>
-                </div>
-                <button onclick="toggleChatbot()" class="text-white/80 hover:text-white">
-                    <i data-lucide="minus" class="w-5 h-5"></i>
-                </button>
-            </div>
-
-            <!-- Messages Container -->
-            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto custom-scrollbar space-y-3 bg-fennel/10 text-xs">
-                <div class="flex items-start gap-2">
-                    <div class="w-6 h-6 rounded-full bg-fern text-white flex items-center justify-center text-[10px] flex-shrink-0">Bot</div>
-                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-fennel max-w-[80%] text-slate-700 leading-relaxed">
-                        Hello! 👋 I'm your Vitality Assistant. Ask me about anti-inflammatory diets, gut health tips, high-protein workouts, or weight loss recipes!
-                    </div>
-                </div>
-            </div>
-
-            <!-- Quick Suggestions -->
-            <div class="p-2 bg-white border-t border-fennel flex gap-1.5 overflow-x-auto text-[11px] custom-scrollbar">
-                <button onclick="sendQuickMessage('What is an anti-inflammatory diet?')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Anti-inflammatory?</button>
-                <button onclick="sendQuickMessage('Give me a gut health tip')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Gut Health Tip</button>
-                <button onclick="sendQuickMessage('Best HIIT workout')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">HIIT Workout</button>
-            </div>
-
-            <!-- Input Box -->
-            <form onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-fennel flex gap-2">
-                <input type="text" id="chat-input" placeholder="Ask about recipes or workouts..." class="flex-grow px-3 py-2 rounded-xl border border-fennel text-xs focus:outline-none focus:ring-1 focus:ring-fern">
-                <button type="submit" class="p-2 rounded-xl bg-fern text-white hover:bg-slate-700 transition">
-                    <i data-lucide="send" class="w-4 h-4"></i>
-                </button>
-            </form>
+            <div id="modal-content"></div>
         </div>
     </div>
 
@@ -512,12 +430,172 @@
     <footer class="bg-slate-800 text-white/70 py-8 border-t border-slate-700 text-xs text-center">
         <div class="max-w-7xl mx-auto px-4 space-y-2">
             <p>© 2026 Vitality Health & Lifestyle Project. All Rights Reserved.</p>
-            <p class="text-slate-400">Color Scheme: Fern (#768E78), Pistachio (#C6C09C), Fennel (#EBDEC0), Cherry (#FECDBE), Peony (#E79897), Bluebell (#B7CBDB), Honey (#FCC88A)</p>
         </div>
     </footer>
 
     <!-- JAVASCRIPT APPLICATION LOGIC & DATASET -->
     <script>
+        // DATASET FOR RECIPES & WORKOUTS
+        const catalogItems = [
+            // Specialized Diets / Healthy Recipes
+            {
+                id: 1,
+                mainCategory: "Specialized Diets",
+                subCategory: "Anti-Inflammatory",
+                title: "Turmeric Wild Salmon Bowl",
+                desc: "Omega-3 rich salmon served with quinoa, leafy greens, and a ginger-turmeric dressing.",
+                time: "25 mins",
+                cal: "480 kcal",
+                tags: ["Anti-Inflammatory", "Omega-3", "High Protein"],
+                ingredients: ["150g Wild Salmon", "1 cup Quinoa", "1 cup Spinach", "1 tsp Turmeric", "1 tbsp Olive Oil"],
+                instructions: ["Season salmon with turmeric and olive oil.", "Pan-sear salmon for 4 minutes per side.", "Serve over warm quinoa and fresh spinach."]
+            },
+            {
+                id: 2,
+                mainCategory: "Specialized Diets",
+                subCategory: "Weight Loss",
+                title: "Mediterranean Avocado Salad",
+                desc: "Crisp cucumber, cherry tomatoes, olive oil, and diced avocado loaded with fiber and healthy fats.",
+                time: "15 mins",
+                cal: "320 kcal",
+                tags: ["Weight Loss", "Low Carb", "Vegan"],
+                ingredients: ["1 Avocado", "1 cup Cherry Tomatoes", "1 Cucumber", "1 tbsp Lemon Juice"],
+                instructions: ["Dice avocado and cucumber.", "Combine in a bowl with tomatoes.", "Toss with olive oil and fresh lemon juice."]
+            },
+            {
+                id: 3,
+                mainCategory: "Specialized Diets",
+                subCategory: "Gut Health",
+                title: "Berry Kefir Smoothie Bowl",
+                desc: "Probiotic-rich kefir blended with antioxidant berries and chia seeds.",
+                time: "10 mins",
+                cal: "290 kcal",
+                tags: ["Gut Health", "Probiotic", "Breakfast"],
+                ingredients: ["1 cup Plain Kefir", "1/2 cup Mixed Berries", "1 tbsp Chia Seeds", "1 tsp Honey"],
+                instructions: ["Blend kefir and berries until smooth.", "Pour into bowl and top with chia seeds."]
+            },
+            {
+                id: 4,
+                mainCategory: "Healthy Recipes",
+                subCategory: "Breakfast",
+                title: "Overnight Chia & Oat Parfait",
+                desc: "Layered oats, chia seeds, almond milk, and fresh blueberries prepared overnight.",
+                time: "5 mins (prep)",
+                cal: "310 kcal",
+                tags: ["Breakfast", "High Fiber", "Prep Ahead"],
+                ingredients: ["1/2 cup Rolled Oats", "1 tbsp Chia Seeds", "3/4 cup Almond Milk", "Fresh Blueberries"],
+                instructions: ["Combine oats, chia, and almond milk in a jar.", "Refrigerate overnight.", "Top with blueberries before serving."]
+            },
+            {
+                id: 5,
+                mainCategory: "Healthy Recipes",
+                subCategory: "Lunch",
+                title: "Grilled Chicken Protein Wrap",
+                desc: "Whole wheat wrap packed with grilled chicken breast, spinach, and hummus.",
+                time: "20 mins",
+                cal: "420 kcal",
+                tags: ["Lunch", "High Protein", "Quick Prep"],
+                ingredients: ["1 Whole Wheat Wrap", "120g Chicken Breast", "2 tbsp Hummus", "1 cup Spinach"],
+                instructions: ["Grill chicken until fully cooked.", "Spread hummus onto wrap.", "Fill with chicken, spinach, and roll up."]
+            },
+            {
+                id: 6,
+                mainCategory: "Healthy Recipes",
+                subCategory: "Dinner",
+                title: "Baked Cod with Roasted Asparagus",
+                desc: "Lean white fish seasoned with herbs and lemon served alongside roasted seasonal veggies.",
+                time: "30 mins",
+                cal: "380 kcal",
+                tags: ["Dinner", "Lean Protein", "Low Calorie"],
+                ingredients: ["180g Cod Fillet", "1 bunch Asparagus", "1 Lemon", "1 tbsp Olive Oil"],
+                instructions: ["Preheat oven to 200°C.", "Place fish and asparagus on a tray.", "Drizzle with olive oil and lemon; bake 18 mins."]
+            },
+            {
+                id: 7,
+                mainCategory: "Healthy Recipes",
+                subCategory: "Dessert/Snacks",
+                title: "Dark Chocolate Energy Bites",
+                desc: "No-bake bites made with dates, dark cocoa powder, almond butter, and rolled oats.",
+                time: "15 mins",
+                cal: "180 kcal (2 bites)",
+                tags: ["Snack", "Natural Energy", "No Bake"],
+                ingredients: ["1 cup Dates", "2 tbsp Cocoa Powder", "1/2 cup Almond Butter", "1 cup Oats"],
+                instructions: ["Pulse dates and oats in a food processor.", "Mix in cocoa and almond butter.", "Roll into bite-sized balls."]
+            },
+            // Sport Workouts
+            {
+                id: 8,
+                mainCategory: "Sports",
+                subCategory: "Strength & Hypertrophy",
+                title: "Full Body Compound Push-Pull",
+                desc: "Heavy compound lifting routine targeting key muscle groups for progressive hypertrophy.",
+                time: "45 mins",
+                cal: "350 kcal",
+                tags: ["Strength", "Hypertrophy", "Gym Required"],
+                ingredients: ["Barbell", "Dumbbells", "Adjustable Bench"],
+                instructions: ["4 Sets Squats (8-10 reps)", "4 Sets Bench Press (8-10 reps)", "3 Sets Bent-over Rows (10-12 reps)", "3 Sets Overhead Press (10 reps)"]
+            },
+            {
+                id: 9,
+                mainCategory: "Sports",
+                subCategory: "Cardio & HIIT",
+                title: "20-Minute High Intensity Interval Protocol",
+                desc: "Fast-paced bodyweight interval training designed to maximize heart rate and stamina.",
+                time: "20 mins",
+                cal: "260 kcal",
+                tags: ["Cardio", "HIIT", "Fat Loss"],
+                ingredients: ["Exercise Mat", "Timer"],
+                instructions: ["45s Jumping Jacks / 15s Rest", "45s High Knees / 15s Rest", "45s Burpees / 15s Rest", "Repeat for 4 Rounds"]
+            },
+            {
+                id: 10,
+                mainCategory: "Sports",
+                subCategory: "Flexibility & Yoga",
+                title: "Morning Vinyasa Mobility Flow",
+                desc: "Gentle yoga flow designed to lengthen tight hip flexors and improve spine mobility.",
+                time: "25 mins",
+                cal: "120 kcal",
+                tags: ["Flexibility", "Yoga", "Recovery"],
+                ingredients: ["Yoga Mat"],
+                instructions: ["5 x Sun Salutations A", "Hold Downward Dog 1 min", "Warrior II Pose 45s per side", "Child's Pose 2 mins"]
+            },
+            {
+                id: 11,
+                mainCategory: "Sports",
+                subCategory: "Athletic Endurance",
+                title: "Threshold Zone Running Workout",
+                desc: "Interval running routine designed to increase cardiovascular output and aerobic baseline.",
+                time: "40 mins",
+                cal: "450 kcal",
+                tags: ["Endurance", "Running", "Cardio"],
+                ingredients: ["Running Shoes"],
+                instructions: ["10 min Light Warmup Jog", "5 x 3 min Tempo Pace (1 min Rest)", "10 min Cool Down Walk/Jog"]
+            },
+            {
+                id: 12,
+                mainCategory: "Sports",
+                subCategory: "Home & Bodyweight",
+                title: "No-Equipment Calisthenics Core Routine",
+                desc: "Targeted core and bodyweight routine requiring zero equipment.",
+                time: "15 mins",
+                cal: "150 kcal",
+                tags: ["Home", "Bodyweight", "Core"],
+                ingredients: ["Floor Space"],
+                instructions: ["3 x 45s Plank Holds", "3 x 15 Pushups", "3 x 20 Russian Twists", "3 x 15 Bodyweight Squats"]
+            }
+        ];
+
+        // SUBTAB MAP DEFINITIONS
+        const subtabsMap = {
+            "Specialized Diets": ["All", "Anti-Inflammatory", "Weight Loss", "Gut Health"],
+            "Healthy Recipes": ["All", "Breakfast", "Lunch", "Dinner", "Dessert/Snacks"],
+            "Sports": ["All", "Strength & Hypertrophy", "Cardio & HIIT", "Flexibility & Yoga", "Athletic Endurance", "Home & Bodyweight"]
+        };
+
+        let currentMainCategory = "Specialized Diets";
+        let currentSubCategory = "All";
+        let searchQuery = "";
+
         // CAROUSEL SLIDES DATASET
         const globalIssueSlides = [
             {
@@ -550,13 +628,18 @@
 
         function updateCarousel() {
             const slide = globalIssueSlides[currentSlideIndex];
-            document.getElementById('carousel-img').src = slide.img;
-            document.getElementById('carousel-tag').innerText = slide.tag;
-            document.getElementById('carousel-title').innerText = slide.title;
-            document.getElementById('carousel-desc').innerText = slide.desc;
-            document.getElementById('carousel-counter').innerText = `${currentSlideIndex + 1} / ${globalIssueSlides.length}`;
+            const img = document.getElementById('carousel-img');
+            const tag = document.getElementById('carousel-tag');
+            const title = document.getElementById('carousel-title');
+            const desc = document.getElementById('carousel-desc');
+            const counter = document.getElementById('carousel-counter');
+
+            if (img) img.src = slide.img;
+            if (tag) tag.innerText = slide.tag;
+            if (title) title.innerText = slide.title;
+            if (desc) desc.innerText = slide.desc;
+            if (counter) counter.innerText = `${currentSlideIndex + 1} / ${globalIssueSlides.length}`;
             
-            // Render Dots
             const dotsContainer = document.getElementById('carousel-dots');
             if (dotsContainer) {
                 dotsContainer.innerHTML = globalIssueSlides.map((_, i) => `
@@ -593,15 +676,193 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        function navigateToCategory(mainCat, subCat = "All") {
+            currentMainCategory = mainCat;
+            currentSubCategory = subCat;
+            searchQuery = "";
+            
+            const searchInput = document.getElementById('catalog-search');
+            if (searchInput) searchInput.value = "";
+
+            // Update page titles based on current selection
+            const title = document.getElementById('catalog-title');
+            const subtitle = document.getElementById('catalog-subtitle');
+            if (title) {
+                if (mainCat === 'Sports') {
+                    title.innerText = 'Sport Workout Plans';
+                } else if (mainCat === 'Healthy Recipes') {
+                    title.innerText = 'Healthy Recipes';
+                } else {
+                    title.innerText = 'Specialized Diets';
+                }
+            }
+            if (subtitle) {
+                subtitle.innerText = mainCat === 'Sports' 
+                    ? 'Structured fitness and athletic routines for strength, endurance, and flexibility.' 
+                    : 'Balanced meals and nutritional diets tailored for optimal health.';
+            }
+
+            renderSubtabs();
+            renderCatalogCards();
+            navigateTo('catalog');
+        }
+
+        function setSubcategory(subCat) {
+            currentSubCategory = subCat;
+            renderSubtabs();
+            renderCatalogCards();
+        }
+
+        function handleSearch(val) {
+            searchQuery = val.toLowerCase();
+            renderCatalogCards();
+        }
+
+        function renderSubtabs() {
+            const pillsContainer = document.getElementById('filter-pills');
+            if (!pillsContainer) return;
+
+            // Fetch correct subtabs matching the exact active main category
+            const sublist = subtabsMap[currentMainCategory] || ["All"];
+            pillsContainer.innerHTML = sublist.map(sub => {
+                const isActive = sub === currentSubCategory;
+                return `
+                    <button onclick="setSubcategory('${sub}')" 
+                        class="px-4 py-2 text-xs font-semibold rounded-2xl transition-all duration-200 ${isActive ? 'bg-fern text-white shadow-md' : 'bg-fennel/30 text-slate-700 hover:bg-fennel/60'}">
+                        ${sub}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        function renderCatalogCards() {
+            const cardGrid = document.getElementById('card-grid');
+            if (!cardGrid) return;
+
+            const filtered = catalogItems.filter(item => {
+                // Strict main category match
+                if (item.mainCategory !== currentMainCategory) {
+                    return false;
+                }
+
+                // Subcategory match
+                if (currentSubCategory !== "All" && item.subCategory !== currentSubCategory) {
+                    return false;
+                }
+
+                // Search query match
+                if (searchQuery) {
+                    const text = `${item.title} ${item.desc} ${item.tags.join(' ')} ${item.ingredients.join(' ')}`.toLowerCase();
+                    if (!text.includes(searchQuery)) return false;
+                }
+
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                cardGrid.innerHTML = `
+                    <div class="col-span-full py-12 text-center text-slate-500 bg-white rounded-3xl border border-fennel">
+                        <i data-lucide="info" class="w-10 h-10 mx-auto mb-2 text-fennel"></i>
+                        <p class="font-medium text-slate-700">No items found matching your filters.</p>
+                        <p class="text-xs text-slate-400 mt-1">Try selecting another subtab or resetting search.</p>
+                    </div>
+                `;
+                if (window.lucide) lucide.createIcons();
+                return;
+            }
+
+            cardGrid.innerHTML = filtered.map(item => `
+                <div class="bg-white rounded-3xl p-6 border border-fennel shadow-sm hover:shadow-md transition flex flex-col justify-between group hover:border-fern">
+                    <div class="space-y-3">
+                        <div class="flex justify-between items-start gap-2">
+                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-fennel/40 text-fern uppercase tracking-wider">${item.subCategory}</span>
+                            <div class="flex items-center text-xs text-slate-400 gap-1">
+                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+                                <span>${item.time}</span>
+                            </div>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-800 group-hover:text-fern transition line-clamp-1">${item.title}</h3>
+                        <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">${item.desc}</p>
+                        <div class="flex flex-wrap gap-1.5 pt-1">
+                            ${item.tags.map(t => `<span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">${t}</span>`).join('')}
+                        </div>
+                    </div>
+                    <div class="pt-5 mt-4 border-t border-fennel/40 flex items-center justify-between">
+                        <span class="text-xs font-semibold text-slate-500">${item.cal}</span>
+                        <button onclick="openModal(${item.id})" class="px-3.5 py-1.5 rounded-xl bg-fern/10 text-fern font-bold text-xs hover:bg-fern hover:text-white transition">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (window.lucide) lucide.createIcons();
+        }
+
+        // MODAL DRAWER LOGIC
+        function openModal(id) {
+            const item = catalogItems.find(i => i.id === id);
+            if (!item) return;
+
+            const modal = document.getElementById('detail-modal');
+            const modalContent = document.getElementById('modal-content');
+            if (!modal || !modalContent) return;
+
+            modalContent.innerHTML = `
+                <div class="space-y-6">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-fern/10 text-fern uppercase tracking-wider">${item.subCategory}</span>
+                        <h2 class="text-2xl font-bold text-slate-800 mt-2">${item.title}</h2>
+                        <p class="text-sm text-slate-600 mt-1">${item.desc}</p>
+                    </div>
+
+                    <div class="flex items-center gap-6 py-3 border-y border-fennel text-xs text-slate-600">
+                        <div><strong>Prep/Duration:</strong> ${item.time}</div>
+                        <div><strong>Energy output:</strong> ${item.cal}</div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">${item.mainCategory === 'Sports' ? 'Equipment Needed' : 'Key Ingredients'}</h4>
+                        <ul class="list-disc list-inside text-xs text-slate-600 space-y-1">
+                            ${item.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2">${item.mainCategory === 'Sports' ? 'Workout Routine / Steps' : 'Preparation Instructions'}</h4>
+                        <ol class="list-decimal list-inside text-xs text-slate-600 space-y-1.5">
+                            ${item.instructions.map(inst => `<li>${inst}</li>`).join('')}
+                        </ol>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('detail-modal');
+            if (modal) modal.classList.add('hidden');
+        }
+
+        function closeModalOnBackdrop(event) {
+            if (event.target.id === 'detail-modal') {
+                closeModal();
+            }
+        }
+
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu) menu.classList.toggle('hidden');
         }
 
-        // Initialize lucide icons on load
+        // INITIALIZATION
         window.addEventListener('DOMContentLoaded', () => {
-            if (window.lucide) lucide.createIcons();
+            renderSubtabs();
+            renderCatalogCards();
             updateCarousel();
+            if (window.lucide) lucide.createIcons();
         });
     </script>
 </body>
