@@ -1,869 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='48' fill='%23768E78'/><path d='M50 20 C30 35 25 65 50 80 C75 65 70 35 50 20 Z M50 20 L50 80' stroke='%23ffffff' stroke-width='4' fill='%23a3b8a5'/></svg>">
-    <title>Healthy Lifestyle & Wellbeing</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Tailwind Config for Custom Palette -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        fern: '#768E78',
-                        pistachio: '#C6C09C',
-                        fennel: '#EBDEC0',
-                        cherry: '#FECDBE',
-                        peony: '#E79897',
-                        bluebell: '#B7CBDB',
-                        honey: '#FCC88A'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #FAF9F6;
-            color: #2D3748;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: #EBDEC0;
-            border-radius: 8px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #768E78;
-            border-radius: 8px;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.90);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(235, 222, 192, 0.6);
-        }
-        .line-clamp-2 {
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        .line-clamp-1 {
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health & Fitness Hub</title>
+  <style>
+    :root {
+      --primary-color: #2c3e50;
+      --accent-color: #6b8e23;
+      --accent-hover: #556b2f;
+      --bg-color: #f4f6f8;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --border-color: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Bar */
+    header {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 20px;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 30px;
+    }
+
+    .nav-item {
+      position: relative;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 20px 0;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 15px;
+      cursor: pointer;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s ease;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      color: var(--accent-color);
+      border-bottom-color: var(--accent-color);
+    }
+
+    .arrow-icon {
+      width: 12px;
+      height: 12px;
+      fill: currentColor;
+      transition: transform 0.2s ease;
+    }
+
+    .nav-item:hover .arrow-icon, .nav-item.open .arrow-icon {
+      transform: rotate(180deg);
+    }
+
+    /* Dropdown Menus */
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #ffffff;
+      min-width: 200px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 10px 0;
+      display: none;
+      list-style: none;
+      z-index: 100;
+    }
+
+    .dropdown-menu.show {
+      display: block;
+    }
+
+    .dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      text-decoration: none;
+      color: var(--primary-color);
+      font-size: 14px;
+      transition: background 0.2s ease;
+    }
+
+    .dropdown-menu a:hover {
+      background-color: #f0f4f0;
+      color: var(--accent-color);
+    }
+
+    /* Hero Banner & Pill Buttons */
+    .hero {
+      background: linear-gradient(135deg, #a3b18a 0%, #588157 100%);
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+
+    .cta-button-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn-pill {
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-outline {
+      background-color: #ffffff;
+      color: #4a6b5d;
+      border: 2px solid #2d4030;
+    }
+
+    .btn-outline:hover {
+      background-color: #f0f5f0;
+      transform: translateY(-2px);
+    }
+
+    .btn-filled {
+      background-color: #9cb08f;
+      color: #ffffff;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+    }
+
+    .btn-filled:hover {
+      background-color: #899e7c;
+      transform: translateY(-2px);
+    }
+
+    /* Main Content Sections */
+    .container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .content-card {
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 25px;
+    }
+
+    .content-card h2 {
+      margin-bottom: 15px;
+      color: var(--primary-color);
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .grid-item {
+      background: #f9fbf9;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 20px;
+    }
+
+    .grid-item h3 {
+      color: var(--accent-color);
+      margin-bottom: 10px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #ffffff;
+      border-top: 1px solid var(--border-color);
+      margin-top: 60px;
+      color: #666;
+    }
+  </style>
 </head>
-<body class="min-h-screen flex flex-col justify-between relative selection:bg-peony selection:text-white">
+<body>
 
-    <!-- HEADER & NAVIGATION BAR -->
-    <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md shadow-sm border-b border-fennel">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <!-- Logo -->
-                <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('home')">
-                    <div class="w-10 h-10 rounded-2xl bg-fern flex items-center justify-center text-white shadow-md">
-                        <i data-lucide="leaf" class="w-6 h-6"></i>
-                    </div>
-                    <div>
-                        <span class="text-xl font-bold tracking-tight text-slate-800">VITALITY</span>
-                        <span class="block text-xs font-medium text-fern tracking-widest uppercase">Healthy Lifestyle Hub</span>
-                    </div>
-                </div>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="nav-container">
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a class="nav-link active" onclick="switchTab(event, 'homepage')">Homepage</a>
+        </li>
 
-                <!-- Desktop Navigation Menu -->
-                <nav class="hidden lg:flex space-x-1 xl:space-x-2">
-                    <button onclick="navigateTo('home')" id="nav-home" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors rounded-xl">
-                        Homepage
-                    </button>
+        <li class="nav-item dropdown">
+          <a class="nav-link" onclick="toggleDropdown(event, 'diet-menu')">
+            Specialized Diets
+            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <ul class="dropdown-menu" id="diet-menu">
+            <li><a onclick="switchTab(event, 'specialized-diets')">Keto Diet</a></li>
+            <li><a onclick="switchTab(event, 'specialized-diets')">Vegan & Plant-Based</a></li>
+            <li><a onclick="switchTab(event, 'specialized-diets')">Mediterranean Diet</a></li>
+          </ul>
+        </li>
 
-                    <!-- Specialized Diets Dropdown -->
-                    <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors flex items-center gap-1 rounded-xl">
-                            Specialized Diets
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-56 bg-white rounded-2xl shadow-xl border border-fennel/60 py-2 z-50 transition-all duration-200">
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Specialized Diets', 'Anti-Inflammatory')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Anti-Inflammatory</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Specialized Diets', 'Weight Loss')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Weight Loss</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Specialized Diets', 'Gut Health')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Gut Health</a>
-                        </div>
-                    </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link" onclick="toggleDropdown(event, 'recipe-menu')">
+            Healthy Recipes
+            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <ul class="dropdown-menu" id="recipe-menu">
+            <li><a onclick="switchTab(event, 'healthy-recipes')">Quick Breakfasts</a></li>
+            <li><a onclick="switchTab(event, 'healthy-recipes')">High-Protein Meals</a></li>
+            <li><a onclick="switchTab(event, 'healthy-recipes')">Low-Calorie Desserts</a></li>
+          </ul>
+        </li>
 
-                    <!-- Healthy Recipes Dropdown -->
-                    <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors flex items-center gap-1 rounded-xl">
-                            Healthy Recipes
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-56 bg-white rounded-2xl shadow-xl border border-fennel/60 py-2 z-50 transition-all duration-200">
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Healthy Recipes', 'Breakfast')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Breakfast</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Healthy Recipes', 'Lunch')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Lunch</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Healthy Recipes', 'Dinner')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Dinner</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Healthy Recipes', 'Dessert/Snacks')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Dessert & Snacks</a>
-                        </div>
-                    </div>
+        <li class="nav-item dropdown">
+          <a class="nav-link" onclick="toggleDropdown(event, 'workout-menu')">
+            Sport Workouts
+            <svg class="arrow-icon" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
+          </a>
+          <ul class="dropdown-menu" id="workout-menu">
+            <li><a onclick="switchTab(event, 'sport-workouts')">Strength Training</a></li>
+            <li><a onclick="switchTab(event, 'sport-workouts')">Cardio & HIIT</a></li>
+            <li><a onclick="switchTab(event, 'sport-workouts')">Flexibility & Yoga</a></li>
+          </ul>
+        </li>
 
-                    <!-- Sport Workouts Dropdown -->
-                    <div class="relative group">
-                        <button class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors flex items-center gap-1 rounded-xl">
-                            Sport Workouts
-                            <i data-lucide="chevron-down" class="w-4 h-4"></i>
-                        </button>
-                        <div class="absolute top-full left-0 hidden group-hover:block w-64 bg-white rounded-2xl shadow-xl border border-fennel/60 py-2 z-50 transition-all duration-200">
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Sports', 'Strength & Hypertrophy')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Strength & Hypertrophy</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Sports', 'Cardio & HIIT')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Cardio & HIIT</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Sports', 'Flexibility & Yoga')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Flexibility & Yoga</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Sports', 'Athletic Endurance')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Athletic Endurance</a>
-                            <a href="javascript:void(0)" onclick="navigateToCategory('Sports', 'Home & Bodyweight')" class="block px-4 py-2.5 text-sm text-slate-700 hover:bg-fennel/30 hover:text-fern">Home & Bodyweight</a>
-                        </div>
-                    </div>
-
-                    <!-- About Us / Global Issues -->
-                    <button onclick="navigateTo('about')" id="nav-about" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors rounded-xl">
-                        About Us / Global Issues
-                    </button>
-                </nav>
-
-                <!-- Mobile Navigation Button -->
-                <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mobile Navigation Menu Dropdown -->
-        <div id="mobile-menu" class="hidden lg:hidden border-t border-fennel bg-white px-4 pt-2 pb-6 space-y-2 max-h-[80vh] overflow-y-auto custom-scrollbar">
-            <button onclick="navigateTo('home'); toggleMobileMenu()" class="block w-full text-left py-2 text-base font-medium text-slate-800 border-b border-fennel/20">Homepage</button>
-            <div class="py-2 border-b border-fennel/20">
-                <span class="block text-xs font-bold text-fern uppercase tracking-wider mb-1">Specialized Diets</span>
-                <button onclick="navigateToCategory('Specialized Diets', 'Anti-Inflammatory'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Anti-Inflammatory</button>
-                <button onclick="navigateToCategory('Specialized Diets', 'Weight Loss'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Weight Loss</button>
-                <button onclick="navigateToCategory('Specialized Diets', 'Gut Health'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Gut Health</button>
-            </div>
-            <div class="py-2 border-b border-fennel/20">
-                <span class="block text-xs font-bold text-fern uppercase tracking-wider mb-1">Healthy Recipes</span>
-                <button onclick="navigateToCategory('Healthy Recipes', 'Breakfast'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Breakfast</button>
-                <button onclick="navigateToCategory('Healthy Recipes', 'Lunch'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Lunch</button>
-                <button onclick="navigateToCategory('Healthy Recipes', 'Dinner'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Dinner</button>
-                <button onclick="navigateToCategory('Healthy Recipes', 'Dessert/Snacks'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Desserts & Snacks</button>
-            </div>
-            <div class="py-2 border-b border-fennel/20">
-                <span class="block text-xs font-bold text-fern uppercase tracking-wider mb-1">Sport Workouts</span>
-                <button onclick="navigateToCategory('Sports', 'Strength & Hypertrophy'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Strength & Hypertrophy</button>
-                <button onclick="navigateToCategory('Sports', 'Cardio & HIIT'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Cardio & HIIT</button>
-                <button onclick="navigateToCategory('Sports', 'Flexibility & Yoga'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Flexibility & Yoga</button>
-                <button onclick="navigateToCategory('Sports', 'Athletic Endurance'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Athletic Endurance</button>
-                <button onclick="navigateToCategory('Sports', 'Home & Bodyweight'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Home & Bodyweight</button>
-            </div>
-            <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left py-2 text-base font-medium text-slate-800">About Us / Global Issues</button>
-        </div>
-    </header>
-
-    <!-- MAIN CONTENT CONTAINER -->
-    <main class="flex-grow">
-
-        <!-- ================= PAGE 1: HOME PAGE ================= -->
-        <section id="page-home" class="page-section">
-            <div class="bg-gradient-to-r from-fern via-pistachio to-bluebell text-white py-20 px-4 sm:px-6 lg:px-8 shadow-inner relative overflow-hidden">
-                <div class="max-w-4xl mx-auto text-center space-y-5 relative z-10">
-                    <span class="inline-block px-4 py-1.5 rounded-full bg-white/20 text-white font-medium text-xs tracking-wider uppercase backdrop-blur-md">
-                        Your Complete Wellness & Life Hub
-                    </span>
-                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight">
-                        Empowering Healthier Futures Together
-                    </h1>
-                    <p class="text-lg sm:text-2xl text-white/95 max-w-2xl mx-auto font-light leading-relaxed">
-                        Discover specialized nutrition, wholesome daily recipes, and targeted sport workout plans designed to improve daily well-being.
-                    </p>
-                    <div class="pt-4 flex flex-wrap justify-center gap-4">
-                        <button onclick="navigateToCategory('Healthy Recipes', 'All')" class="px-7 py-3.5 rounded-2xl bg-white text-fern font-bold shadow-lg hover:bg-fennel transition hover:scale-105 active:scale-95">
-                            Explore Recipes
-                        </button>
-                        <button onclick="navigateToCategory('Sports', 'All')" class="px-7 py-3.5 rounded-2xl bg-fern/40 text-white font-bold border border-white/50 hover:bg-fern/60 transition hover:scale-105 active:scale-95">
-                            Sport Workout Plans
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 bg-cherry/40 rounded-2xl text-slate-800">
-                                <i data-lucide="sparkles" class="w-6 h-6"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold text-slate-800">General Daily Tips</h2>
-                        </div>
-                        <ul class="space-y-4 text-slate-600">
-                            <li class="flex items-start space-x-3">
-                                <i data-lucide="droplet" class="w-5 h-5 text-bluebell mt-1 flex-shrink-0"></i>
-                                <span><strong>Hydrate Consistently:</strong> Drink at least 2.5 to 3 liters of water daily to maintain optimal cognitive function, joint lubrication, and cellular repair.</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i data-lucide="sun" class="w-5 h-5 text-honey mt-1 flex-shrink-0"></i>
-                                <span><strong>Morning Sun & Movement:</strong> Aim for 15 minutes of natural morning sunlight and light mobility exercises within an hour of waking up to set circadian rhythm.</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i data-lucide="utensils" class="w-5 h-5 text-fern mt-1 flex-shrink-0"></i>
-                                <span><strong>Mindful Nutrition:</strong> Practice chewing thoroughly and eating without screen distractions to promote healthy gut enzyme production and natural satiety cues.</span>
-                            </li>
-                            <li class="flex items-start space-x-3">
-                                <i data-lucide="moon" class="w-5 h-5 text-peony mt-1 flex-shrink-0"></i>
-                                <span><strong>Restorative Sleep Hygiene:</strong> Maintain a consistent sleep schedule aiming for 7-9 hours of uninterrupted sleep in a dark, cool environment.</span>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="glass-card rounded-3xl p-6 sm:p-8 shadow-sm hover:shadow-md transition">
-                        <div class="flex items-center space-x-3 mb-6">
-                            <div class="p-3 bg-pistachio/50 rounded-2xl text-slate-800">
-                                <i data-lucide="heart-pulse" class="w-6 h-6"></i>
-                            </div>
-                            <h2 class="text-2xl font-bold text-slate-800">General Information</h2>
-                        </div>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            A healthy lifestyle is not about temporary restrictions or extreme routines. It is built upon sustainable daily choices that nourish physical strength, boost immunity, and enhance daily longevity.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed mb-4">
-                            Our platform unifies scientifically backed dietary approaches—such as anti-inflammatory protocols, gut microbiome support, and weight management—alongside structured sport-specific workout routines suitable for all experience levels.
-                        </p>
-                        <div class="p-4 bg-fennel/40 rounded-2xl border border-fennel flex items-center gap-3">
-                            <i data-lucide="shield-check" class="w-8 h-8 text-fern flex-shrink-0"></i>
-                            <p class="text-xs text-slate-700">
-                                Every recipe and workout guide is carefully organized with clear breakdown metrics, ingredient lists, and instructions to ensure simple, seamless integration into your life.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="glass-card rounded-3xl p-6 sm:p-8 border-l-8 border-l-fern bg-gradient-to-r from-white to-fennel/20">
-                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-                        <div class="space-y-3 max-w-3xl">
-                            <div class="flex items-center gap-2">
-                                <span class="bg-fern text-white text-xs px-3 py-1 rounded-full font-semibold">Global Wellness Initiative</span>
-                                <span class="text-xs text-slate-500 uppercase tracking-widest">Health & Well-Being</span>
-                            </div>
-                            <h2 class="text-2xl font-bold text-slate-800">Global Significance</h2>
-                            <p class="text-slate-600 leading-relaxed">
-                                Preventable lifestyle diseases remain one of the most prominent global health challenges of our time. By fostering accessible nutrition literacy and encouraging physical activity across communities, we can reduce metabolic risks, promote mental well-being, and empower individuals to take proactive ownership of their health.
-                            </p>
-                        </div>
-                        <div class="p-6 bg-white rounded-2xl shadow-sm border border-fennel text-center min-w-[220px]">
-                            <div class="text-4xl font-extrabold text-fern">100+</div>
-                            <div class="text-xs font-semibold text-slate-600 mt-1 uppercase tracking-wider">Recipes & Sport Workouts</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG ================= -->
-        <section id="page-catalog" class="page-section hidden">
-            <div id="catalog-hero" class="bg-gradient-to-r from-pistachio via-fennel to-bluebell py-12 px-4 sm:px-6 lg:px-8 text-slate-800">
-                <div class="max-w-4xl mx-auto text-center space-y-2">
-                    <h1 id="catalog-title" class="text-3xl font-extrabold tracking-tight">Healthy Recipes & Specialized Diets</h1>
-                    <p id="catalog-subtitle" class="text-slate-700">Explore balanced meals and fitness routines tailored for optimal health.</p>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
-                <!-- Filters and Search Bar -->
-                <div class="flex flex-col lg:flex-row gap-4 items-center justify-between bg-white p-4 rounded-3xl border border-fennel shadow-sm">
-                    <!-- Subtab / Filter Pills -->
-                    <div class="flex flex-wrap gap-2 justify-center lg:justify-start" id="filter-pills">
-                        <!-- Dynamic Subtab Pills Injected via JS -->
-                    </div>
-
-                    <!-- Search Input -->
-                    <div class="relative w-full lg:w-72">
-                        <input type="text" id="catalog-search" oninput="handleSearch(this.value)" placeholder="Search titles, ingredients, goals..." 
-                            class="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-fennel bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-fern focus:bg-white transition">
-                        <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5"></i>
-                    </div>
-                </div>
-
-                <!-- Card Grid Layout -->
-                <div id="card-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Dynamic Cards Loaded via JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- ================= PAGE 4: ABOUT US & GLOBAL ISSUES ================= -->
-        <section id="page-about" class="page-section hidden">
-            <div class="bg-gradient-to-r from-peony via-cherry to-honey py-12 px-4 text-slate-800">
-                <div class="max-w-4xl mx-auto text-center space-y-2">
-                    <h1 class="text-3xl sm:text-4xl font-extrabold">About Our Health Mission</h1>
-                    <p class="text-slate-700">Meet the team and explore our interactive spotlight on global health issues.</p>
-                </div>
-            </div>
-
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-                <div class="glass-card rounded-3xl p-8 shadow-sm">
-                    <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
-                        <i data-lucide="users" class="w-6 h-6 text-fern"></i>
-                        Our Team
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
-                            <div class="w-20 h-20 mx-auto rounded-full bg-fern/20 flex items-center justify-center text-fern text-2xl font-bold">
-                                T1
-                            </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Chloe Kehoe</h3>
-                            <p class="text-xs text-fern font-semibold uppercase tracking-wider">Planning and Design</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
-                            <div class="w-20 h-20 mx-auto rounded-full bg-peony/30 flex items-center justify-center text-peony text-2xl font-bold">
-                                T2
-                            </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Mazen Abdelhameed</h3>
-                            <p class="text-xs text-peony font-semibold uppercase tracking-wider">Planning and Web Development</p>
-                        </div>
-                        <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
-                            <div class="w-20 h-20 mx-auto rounded-full bg-bluebell/40 flex items-center justify-center text-bluebell text-2xl font-bold">
-                                T3
-                            </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Aisha Andrade Farías</h3>
-                            <p class="text-xs text-bluebell font-semibold uppercase tracking-wider">Planning and Research</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                    <div class="glass-card rounded-3xl p-8 space-y-4">
-                        <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
-                            <i data-lucide="target" class="w-6 h-6 text-peony"></i>
-                            Why We Created Vitality
-                        </h2>
-                        <p class="text-slate-600 leading-relaxed">
-                            In today's fast-paced environment, finding reliable, structured, and simple lifestyle information can be overwhelming due to conflicting advice and overly complex trends.
-                        </p>
-                        <p class="text-slate-600 leading-relaxed">
-                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to curated recipes and targeted workout routines—all organized cleanly in one place.
-                        </p>
-                        <div class="p-4 bg-honey/20 border border-honey/50 rounded-2xl">
-                            <h4 class="font-semibold text-slate-800 text-sm">Core Pillars</h4>
-                            <p class="text-xs text-slate-600 mt-1">Accessibility, evidence-based nutrition, sustainable athletic progress, and seamless digital interaction.</p>
-                        </div>
-                    </div>
-
-                    <!-- Instagram-Style Multi-Slide Image Carousel -->
-                    <div class="glass-card rounded-3xl p-6 shadow-sm flex flex-col justify-between">
-                        <div>
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center gap-2">
-                                    <div class="w-8 h-8 rounded-full bg-fern flex items-center justify-center text-white font-bold text-xs">
-                                        <i data-lucide="globe" class="w-4 h-4"></i>
-                                    </div>
-                                    <div>
-                                        <h2 class="text-base font-bold text-slate-800">Global Health Spotlight</h2>
-                                        <p class="text-[11px] text-slate-500">Swipe or click arrows to explore slides</p>
-                                    </div>
-                                </div>
-                                <span id="carousel-counter" class="text-xs font-semibold px-2.5 py-1 bg-fennel/50 text-slate-700 rounded-full border border-fennel">
-                                    1 / 4
-                                </span>
-                            </div>
-
-                            <div class="relative overflow-hidden rounded-2xl bg-slate-900 group shadow-md" style="aspect-ratio: 4/3;">
-                                <img id="carousel-img" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80" alt="Global Issue Slide" class="w-full h-full object-cover transition-all duration-500 opacity-90">
-                                
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-5 flex flex-col justify-end text-white space-y-1">
-                                    <span id="carousel-tag" class="inline-block self-start text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-peony text-slate-900">
-                                        Issue 01: Malnutrition & Inequality
-                                    </span>
-                                    <h3 id="carousel-title" class="text-lg font-bold leading-tight drop-shadow">
-                                        The Dual Burden of Global Nutrition
-                                    </h3>
-                                    <p id="carousel-desc" class="text-xs text-slate-200 leading-relaxed line-clamp-2">
-                                        Over 800 million people lack access to sufficient food, while millions suffer from diet-related metabolic non-communicable diseases.
-                                    </p>
-                                </div>
-
-                                <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
-                                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                                </button>
-
-                                <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 hover:bg-white text-slate-800 flex items-center justify-center shadow-md transition active:scale-90">
-                                    <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                                </button>
-                            </div>
-
-                            <div class="flex justify-center items-center gap-1.5 mt-4" id="carousel-dots"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- DETAIL MODAL DRAWER -->
-    <div id="detail-modal" onclick="closeModalOnBackdrop(event)" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
-        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar p-6 sm:p-8 relative shadow-2xl border border-fennel">
-            <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-fennel/30 text-slate-500 transition">
-                <i data-lucide="x" class="w-6 h-6"></i>
-            </button>
-            <div id="modal-content"></div>
-        </div>
+        <li class="nav-item">
+          <a class="nav-link" onclick="switchTab(event, 'about-us')">About Us / Global Issues</a>
+        </li>
+      </ul>
     </div>
+  </header>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-800 text-white/70 py-8 border-t border-slate-700 text-xs text-center">
-        <div class="max-w-7xl mx-auto px-4 space-y-2">
-            <p>© 2026 Vitality Health & Lifestyle Project. All Rights Reserved.</p>
+  <!-- Hero Section with Buttons -->
+  <section class="hero">
+    <h1>Empower Your Health Journey</h1>
+    <p>Discover tailored nutrition plans, wholesome recipes, and top workout routines.</p>
+    <div class="cta-button-group">
+      <button class="btn-pill btn-outline" onclick="switchTab(event, 'healthy-recipes')">Explore Recipes</button>
+      <button class="btn-pill btn-filled" onclick="switchTab(event, 'sport-workouts')">Sport Workout Plans</button>
+    </div>
+  </section>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    
+    <!-- Tab 1: Homepage -->
+    <section id="homepage" class="tab-content active">
+      <div class="content-card">
+        <h2>Welcome to Your Health Hub</h2>
+        <p>Explore our vast collection of specialized nutrition guides, delicious recipes, and targeted fitness routines to reach your wellness goals.</p>
+        <div class="grid-3">
+          <div class="grid-item">
+            <h3>Specialized Diets</h3>
+            <p>Tailored meal strategies for weight management, energy enhancement, and overall well-being.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Healthy Recipes</h3>
+            <p>Nutritious and easy-to-cook recipes designed by culinary experts and nutritionists.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Sport Workouts</h3>
+            <p>Comprehensive exercise plans built for all fitness levels, from beginner to athletic training.</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <!-- JAVASCRIPT APPLICATION LOGIC & DATASET -->
-    <script>
-        // DATASET FOR RECIPES & WORKOUTS
-        const catalogItems = [
-            // Specialized Diets / Healthy Recipes
-            {
-                id: 1,
-                mainCategory: "Specialized Diets",
-                subCategory: "Anti-Inflammatory",
-                title: "Turmeric Wild Salmon Bowl",
-                desc: "Omega-3 rich salmon served with quinoa, leafy greens, and a ginger-turmeric dressing.",
-                time: "25 mins",
-                cal: "480 kcal",
-                tags: ["Anti-Inflammatory", "Omega-3", "High Protein"],
-                ingredients: ["150g Wild Salmon", "1 cup Quinoa", "1 cup Spinach", "1 tsp Turmeric", "1 tbsp Olive Oil"],
-                instructions: ["Season salmon with turmeric and olive oil.", "Pan-sear salmon for 4 minutes per side.", "Serve over warm quinoa and fresh spinach."]
-            },
-            {
-                id: 2,
-                mainCategory: "Specialized Diets",
-                subCategory: "Weight Loss",
-                title: "Mediterranean Avocado Salad",
-                desc: "Crisp cucumber, cherry tomatoes, olive oil, and diced avocado loaded with fiber and healthy fats.",
-                time: "15 mins",
-                cal: "320 kcal",
-                tags: ["Weight Loss", "Low Carb", "Vegan"],
-                ingredients: ["1 Avocado", "1 cup Cherry Tomatoes", "1 Cucumber", "1 tbsp Lemon Juice"],
-                instructions: ["Dice avocado and cucumber.", "Combine in a bowl with tomatoes.", "Toss with olive oil and fresh lemon juice."]
-            },
-            {
-                id: 3,
-                mainCategory: "Specialized Diets",
-                subCategory: "Gut Health",
-                title: "Berry Kefir Smoothie Bowl",
-                desc: "Probiotic-rich kefir blended with antioxidant berries and chia seeds.",
-                time: "10 mins",
-                cal: "290 kcal",
-                tags: ["Gut Health", "Probiotic", "Breakfast"],
-                ingredients: ["1 cup Plain Kefir", "1/2 cup Mixed Berries", "1 tbsp Chia Seeds", "1 tsp Honey"],
-                instructions: ["Blend kefir and berries until smooth.", "Pour into bowl and top with chia seeds."]
-            },
-            {
-                id: 4,
-                mainCategory: "Healthy Recipes",
-                subCategory: "Breakfast",
-                title: "Overnight Chia & Oat Parfait",
-                desc: "Layered oats, chia seeds, almond milk, and fresh blueberries prepared overnight.",
-                time: "5 mins (prep)",
-                cal: "310 kcal",
-                tags: ["Breakfast", "High Fiber", "Prep Ahead"],
-                ingredients: ["1/2 cup Rolled Oats", "1 tbsp Chia Seeds", "3/4 cup Almond Milk", "Fresh Blueberries"],
-                instructions: ["Combine oats, chia, and almond milk in a jar.", "Refrigerate overnight.", "Top with blueberries before serving."]
-            },
-            {
-                id: 5,
-                mainCategory: "Healthy Recipes",
-                subCategory: "Lunch",
-                title: "Grilled Chicken Protein Wrap",
-                desc: "Whole wheat wrap packed with grilled chicken breast, spinach, and hummus.",
-                time: "20 mins",
-                cal: "420 kcal",
-                tags: ["Lunch", "High Protein", "Quick Prep"],
-                ingredients: ["1 Whole Wheat Wrap", "120g Chicken Breast", "2 tbsp Hummus", "1 cup Spinach"],
-                instructions: ["Grill chicken until fully cooked.", "Spread hummus onto wrap.", "Fill with chicken, spinach, and roll up."]
-            },
-            {
-                id: 6,
-                mainCategory: "Healthy Recipes",
-                subCategory: "Dinner",
-                title: "Baked Cod with Roasted Asparagus",
-                desc: "Lean white fish seasoned with herbs and lemon served alongside roasted seasonal veggies.",
-                time: "30 mins",
-                cal: "380 kcal",
-                tags: ["Dinner", "Lean Protein", "Low Calorie"],
-                ingredients: ["180g Cod Fillet", "1 bunch Asparagus", "1 Lemon", "1 tbsp Olive Oil"],
-                instructions: ["Preheat oven to 200°C.", "Place fish and asparagus on a tray.", "Drizzle with olive oil and lemon; bake 18 mins."]
-            },
-            {
-                id: 7,
-                mainCategory: "Healthy Recipes",
-                subCategory: "Dessert/Snacks",
-                title: "Dark Chocolate Energy Bites",
-                desc: "No-bake bites made with dates, dark cocoa powder, almond butter, and rolled oats.",
-                time: "15 mins",
-                cal: "180 kcal (2 bites)",
-                tags: ["Snack", "Natural Energy", "No Bake"],
-                ingredients: ["1 cup Dates", "2 tbsp Cocoa Powder", "1/2 cup Almond Butter", "1 cup Oats"],
-                instructions: ["Pulse dates and oats in a food processor.", "Mix in cocoa and almond butter.", "Roll into bite-sized balls."]
-            },
-            // Sport Workouts
-            {
-                id: 8,
-                mainCategory: "Sports",
-                subCategory: "Strength & Hypertrophy",
-                title: "Full Body Compound Push-Pull",
-                desc: "Heavy compound lifting routine targeting key muscle groups for progressive hypertrophy.",
-                time: "45 mins",
-                cal: "350 kcal",
-                tags: ["Strength", "Hypertrophy", "Gym Required"],
-                ingredients: ["Barbell", "Dumbbells", "Adjustable Bench"],
-                instructions: ["4 Sets Squats (8-10 reps)", "4 Sets Bench Press (8-10 reps)", "3 Sets Bent-over Rows (10-12 reps)", "3 Sets Overhead Press (10 reps)"]
-            },
-            {
-                id: 9,
-                mainCategory: "Sports",
-                subCategory: "Cardio & HIIT",
-                title: "20-Minute High Intensity Interval Protocol",
-                desc: "Fast-paced bodyweight interval training designed to maximize heart rate and stamina.",
-                time: "20 mins",
-                cal: "260 kcal",
-                tags: ["Cardio", "HIIT", "Fat Loss"],
-                ingredients: ["Exercise Mat", "Timer"],
-                instructions: ["45s Jumping Jacks / 15s Rest", "45s High Knees / 15s Rest", "45s Burpees / 15s Rest", "Repeat for 4 Rounds"]
-            },
-            {
-                id: 10,
-                mainCategory: "Sports",
-                subCategory: "Flexibility & Yoga",
-                title: "Morning Vinyasa Mobility Flow",
-                desc: "Gentle yoga flow designed to lengthen tight hip flexors and improve spine mobility.",
-                time: "25 mins",
-                cal: "120 kcal",
-                tags: ["Flexibility", "Yoga", "Recovery"],
-                ingredients: ["Yoga Mat"],
-                instructions: ["5 x Sun Salutations A", "Hold Downward Dog 1 min", "Warrior II Pose 45s per side", "Child's Pose 2 mins"]
-            },
-            {
-                id: 11,
-                mainCategory: "Sports",
-                subCategory: "Athletic Endurance",
-                title: "Threshold Zone Running Workout",
-                desc: "Interval running routine designed to increase cardiovascular output and aerobic baseline.",
-                time: "40 mins",
-                cal: "450 kcal",
-                tags: ["Endurance", "Running", "Cardio"],
-                ingredients: ["Running Shoes"],
-                instructions: ["10 min Light Warmup Jog", "5 x 3 min Tempo Pace (1 min Rest)", "10 min Cool Down Walk/Jog"]
-            },
-            {
-                id: 12,
-                mainCategory: "Sports",
-                subCategory: "Home & Bodyweight",
-                title: "No-Equipment Calisthenics Core Routine",
-                desc: "Targeted core and bodyweight routine requiring zero equipment.",
-                time: "15 mins",
-                cal: "150 kcal",
-                tags: ["Home", "Bodyweight", "Core"],
-                ingredients: ["Floor Space"],
-                instructions: ["3 x 45s Plank Holds", "3 x 15 Pushups", "3 x 20 Russian Twists", "3 x 15 Bodyweight Squats"]
-            }
-        ];
+    <!-- Tab 2: Specialized Diets -->
+    <section id="specialized-diets" class="tab-content">
+      <div class="content-card">
+        <h2>Specialized Diets</h2>
+        <p>Choose the nutrition path that aligns best with your body's needs and daily lifestyle.</p>
+        <div class="grid-3">
+          <div class="grid-item">
+            <h3>Ketogenic Plan</h3>
+            <p>Low-carb, high-fat meal planning designed to help body fat management.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Plant-Based & Vegan</h3>
+            <p>Nutrient-dense, cruelty-free meal ideas packed with vital vitamins and minerals.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Mediterranean Diet</h3>
+            <p>Heart-healthy eating patterns featuring wholesome grains, healthy fats, and fresh produce.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // SUBTAB MAP DEFINITIONS
-        const subtabsMap = {
-            "Specialized Diets": ["All", "Anti-Inflammatory", "Weight Loss", "Gut Health"],
-            "Healthy Recipes": ["All", "Breakfast", "Lunch", "Dinner", "Dessert/Snacks"],
-            "Sports": ["All", "Strength & Hypertrophy", "Cardio & HIIT", "Flexibility & Yoga", "Athletic Endurance", "Home & Bodyweight"]
-        };
+    <!-- Tab 3: Healthy Recipes -->
+    <section id="healthy-recipes" class="tab-content">
+      <div class="content-card">
+        <h2>Healthy Recipes</h2>
+        <p>Delicious, wholesome meals that are easy to prepare without compromising on taste.</p>
+        <div class="grid-3">
+          <div class="grid-item">
+            <h3>Avocado Toast & Eggs</h3>
+            <p>Protein-packed breakfast options to power your mornings effectively.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Grilled Salmon Bowl</h3>
+            <p>Rich in Omega-3 fatty acids and serving a complete balanced dinner option.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Berry Protein Smoothie</h3>
+            <p>Quick post-workout fuel packed with antioxidants and quality proteins.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        let currentMainCategory = "Specialized Diets";
-        let currentSubCategory = "All";
-        let searchQuery = "";
+    <!-- Tab 4: Sport Workouts -->
+    <section id="sport-workouts" class="tab-content">
+      <div class="content-card">
+        <h2>Sport Workouts</h2>
+        <p>Structured workout programs aimed at strengthening muscles, building endurance, and improving flexibility.</p>
+        <div class="grid-3">
+          <div class="grid-item">
+            <h3>Full-Body Strength</h3>
+            <p>Target major muscle groups with compound exercises built for progressive overload.</p>
+          </div>
+          <div class="grid-item">
+            <h3>HIIT Cardio Blast</h3>
+            <p>High-intensity interval routines engineered for max calorie burning in minimal time.</p>
+          </div>
+          <div class="grid-item">
+            <h3>Recovery Yoga Flow</h3>
+            <p>Enhance joint mobility, relieve muscular tension, and accelerate recovery times.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        // CAROUSEL SLIDES DATASET
-        const globalIssueSlides = [
-            {
-                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80",
-                tag: "Issue 01: Malnutrition & Inequality",
-                title: "The Dual Burden of Global Nutrition",
-                desc: "Over 800 million people suffer from food insecurity worldwide, while millions face metabolic disease due to ultra-processed foods."
-            },
-            {
-                img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=800&q=80",
-                tag: "Issue 02: Accessible Whole Foods",
-                title: "Nutrition Deserts & Urban Accessibility",
-                desc: "Fresh, nutrient-dense fruits and vegetables remain financially inaccessible in many urban communities, driving reliance on cheap calories."
-            },
-            {
-                img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80",
-                tag: "Issue 03: Physical Sedentary Life",
-                title: "The Global Sedentary Epidemic",
-                desc: "Modern technology has dramatically decreased daily physical activity, elevating long-term risks for cardiovascular diseases."
-            },
-            {
-                img: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80",
-                tag: "Issue 04: Sustainable Education",
-                title: "Empowerment Through Health Literacy",
-                desc: "Providing clear, actionable nutrition and sport science education is key to building resilient, healthy communities worldwide."
-            }
-        ];
+    <!-- Tab 5: About Us / Global Issues -->
+    <section id="about-us" class="tab-content">
+      <div class="content-card">
+        <h2>About Us & Global Health Issues</h2>
+        <p>Our mission is to make health information accessible globally while raising awareness about sustainable food sourcing, nutrition equity, and active living worldwide.</p>
+      </div>
+    </section>
 
-        let currentSlideIndex = 0;
+  </main>
 
-        function updateCarousel() {
-            const slide = globalIssueSlides[currentSlideIndex];
-            const img = document.getElementById('carousel-img');
-            const tag = document.getElementById('carousel-tag');
-            const title = document.getElementById('carousel-title');
-            const desc = document.getElementById('carousel-desc');
-            const counter = document.getElementById('carousel-counter');
+  <footer>
+    <p>&copy; 2026 Health & Fitness Portal. All rights reserved.</p>
+  </footer>
 
-            if (img) img.src = slide.img;
-            if (tag) tag.innerText = slide.tag;
-            if (title) title.innerText = slide.title;
-            if (desc) desc.innerText = slide.desc;
-            if (counter) counter.innerText = `${currentSlideIndex + 1} / ${globalIssueSlides.length}`;
-            
-            const dotsContainer = document.getElementById('carousel-dots');
-            if (dotsContainer) {
-                dotsContainer.innerHTML = globalIssueSlides.map((_, i) => `
-                    <button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition-all ${i === currentSlideIndex ? 'bg-fern w-6' : 'bg-fennel/80 hover:bg-fern/50'}"></button>
-                `).join('');
-            }
-            if (window.lucide) lucide.createIcons();
+  <script>
+    function switchTab(event, targetTabId) {
+      if (event) {
+        event.preventDefault();
+      }
+
+      // Hide all tab contents
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(content => content.classList.remove('active'));
+
+      // Show targeted tab
+      const targetContent = document.getElementById(targetTabId);
+      if (targetContent) {
+        targetContent.classList.add('active');
+      }
+
+      // Update active nav item styling
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => link.classList.remove('active'));
+
+      // Find matching nav tab or parent nav item to highlight
+      if (event && event.currentTarget) {
+        const clickedLink = event.currentTarget.closest('.nav-item');
+        if (clickedLink) {
+          const topLink = clickedLink.querySelector('.nav-link');
+          if (topLink) topLink.classList.add('active');
         }
+      }
 
-        function nextSlide() {
-            currentSlideIndex = (currentSlideIndex + 1) % globalIssueSlides.length;
-            updateCarousel();
-        }
+      // Close open dropdowns
+      closeAllDropdowns();
 
-        function prevSlide() {
-            currentSlideIndex = (currentSlideIndex - 1 + globalIssueSlides.length) % globalIssueSlides.length;
-            updateCarousel();
-        }
+      // Scroll to content view on mobile / lower viewports
+      window.scrollTo({
+        top: document.querySelector('main').offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
 
-        function goToSlide(index) {
-            currentSlideIndex = index;
-            updateCarousel();
-        }
+    function toggleDropdown(event, menuId) {
+      event.preventDefault();
+      event.stopPropagation();
 
-        // NAVIGATION LOGIC
-        function navigateTo(pageId) {
-            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
-            const activePage = document.getElementById(`page-${pageId}`);
-            if (activePage) activePage.classList.remove('hidden');
-            
-            if (pageId === 'about') {
-                updateCarousel();
-            }
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+      const targetMenu = document.getElementById(menuId);
+      const isVisible = targetMenu.classList.contains('show');
 
-        function navigateToCategory(mainCat, subCat = "All") {
-            currentMainCategory = mainCat;
-            currentSubCategory = subCat;
-            searchQuery = "";
-            
-            const searchInput = document.getElementById('catalog-search');
-            if (searchInput) searchInput.value = "";
+      closeAllDropdowns();
 
-            // Update page titles based on current selection
-            const title = document.getElementById('catalog-title');
-            const subtitle = document.getElementById('catalog-subtitle');
-            if (title) {
-                if (mainCat === 'Sports') {
-                    title.innerText = 'Sport Workout Plans';
-                } else if (mainCat === 'Healthy Recipes') {
-                    title.innerText = 'Healthy Recipes';
-                } else {
-                    title.innerText = 'Specialized Diets';
-                }
-            }
-            if (subtitle) {
-                subtitle.innerText = mainCat === 'Sports' 
-                    ? 'Structured fitness and athletic routines for strength, endurance, and flexibility.' 
-                    : 'Balanced meals and nutritional diets tailored for optimal health.';
-            }
+      if (!isVisible) {
+        targetMenu.classList.add('show');
+      }
+    }
 
-            renderSubtabs();
-            renderCatalogCards();
-            navigateTo('catalog');
-        }
+    function closeAllDropdowns() {
+      const dropdowns = document.querySelectorAll('.dropdown-menu');
+      dropdowns.forEach(menu => menu.classList.remove('show'));
+    }
 
-        function setSubcategory(subCat) {
-            currentSubCategory = subCat;
-            renderSubtabs();
-            renderCatalogCards();
-        }
-
-        function handleSearch(val) {
-            searchQuery = val.toLowerCase();
-            renderCatalogCards();
-        }
-
-        function renderSubtabs() {
-            const pillsContainer = document.getElementById('filter-pills');
-            if (!pillsContainer) return;
-
-            // Fetch correct subtabs matching the exact active main category
-            const sublist = subtabsMap[currentMainCategory] || ["All"];
-            pillsContainer.innerHTML = sublist.map(sub => {
-                const isActive = sub === currentSubCategory;
-                return `
-                    <button onclick="setSubcategory('${sub}')" 
-                        class="px-4 py-2 text-xs font-semibold rounded-2xl transition-all duration-200 ${isActive ? 'bg-fern text-white shadow-md' : 'bg-fennel/30 text-slate-700 hover:bg-fennel/60'}">
-                        ${sub}
-                    </button>
-                `;
-            }).join('');
-        }
-
-        function renderCatalogCards() {
-            const cardGrid = document.getElementById('card-grid');
-            if (!cardGrid) return;
-
-            const filtered = catalogItems.filter(item => {
-                // Strict main category match
-                if (item.mainCategory !== currentMainCategory) {
-                    return false;
-                }
-
-                // Subcategory match
-                if (currentSubCategory !== "All" && item.subCategory !== currentSubCategory) {
-                    return false;
-                }
-
-                // Search query match
-                if (searchQuery) {
-                    const text = `${item.title} ${item.desc} ${item.tags.join(' ')} ${item.ingredients.join(' ')}`.toLowerCase();
-                    if (!text.includes(searchQuery)) return false;
-                }
-
-                return true;
-            });
-
-            if (filtered.length === 0) {
-                cardGrid.innerHTML = `
-                    <div class="col-span-full py-12 text-center text-slate-500 bg-white rounded-3xl border border-fennel">
-                        <i data-lucide="info" class="w-10 h-10 mx-auto mb-2 text-fennel"></i>
-                        <p class="font-medium text-slate-700">No items found matching your filters.</p>
-                        <p class="text-xs text-slate-400 mt-1">Try selecting another subtab or resetting search.</p>
-                    </div>
-                `;
-                if (window.lucide) lucide.createIcons();
-                return;
-            }
-
-            cardGrid.innerHTML = filtered.map(item => `
-                <div class="bg-white rounded-3xl p-6 border border-fennel shadow-sm hover:shadow-md transition flex flex-col justify-between group hover:border-fern">
-                    <div class="space-y-3">
-                        <div class="flex justify-between items-start gap-2">
-                            <span class="text-[10px] font-bold px-2.5 py-1 rounded-full bg-fennel/40 text-fern uppercase tracking-wider">${item.subCategory}</span>
-                            <div class="flex items-center text-xs text-slate-400 gap-1">
-                                <i data-lucide="clock" class="w-3.5 h-3.5"></i>
-                                <span>${item.time}</span>
-                            </div>
-                        </div>
-                        <h3 class="text-lg font-bold text-slate-800 group-hover:text-fern transition line-clamp-1">${item.title}</h3>
-                        <p class="text-xs text-slate-600 line-clamp-2 leading-relaxed">${item.desc}</p>
-                        <div class="flex flex-wrap gap-1.5 pt-1">
-                            ${item.tags.map(t => `<span class="text-[10px] bg-slate-100 text-slate-600 px-2 py-0.5 rounded-md font-medium">${t}</span>`).join('')}
-                        </div>
-                    </div>
-                    <div class="pt-5 mt-4 border-t border-fennel/40 flex items-center justify-between">
-                        <span class="text-xs font-semibold text-slate-500">${item.cal}</span>
-                        <button onclick="openModal(${item.id})" class="px-3.5 py-1.5 rounded-xl bg-fern/10 text-fern font-bold text-xs hover:bg-fern hover:text-white transition">
-                            View Details
-                        </button>
-                    </div>
-                </div>
-            `).join('');
-
-            if (window.lucide) lucide.createIcons();
-        }
-
-        // MODAL DRAWER LOGIC
-        function openModal(id) {
-            const item = catalogItems.find(i => i.id === id);
-            if (!item) return;
-
-            const modal = document.getElementById('detail-modal');
-            const modalContent = document.getElementById('modal-content');
-            if (!modal || !modalContent) return;
-
-            modalContent.innerHTML = `
-                <div class="space-y-6">
-                    <div>
-                        <span class="text-xs font-bold px-3 py-1 rounded-full bg-fern/10 text-fern uppercase tracking-wider">${item.subCategory}</span>
-                        <h2 class="text-2xl font-bold text-slate-800 mt-2">${item.title}</h2>
-                        <p class="text-sm text-slate-600 mt-1">${item.desc}</p>
-                    </div>
-
-                    <div class="flex items-center gap-6 py-3 border-y border-fennel text-xs text-slate-600">
-                        <div><strong>Prep/Duration:</strong> ${item.time}</div>
-                        <div><strong>Energy output:</strong> ${item.cal}</div>
-                    </div>
-
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm mb-2">${item.mainCategory === 'Sports' ? 'Equipment Needed' : 'Key Ingredients'}</h4>
-                        <ul class="list-disc list-inside text-xs text-slate-600 space-y-1">
-                            ${item.ingredients.map(ing => `<li>${ing}</li>`).join('')}
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h4 class="font-bold text-slate-800 text-sm mb-2">${item.mainCategory === 'Sports' ? 'Workout Routine / Steps' : 'Preparation Instructions'}</h4>
-                        <ol class="list-decimal list-inside text-xs text-slate-600 space-y-1.5">
-                            ${item.instructions.map(inst => `<li>${inst}</li>`).join('')}
-                        </ol>
-                    </div>
-                </div>
-            `;
-
-            modal.classList.remove('hidden');
-            if (window.lucide) lucide.createIcons();
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('detail-modal');
-            if (modal) modal.classList.add('hidden');
-        }
-
-        function closeModalOnBackdrop(event) {
-            if (event.target.id === 'detail-modal') {
-                closeModal();
-            }
-        }
-
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.toggle('hidden');
-        }
-
-        // INITIALIZATION
-        window.addEventListener('DOMContentLoaded', () => {
-            renderSubtabs();
-            renderCatalogCards();
-            updateCarousel();
-            if (window.lucide) lucide.createIcons();
-        });
-    </script>
+    // Close dropdowns when clicking anywhere outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.dropdown')) {
+        closeAllDropdowns();
+      }
+    });
+  </script>
 </body>
 </html>
