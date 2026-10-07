@@ -135,13 +135,13 @@
 
                     <!-- About Us / Contact -->
                     <button onclick="navigateTo('about')" id="nav-about" class="px-3 py-2 text-sm font-medium text-slate-700 hover:text-fern hover:bg-fennel/30 transition-colors rounded-xl">
-                        About Us / Global Impact
+                        About Us / Contact Us
                     </button>
                 </nav>
 
                 <!-- Mobile Navigation Button -->
                 <div class="lg:hidden flex items-center">
-                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
+                    <button id="mobile-menu-btn" class="p-2 rounded-xl text-slate-600 hover:bg-fennel/40">
                         <i data-lucide="menu" class="w-6 h-6"></i>
                     </button>
                 </div>
@@ -172,14 +172,14 @@
                 <button onclick="navigateToCategory('Sports', 'Athletic Endurance'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Athletic Endurance</button>
                 <button onclick="navigateToCategory('Sports', 'Home & Bodyweight'); toggleMobileMenu()" class="block w-full text-left py-1 text-sm text-slate-600 pl-3">Home & Bodyweight</button>
             </div>
-            <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left py-2 text-base font-medium text-slate-800">About Us / Global Impact</button>
+            <button onclick="navigateTo('about'); toggleMobileMenu()" class="block w-full text-left py-2 text-base font-medium text-slate-800">About Us / Contact Us</button>
         </div>
     </header>
 
     <!-- MAIN CONTENT CONTAINER -->
     <main class="flex-grow">
 
-        <!-- ================= PAGE 1: HOME PAGE ================= -->
+        <!-- ================= PAGE 1: HOME PAGE (WIREFRAME 3) ================= -->
         <section id="page-home" class="page-section">
             <!-- Hero Banner -->
             <div class="bg-gradient-to-r from-fern via-pistachio to-bluebell text-white py-20 px-4 sm:px-6 lg:px-8 shadow-inner relative overflow-hidden">
@@ -205,7 +205,7 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-12">
-                <!-- Section Grid Layout -->
+                <!-- Section Grid Matching Wireframe Sketch Layout -->
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                     
                     <!-- General Tips Card -->
@@ -281,8 +281,9 @@
             </div>
         </section>
 
-        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG ================= -->
+        <!-- ================= PAGE 2 & 3: RECIPES & SPORTS CATALOG (WIREFRAME 2) ================= -->
         <section id="page-catalog" class="page-section hidden">
+            <!-- Catalog Hero Header -->
             <div id="catalog-hero" class="bg-gradient-to-r from-pistachio via-fennel to-bluebell py-12 px-4 sm:px-6 lg:px-8 text-slate-800">
                 <div class="max-w-4xl mx-auto text-center space-y-2">
                     <h1 id="catalog-title" class="text-3xl font-extrabold tracking-tight">Healthy Recipes & Specialized Diets</h1>
@@ -293,10 +294,12 @@
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8">
                 <!-- Filters and Search Bar -->
                 <div class="flex flex-col lg:flex-row gap-4 items-center justify-between bg-white p-4 rounded-3xl border border-fennel shadow-sm">
+                    <!-- Subtab / Filter Pills -->
                     <div class="flex flex-wrap gap-2 justify-center lg:justify-start" id="filter-pills">
                         <!-- Dynamic Filters inserted via JS -->
                     </div>
 
+                    <!-- Search Input -->
                     <div class="relative w-full lg:w-72">
                         <input type="text" id="catalog-search" placeholder="Search titles, ingredients, goals..." 
                             class="w-full pl-10 pr-4 py-2.5 rounded-2xl border border-fennel bg-slate-50 text-sm focus:outline-none focus:ring-2 focus:ring-fern focus:bg-white transition">
@@ -304,17 +307,19 @@
                     </div>
                 </div>
 
+                <!-- Card Grid Matching Wireframe Sketch Layout -->
                 <div id="card-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     <!-- Dynamic Cards Loaded via JavaScript -->
                 </div>
 
+                <!-- Pagination Control -->
                 <div id="pagination-controls" class="flex justify-center items-center gap-2 pt-6">
                     <!-- Dynamic Pagination -->
                 </div>
             </div>
         </section>
 
-        <!-- ================= PAGE 4: ABOUT US / GLOBAL IMPACT ================= -->
+        <!-- ================= PAGE 4: ABOUT US / CONTACT US (WIREFRAME 1) ================= -->
         <section id="page-about" class="page-section hidden">
             <!-- Hero Section -->
             <div class="bg-gradient-to-r from-peony via-cherry to-honey py-12 px-4 text-slate-800">
@@ -325,46 +330,47 @@
             </div>
 
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
-                <!-- Our Team Section (UPDATED: Member Names, Titles, and Paragraph Removed) -->
+                <!-- Our Team Section (Matching Wireframe 1 Top Half) -->
                 <div class="glass-card rounded-3xl p-8 shadow-sm">
                     <h2 class="text-2xl font-bold text-slate-800 mb-6 flex items-center gap-2">
                         <i data-lucide="users" class="w-6 h-6 text-fern"></i>
                         Our Team
                     </h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                        <!-- Member 1: Chloe Kehoe -->
+                        <!-- Member 1 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-fern/20 flex items-center justify-center text-fern text-2xl font-bold">
-                                CK
+                                T1
                             </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Chloe Kehoe</h3>
-                            <p class="text-xs text-fern font-semibold uppercase tracking-wider">Planning Director</p>
+                            <h3 class="font-bold text-slate-800 text-lg">Team Lead 1</h3>
+                            <p class="text-xs text-fern font-semibold uppercase tracking-wider">Nutrition & Dietetics Lead</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Specializes in researching specialized dietary strategies, gut microbiome balance, and nutrient-dense meal formulations.</p>
                         </div>
-                        
-                        <!-- Member 2: Mazen Abdelhameed -->
+                        <!-- Member 2 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-peony/30 flex items-center justify-center text-peony text-2xl font-bold">
-                                MA
+                                T2
                             </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Mazen Abdelhameed</h3>
-                            <p class="text-xs text-peony font-semibold uppercase tracking-wider">Website Developer</p>
+                            <h3 class="font-bold text-slate-800 text-lg">Team Lead 2</h3>
+                            <p class="text-xs text-peony font-semibold uppercase tracking-wider">Fitness & Performance Specialist</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Focuses on athletic conditioning, strength programming, mobility protocols, and sport recovery routines.</p>
                         </div>
-                        
-                        <!-- Member 3: Aisha Andrade Farías -->
+                        <!-- Member 3 -->
                         <div class="bg-white p-6 rounded-2xl border border-fennel text-center space-y-3 hover:border-fern transition shadow-sm">
                             <div class="w-20 h-20 mx-auto rounded-full bg-bluebell/40 flex items-center justify-center text-bluebell text-2xl font-bold">
-                                AA
+                                T3
                             </div>
-                            <h3 class="font-bold text-slate-800 text-lg">Aisha Andrade Farías</h3>
-                            <p class="text-xs text-bluebell font-semibold uppercase tracking-wider">Research Director</p>
+                            <h3 class="font-bold text-slate-800 text-lg">Team Lead 3</h3>
+                            <p class="text-xs text-bluebell font-semibold uppercase tracking-wider">UX Design & Web Developer</p>
+                            <p class="text-xs text-slate-500 leading-relaxed">Architected the interactive layout, intuitive navigation, responsive components, and virtual assistant functionality.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- Bottom Layout Grid: Why Section + Instagram Style Global Issues Slider -->
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+                <!-- "Why" Section & Contact Form (Matching Wireframe 1 Bottom Layout) -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <!-- Why Section -->
-                    <div class="glass-card rounded-3xl p-8 space-y-4 h-full">
+                    <div class="glass-card rounded-3xl p-8 space-y-4">
                         <h2 class="text-2xl font-bold text-slate-800 flex items-center gap-2">
                             <i data-lucide="target" class="w-6 h-6 text-peony"></i>
                             Why We Created Vitality
@@ -373,7 +379,7 @@
                             In today's fast-paced environment, finding reliable, structured, and simple lifestyle information can be overwhelming due to conflicting advice and overly complex trends.
                         </p>
                         <p class="text-slate-600 leading-relaxed">
-                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to curated recipes and targeted workout routines—all organized cleanly in one place.
+                            We created <strong>Vitality</strong> to simplify wellness. By bridging the gap between clinical dietary guidelines and real-world execution, our platform provides instant access to 70 curated recipes and 50 targeted workout routines—all organized cleanly in one place.
                         </p>
                         <div class="p-4 bg-honey/20 border border-honey/50 rounded-2xl">
                             <h4 class="font-semibold text-slate-800 text-sm">Core Pillars</h4>
@@ -381,100 +387,38 @@
                         </div>
                     </div>
 
-                    <!-- Instagram-Style Global Health Issues Photo Slider (REPLACED FORM) -->
-                    <div class="glass-card rounded-3xl overflow-hidden shadow-md border border-fennel">
-                        <!-- IG Post Header -->
-                        <div class="p-4 bg-white border-b border-fennel flex items-center justify-between">
-                            <div class="flex items-center space-x-3">
-                                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-honey via-peony to-fern p-[2px]">
-                                    <div class="w-full h-full bg-white rounded-full p-[2px]">
-                                        <div class="w-full h-full bg-fern rounded-full flex items-center justify-center text-white text-xs font-bold">
-                                            V
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <div class="flex items-center gap-1.5">
-                                        <span class="font-bold text-sm text-slate-800">vitality_global</span>
-                                        <i data-lucide="check-circle-2" class="w-4 h-4 text-fern fill-fern text-white"></i>
-                                    </div>
-                                    <span class="text-xs text-slate-500">Global Health Focus Series</span>
-                                </div>
+                    <!-- Contact Us Form -->
+                    <div class="glass-card rounded-3xl p-8 shadow-sm">
+                        <h2 class="text-2xl font-bold text-slate-800 mb-2 flex items-center gap-2">
+                            <i data-lucide="mail" class="w-6 h-6 text-fern"></i>
+                            Contact Us
+                        </h2>
+                        <p class="text-xs text-slate-500 mb-6">Have questions or feedback? Send our team a direct message!</p>
+                        
+                        <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Full Name</label>
+                                <input type="text" required placeholder="Jane Doe" class="w-full px-4 py-2.5 rounded-xl border border-fennel bg-white text-sm focus:outline-none focus:ring-2 focus:ring-fern">
                             </div>
-                            <button class="text-slate-500 hover:text-slate-800">
-                                <i data-lucide="more-horizontal" class="w-5 h-5"></i>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Your Email Address</label>
+                                <input type="email" required placeholder="jane@example.com" class="w-full px-4 py-2.5 rounded-xl border border-fennel bg-white text-sm focus:outline-none focus:ring-2 focus:ring-fern">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Message Subject</label>
+                                <input type="text" required placeholder="Recipe Suggestion / Query" class="w-full px-4 py-2.5 rounded-xl border border-fennel bg-white text-sm focus:outline-none focus:ring-2 focus:ring-fern">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-700 mb-1">Message Details</label>
+                                <textarea rows="3" required placeholder="How can we help you on your health journey?" class="w-full px-4 py-2.5 rounded-xl border border-fennel bg-white text-sm focus:outline-none focus:ring-2 focus:ring-fern"></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-fern text-white font-semibold shadow hover:bg-slate-700 transition flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                                Send Message
                             </button>
-                        </div>
-
-                        <!-- Carousel Container -->
-                        <div class="relative bg-slate-900 group">
-                            <!-- Image Display Area -->
-                            <div class="relative h-80 sm:h-96 w-full overflow-hidden">
-                                <img id="carousel-img" src="" alt="Global Health Focus" class="w-full h-full object-cover transition-all duration-500">
-                                
-                                <!-- Slide Overlay Badge -->
-                                <div class="absolute top-3 right-3 bg-slate-900/70 backdrop-blur-md text-white text-xs font-semibold px-2.5 py-1 rounded-full">
-                                    <span id="slide-index">1</span> / <span id="slide-total">4</span>
-                                </div>
-
-                                <!-- Image Gradient Vignette -->
-                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
-
-                                <!-- Slide Heading Overlay -->
-                                <div class="absolute bottom-4 left-4 right-4 text-white">
-                                    <span id="slide-tag" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded bg-fern text-white mb-1 inline-block">Category</span>
-                                    <h3 id="slide-title" class="text-lg font-bold">Issue Title</h3>
-                                </div>
-                            </div>
-
-                            <!-- Carousel Nav Buttons -->
-                            <button onclick="prevSlide()" class="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-slate-800 flex items-center justify-center shadow-md hover:bg-white transition hover:scale-110 active:scale-95">
-                                <i data-lucide="chevron-left" class="w-5 h-5"></i>
-                            </button>
-                            <button onclick="nextSlide()" class="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-white/80 text-slate-800 flex items-center justify-center shadow-md hover:bg-white transition hover:scale-110 active:scale-95">
-                                <i data-lucide="chevron-right" class="w-5 h-5"></i>
-                            </button>
-
-                            <!-- Slide Indicator Dots -->
-                            <div id="carousel-dots" class="absolute bottom-2 left-1/2 -translate-x-1/2 flex space-x-1.5 z-10">
-                                <!-- Dynamic dots -->
-                            </div>
-                        </div>
-
-                        <!-- IG Post Action Bar -->
-                        <div class="p-4 bg-white space-y-3">
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center space-x-4 text-slate-700">
-                                    <button id="like-btn" onclick="toggleLike()" class="hover:text-peony transition">
-                                        <i id="like-icon" data-lucide="heart" class="w-6 h-6"></i>
-                                    </button>
-                                    <button class="hover:text-fern transition">
-                                        <i data-lucide="message-circle" class="w-6 h-6"></i>
-                                    </button>
-                                    <button onclick="sharePost()" class="hover:text-fern transition">
-                                        <i data-lucide="send" class="w-6 h-6"></i>
-                                    </button>
-                                </div>
-                                <button id="bookmark-btn" onclick="toggleBookmark()" class="text-slate-700 hover:text-fern transition">
-                                    <i id="bookmark-icon" data-lucide="bookmark" class="w-6 h-6"></i>
-                                </button>
-                            </div>
-
-                            <!-- Likes Count -->
-                            <div class="text-xs font-bold text-slate-800">
-                                <span id="likes-count">1,428</span> likes
-                            </div>
-
-                            <!-- Caption Section -->
-                            <div class="text-xs text-slate-700 space-y-1 leading-relaxed">
-                                <p>
-                                    <span class="font-bold text-slate-900 mr-1">vitality_global</span>
-                                    <span id="slide-caption">Global health description caption goes here...</span>
-                                </p>
-                                <p id="slide-hashtags" class="text-fern font-medium pt-1">
-                                    #GlobalHealth #WellnessEquity #VitalityImpact
-                                </p>
-                            </div>
+                        </form>
+                        <div id="contact-success" class="hidden mt-4 p-3.5 bg-emerald-100 text-emerald-800 rounded-xl text-center text-xs font-medium border border-emerald-300">
+                            Thank you! Your message has been sent successfully to our team.
                         </div>
                     </div>
                 </div>
@@ -483,219 +427,1296 @@
 
     </main>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-white border-t border-slate-800 py-10 px-4 sm:px-6 lg:px-8 mt-12">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 rounded-xl bg-fern flex items-center justify-center text-white">
-                    <i data-lucide="leaf" class="w-5 h-5"></i>
+    <!-- DETAIL MODAL DRAWER -->
+    <div id="detail-modal" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto custom-scrollbar p-6 sm:p-8 relative shadow-2xl border border-fennel">
+            <button onclick="closeModal()" class="absolute top-5 right-5 p-2 rounded-full hover:bg-fennel/30 text-slate-500 transition">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+            <div id="modal-content">
+                <!-- Content dynamically injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FLOATING CHATBOT WIDGET (Matching Wireframe 1 Bottom Right Floating Bubble) -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <!-- Chat Toggle Button -->
+        <button id="chatbot-toggle-btn" onclick="toggleChatbot()" class="w-14 h-14 rounded-full bg-fern text-white flex items-center justify-center shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 relative group">
+            <i data-lucide="message-square" class="w-6 h-6"></i>
+            <span class="absolute -top-1 -right-1 w-3.5 h-3.5 bg-peony border-2 border-white rounded-full"></span>
+        </button>
+
+        <!-- Chatbot Floating Window -->
+        <div id="chatbot-window" class="hidden absolute bottom-16 right-0 w-80 sm:w-96 bg-white rounded-3xl shadow-2xl border border-fennel flex flex-col overflow-hidden transition-all duration-300" style="height: 480px;">
+            <!-- Header -->
+            <div class="p-4 bg-gradient-to-r from-fern to-pistachio text-white flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center text-white">
+                        <i data-lucide="bot" class="w-5 h-5"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm">Vitality HealthBot</h4>
+                        <span class="text-[10px] text-white/90">Interactive Assistant</span>
+                    </div>
                 </div>
-                <div>
-                    <span class="text-lg font-bold tracking-tight text-white">VITALITY</span>
-                    <span class="block text-[10px] text-fennel font-light">Global Healthy Lifestyle Initiative</span>
+                <button onclick="toggleChatbot()" class="text-white/80 hover:text-white">
+                    <i data-lucide="minus" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <!-- Messages Container -->
+            <div id="chat-messages" class="flex-grow p-4 overflow-y-auto custom-scrollbar space-y-3 bg-fennel/10 text-xs">
+                <div class="flex items-start gap-2">
+                    <div class="w-6 h-6 rounded-full bg-fern text-white flex items-center justify-center text-[10px] flex-shrink-0">Bot</div>
+                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-fennel max-w-[80%] text-slate-700 leading-relaxed">
+                        Hello! 👋 I'm your Vitality Assistant. Ask me about anti-inflammatory diets, gut health tips, high-protein workouts, or weight loss recipes!
+                    </div>
                 </div>
             </div>
-            <p class="text-xs text-slate-400 text-center md:text-right">
-                &copy; 2026 Vitality Wellness Hub. All Rights Reserved. Created with commitment to global physical & nutrition education.
-            </p>
+
+            <!-- Quick Suggestions -->
+            <div class="p-2 bg-white border-t border-fennel flex gap-1.5 overflow-x-auto text-[11px] custom-scrollbar">
+                <button onclick="sendQuickMessage('What is an anti-inflammatory diet?')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Anti-inflammatory?</button>
+                <button onclick="sendQuickMessage('Give me a gut health tip')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">Gut Health Tip</button>
+                <button onclick="sendQuickMessage('Best HIIT workout')" class="px-2.5 py-1 rounded-full bg-fennel/30 hover:bg-fennel whitespace-nowrap text-slate-700">HIIT Workout</button>
+            </div>
+
+            <!-- Input Box -->
+            <form onsubmit="handleChatSubmit(event)" class="p-3 bg-white border-t border-fennel flex gap-2">
+                <input type="text" id="chat-input" placeholder="Ask about recipes or workouts..." class="flex-grow px-3 py-2 rounded-xl border border-fennel text-xs focus:outline-none focus:ring-1 focus:ring-fern">
+                <button type="submit" class="p-2 rounded-xl bg-fern text-white hover:bg-slate-700 transition">
+                    <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-800 text-white/70 py-8 border-t border-slate-700 text-xs text-center">
+        <div class="max-w-7xl mx-auto px-4 space-y-2">
+            <p>© 2026 Vitality Health & Lifestyle Project. All Rights Reserved.</p>
+            <p class="text-slate-400">Color Scheme: Fern (#768E78), Pistachio (#C6C09C), Fennel (#EBDEC0), Cherry (#FECDBE), Peony (#E79897), Bluebell (#B7CBDB), Honey (#FCC88A)</p>
         </div>
     </footer>
 
-    <!-- JAVASCRIPT APP LOGIC -->
+    <!-- JAVASCRIPT APPLICATION LOGIC & DATASET -->
     <script>
-        // --- INSTAGRAM CAROUSEL DATA & STATE ---
-        const globalIssues = [
+        
+        // HELPER TO GENERATE PLACEHOLDER OR UNSPLASH IMAGES
+        const img = (keyword) => `https://images.unsplash.com/photo-${keyword}?auto=format&fit=crop&w=600&q=80`;
+
+        const database = [
+            // ==========================================
+            // 1. SPECIALIZED DIETS - ANTI-INFLAMMATORY (10 RECIPES)
+            // ==========================================
             {
-                title: "Nutrition Equity & Food Access",
-                category: "Nutrition",
-                image: "https://images.unsplash.com/photo-1488459716781-31db52582fe9?auto=format&fit=crop&w=800&q=80",
-                caption: "Over 800 million people lack access to nutrient-dense fresh food. Sustainable food infrastructure and nutrition literacy are essential steps to bridge global health gaps.",
-                hashtags: "#NutritionEquity #GlobalHealth #ZeroHunger #Vitality"
+                id: 101, title: "Turmeric Wild Salmon Bowl", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "20 mins", calories: "450 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Rich in omega-3 fatty acids and curcumin to reduce systemic joint and cellular inflammation.",
+                ingredients: ["200g Wild Salmon Fillet", "1 tsp Ground Turmeric & Black Pepper", "1 cup Cooked Quinoa", "1 cup Steamed Broccoli", "1 tbsp Extra Virgin Olive Oil"],
+                instructions: "Season salmon with turmeric, pepper, and olive oil. Pan-sear for 4 minutes each side. Serve over steamed quinoa and broccoli with a drizzle of olive oil."
             },
             {
-                title: "Combating Physical Inactivity",
-                category: "Fitness",
-                image: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80",
-                caption: "Physical inactivity is responsible for roughly 3.2 million deaths each year globally. Daily 20-minute structured exercises dramatically lower cardiovascular risks.",
-                hashtags: "#MoveDaily #PhysicalHealth #ActiveLifestyle #VitalitySports"
+                id: 102, title: "Berry Antioxidant Chia Smoothie", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1553530666-ba11a7da3888"), prepTime: "5 mins", calories: "280 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Packed with anthocyanins and polyphenols from wild blueberries and black chia seeds.",
+                ingredients: ["1 cup Frozen Blueberries", "1 tbsp Black Chia Seeds", "1 cup Unsweetened Almond Milk", "1/2 tsp Fresh Ginger", "1 scoop Plant Protein"],
+                instructions: "Combine all ingredients into a high-speed blender. Blend on high for 60 seconds until smooth and creamy."
             },
             {
-                title: "Preventative Healthcare & Education",
-                category: "Wellness",
-                image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80",
-                caption: "Prevention starts with knowledge. Simple daily habits—adequate hydration, anti-inflammatory whole foods, and sleep hygiene—reduce metabolic health risks.",
-                hashtags: "#PreventativeHealth #WellnessEducation #MindfulLiving"
+                id: 103, title: "Golden Milk Oatmeal with Walnuts", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1517673400267-0251440c45dc"), prepTime: "12 mins", calories: "360 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Warming oatmeal infused with anti-inflammatory spices and crunch walnuts.",
+                ingredients: ["1/2 cup Rolled Oats", "1 cup Coconut Milk", "1/2 tsp Turmeric & Cinnamon", "2 tbsp Chopped Walnuts", "1 tsp Raw Honey"],
+                instructions: "Simmer oats in coconut milk with turmeric and cinnamon for 8 minutes. Top with walnuts and raw honey."
             },
             {
-                title: "Gut Microbiome & Mental Health",
-                category: "Science",
-                image: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80",
-                caption: "The gut-brain axis governs mood, energy, and immune strength. Prioritizing fermented, high-fiber, pre-biotic foods enhances both mental and bodily wellbeing.",
-                hashtags: "#GutHealth #MindBodyConnection #HolisticNutrition"
+                id: 104, title: "Ginger Spinach Green Soup", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1547592166-23ac45744acd"), prepTime: "25 mins", calories: "220 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Deep green vegetable soup enriched with fresh ginger and garlic root extract.",
+                ingredients: ["4 cups Fresh Spinach", "1 tbsp Minced Ginger", "2 Cloves Garlic", "1 Zucchini", "3 cups Vegetable Broth"],
+                instructions: "Sauté ginger, garlic, and chopped zucchini. Add broth, simmer for 15 mins, blend in fresh spinach until vibrant green."
+            },
+            {
+                id: 105, title: "Avocado & Roasted Beet Salad", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "15 mins", calories: "310 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Betalains in beets work synergistically with healthy avocado monounsaturated fats.",
+                ingredients: ["2 Roasted Beets, Diced", "1 Sliced Avocado", "2 cups Arugula", "1 tbsp Pumpkin Seeds", "Lemon Vinaigrette"],
+                instructions: "Toss arugula, roasted beets, and avocado slices in a bowl. Top with toasted pumpkin seeds and lemon vinaigrette."
+            },
+            {
+                id: 106, title: "Garlic & Rosemary Baked Mackerel", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1519708227418-c8fd9a32b7a2"), prepTime: "20 mins", calories: "420 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Supercharged omega-3 seafood course served with antioxidant herbs.",
+                ingredients: ["2 Mackerel Fillets", "2 Cloves Minced Garlic", "Fresh Rosemary Sprigs", "1 tbsp Olive Oil", "Lemon Wedges"],
+                instructions: "Place mackerel on baking tray, top with garlic, rosemary, and olive oil. Bake at 200°C for 15 minutes."
+            },
+            {
+                id: 107, title: "Matcha Green Tea Power Porridge", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1536256263959-770b48d82b0a"), prepTime: "10 mins", calories: "290 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Contains high EGCG antioxidants from ceremonial grade matcha green tea.",
+                ingredients: ["1/2 cup Rolled Oats", "1 tsp Ceremonial Matcha", "1 cup Oat Milk", "1 tbsp Flaxseed Meal", "Fresh Raspberries"],
+                instructions: "Whisk matcha into warm oat milk, stir into oats and cook for 5 minutes. Garnish with flaxseeds and raspberries."
+            },
+            {
+                id: 108, title: "Roasted Cauliflower & Curried Lentils", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1543339308-43e59d6b73a6"), prepTime: "30 mins", calories: "380 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Cruciferous cauliflower combined with yellow curry anti-inflammatory spices.",
+                ingredients: ["1/2 Head Cauliflower Florets", "1 cup Brown Lentils", "1 tbsp Curry Powder", "1/2 Coconut Milk", "Coriander"],
+                instructions: "Roast cauliflower at 200°C. Simmer cooked lentils in curry spices and coconut milk. Combine and serve warm."
+            },
+            {
+                id: 109, title: "Cherry Walnut Antioxidant Bowl", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1488477181946-6428a0291777"), prepTime: "8 mins", calories: "320 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Tart cherries contain natural anthocyanins that soothe muscular soreness.",
+                ingredients: ["1 cup Pitched Tart Cherries", "1/2 cup Greek Yogurt", "1/4 cup Raw Walnuts", "1 tbsp Hemp Seeds"],
+                instructions: "Layer Greek yogurt with cherries, raw walnuts, and hemp seeds in a glass bowl."
+            },
+            {
+                id: 110, title: "Turmeric Spice Vegetable Stir-Fry", category: "Specialized Diets", subcat: "Anti-Inflammatory",
+                image: img("1540420773420-3366772f4999"), prepTime: "15 mins", calories: "270 kcal", tag: "Anti-Inflammatory", color: "bg-peony/20 text-slate-800 border-peony",
+                description: "Colorful vegetable pan-fry seasoned with black pepper, garlic, and turmeric.",
+                ingredients: ["Bell Peppers, Broccoli, Carrots", "1 tbsp Sesame Oil", "1 tsp Turmeric", "1 tbsp Soy Sauce/Tamari", "Sesame Seeds"],
+                instructions: "Stir-fry chopped veggies in sesame oil over high heat for 6 mins. Add turmeric, tamari, and top with sesame seeds."
+            },
+
+            // ==========================================
+            // 2. SPECIALIZED DIETS - WEIGHT LOSS (10 RECIPES)
+            // ==========================================
+            {
+                id: 201, title: "Lean Turkey Zucchini Boats", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1540420773420-3366772f4999"), prepTime: "25 mins", calories: "310 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Low-carb, volume-rich zucchini stuffed with seasoned high-protein lean turkey.",
+                ingredients: ["2 Large Zucchinis", "200g Extra Lean Ground Turkey", "1/2 cup Marinara Sauce", "Italian Herbs", "Light Mozzarella"],
+                instructions: "Hollow out zucchinis. Brown ground turkey with herbs and marinara. Fill boats, sprinkle cheese, bake at 190°C for 20 mins."
+            },
+            {
+                id: 202, title: "High-Protein Egg White Omelet", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1525351484163-7529414344d8"), prepTime: "10 mins", calories: "210 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Maximize satiety per calorie with pure protein and fresh leafy greens.",
+                ingredients: ["1 cup Egg Whites", "1 cup Baby Spinach", "1/2 cup Cherry Tomatoes", "1/4 cup Feta Cheese"],
+                instructions: "Whisk egg whites and pour into hot non-stick pan. Add spinach and tomatoes. Fold omelet when set and top with feta."
+            },
+            {
+                id: 203, title: "Cucumber Herb Tuna Salad Wrap", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1509722747041-616f39b57569"), prepTime: "10 mins", calories: "290 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Mayo-free high-protein tuna wrapped in crisp lettuce leaves.",
+                ingredients: ["1 Can Albacore Tuna in Water", "1 tbsp Greek Yogurt", "Diced Cucumber & Dill", "Large Romaine Leaves"],
+                instructions: "Mix tuna with Greek yogurt, cucumber, and dill. Spoon mixture into romaine leaves and wrap."
+            },
+            {
+                id: 204, title: "Mediterranean Chickpea Bowl", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "12 mins", calories: "330 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "High-fiber legumes paired with hydrating cucumbers and lemon juice.",
+                ingredients: ["1 can Rinsed Chickpeas", "Diced Cucumbers & Tomatoes", "1 tbsp Red Onion", "1 tbsp Lemon Juice & Parsley"],
+                instructions: "Toss chickpeas, tomatoes, cucumber, onion, and parsley in lemon juice with a pinch of sea salt."
+            },
+            {
+                id: 205, title: "Spicy Shrimp & Cauliflower Rice", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "15 mins", calories: "280 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Ultra low-calorie keto-friendly swap for traditional fried rice.",
+                ingredients: ["150g Jumbo Shrimp", "2 cups Riced Cauliflower", "1 Egg", "1 tbsp Chili Flakes & Soy Sauce"],
+                instructions: "Sauté shrimp in chili flakes. In another pan, stir-fry cauliflower rice with egg and soy sauce. Combine."
+            },
+            {
+                id: 206, title: "Grilled Chicken Breast & Asparagus", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1519708227418-c8fd9a32b7a2"), prepTime: "20 mins", calories: "340 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Classic clean fitness meal engineered for thermogenic deficit.",
+                ingredients: ["200g Lean Chicken Breast", "1 Bunch Asparagus", "1 tsp Olive Oil", "Garlic Powder & Paprika"],
+                instructions: "Grill seasoned chicken breast for 6 mins per side. Grill asparagus with olive oil until crisp-tender."
+            },
+            {
+                id: 207, title: "High-Fiber Berry Protein Shake", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1553530666-ba11a7da3888"), prepTime: "5 mins", calories: "230 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Satiation shake with psyllium husk fiber and whey isolate.",
+                ingredients: ["1 Scoop Whey Isolate", "1 cup Frozen Strawberries", "1 tsp Psyllium Husk", "1.5 cups Water/Ice"],
+                instructions: "Blend whey protein, strawberries, psyllium husk, and ice on high until thick."
+            },
+            {
+                id: 208, title: "Zucchini Noodle Tofu Pad Thai", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1543339308-43e59d6b73a6"), prepTime: "15 mins", calories: "260 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Spiralized zucchini replaces noodles in a lightened Asian specialty.",
+                ingredients: ["2 Spiralized Zucchinis", "150g Cubed Firm Tofu", "Bean Sprouts", "Light PB Sauce (PB Powder, Soy Sauce, Lime)"],
+                instructions: "Pan-fry tofu until golden. Toss zucchini noodles and sprouts in hot pan for 2 mins with PB sauce."
+            },
+            {
+                id: 209, title: "Cottage Cheese & Flax Seed Bowl", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1488477181946-6428a0291777"), prepTime: "5 mins", calories: "220 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Slow-digesting casein protein that prevents late-night craving spikes.",
+                ingredients: ["1 cup Low-Fat Cottage Cheese", "1 tbsp Ground Flaxseed", "1/2 cup Fresh Raspberries"],
+                instructions: "Spoon cottage cheese into bowl, sprinkle ground flaxseeds, and top with raspberries."
+            },
+            {
+                id: 210, title: "Balsamic White Fish & Green Beans", category: "Specialized Diets", subcat: "Weight Loss",
+                image: img("1519708227418-c8fd9a32b7a2"), prepTime: "18 mins", calories: "270 kcal", tag: "Weight Loss", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Flaky white fish glazed in tangy balsamic reduction with steamed green beans.",
+                ingredients: ["200g Cod Fillet", "1.5 cups Green Beans", "1 tbsp Balsamic Glaze", "1 tsp Olive Oil"],
+                instructions: "Pan-sear cod fillet in olive oil. Steam green beans. Drizzle fish with balsamic glaze before serving."
+            },
+
+            // ==========================================
+            // 3. SPECIALIZED DIETS - GUT HEALTH (10 RECIPES)
+            // ==========================================
+            {
+                id: 301, title: "Probiotic Kimchi Tofu Bowl", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1543339308-43e59d6b73a6"), prepTime: "15 mins", calories: "380 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Fermented Korean kimchi delivers living probiotic cultures for optimal microbiome diversity.",
+                ingredients: ["1/2 cup Fermented Kimchi", "150g Pan-Seared Tofu", "1 cup Brown Rice", "Edamame Beans", "Sesame Oil"],
+                instructions: "Sear tofu cubes. Assemble over warm brown rice with fresh kimchi, edamame, and sesame drizzle."
+            },
+            {
+                id: 302, title: "Kefir Berry Microbiome Smoothie", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1553530666-ba11a7da3888"), prepTime: "5 mins", calories: "260 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Traditional fermented milk kefir packed with over 30 strains of beneficial bacteria.",
+                ingredients: ["1 cup Plain Milk/Coconut Kefir", "1/2 cup Blueberries", "1 tbsp Green Banana Flour (Prebiotic)", "1 tsp Honey"],
+                instructions: "Blend kefir, blueberries, banana flour, and honey until smooth. Drink immediately."
+            },
+            {
+                id: 303, title: "Miso Glazed Eggplant & Brown Rice", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1540420773420-3366772f4999"), prepTime: "25 mins", calories: "340 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Fermented soybean paste provides rich umami flavor and digestive enzymes.",
+                ingredients: ["1 Large Eggplant", "2 tbsp Yellow Miso Paste", "1 tbsp Mirin", "1 cup Cooked Brown Rice", "Sesame Seeds"],
+                instructions: "Score eggplant halves, brush with miso and mirin mixture. Broil for 15 minutes. Serve over warm brown rice."
+            },
+            {
+                id: 304, title: "Sauerkraut Avocado Toast", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1525351484163-7529414344d8"), prepTime: "8 mins", calories: "310 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Raw unpasteurized sauerkraut delivers active lactobacillus cultures.",
+                ingredients: ["1 Slice Sourdough Bread", "1/2 Mashed Avocado", "1/4 cup Raw Sauerkraut", "Hemp Seeds"],
+                instructions: "Toast sourdough. Layer mashed avocado and top generously with cold raw sauerkraut and hemp seeds."
+            },
+            {
+                id: 305, title: "Gut-Healing Bone Broth Soup", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1547592166-23ac45744acd"), prepTime: "20 mins", calories: "180 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Rich in collagen and glutamine to support GI mucosal lining integrity.",
+                ingredients: ["2 cups Organic Bone Broth", "Sliced Mushrooms", "1 cup Chopped Kale", "1 tsp Grated Ginger"],
+                instructions: "Simmer bone broth with ginger and mushrooms for 10 minutes. Stir in kale until wilted."
+            },
+            {
+                id: 306, title: "Prebiotic Garlic Leek Soup", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1547592166-23ac45744acd"), prepTime: "30 mins", calories: "230 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "High in inulin fiber to feed beneficial Bifidobacteria in the lower digestive tract.",
+                ingredients: ["2 Chopped Leeks", "4 Cloves Garlic", "1 Potato, Diced", "3 cups Vegetable Broth"],
+                instructions: "Sauté leeks and garlic. Add diced potato and broth, simmer for 20 minutes, blend until silky smooth."
+            },
+            {
+                id: 307, title: "Tempeh Rainbow Grain Bowl", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "20 mins", calories: "410 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Fermented whole soybean tempeh paired with fiber-rich whole grains.",
+                ingredients: ["150g Marinated Tempeh", "1/2 cup Quinoa", "Shredded Carrots & Purple Cabbage", "Tahini Dressing"],
+                instructions: "Pan-fry tempeh until golden. Assemble quinoa bowl with raw colorful veggies and tahini dressing."
+            },
+            {
+                id: 308, title: "Fermented Kombucha Chia Pudding", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1517673400267-0251440c45dc"), prepTime: "10 mins", calories: "210 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Effervescent probiotic dessert soaked overnight.",
+                ingredients: ["1/2 cup Ginger Kombucha", "3 tbsp Chia Seeds", "1/2 cup Coconut Milk", "Fresh Mango Diced"],
+                instructions: "Mix kombucha, chia, and coconut milk in a jar. Chill overnight. Top with mango before eating."
+            },
+            {
+                id: 309, title: "Artichoke & Asparagus Fiber Salad", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "12 mins", calories: "270 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Double prebiotic starches that support gut barrier immunity.",
+                ingredients: ["1 can Artichoke Hearts", "1 cup Steamed Asparagus", "Wild Arugula", "Olive Oil & Lemon"],
+                instructions: "Combine drained artichoke hearts, asparagus, and arugula. Toss in olive oil and fresh lemon juice."
+            },
+            {
+                id: 310, title: "Papaya & Greek Yogurt Digest Bowl", category: "Specialized Diets", subcat: "Gut Health",
+                image: img("1488477181946-6428a0291777"), prepTime: "5 mins", calories: "250 kcal", tag: "Gut Health", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Papain enzymes in papaya digest proteins seamlessly alongside yogurt cultures.",
+                ingredients: ["1/2 Ripe Papaya, Cubed", "3/4 cup Plain Greek Yogurt", "1 tbsp Pumpkin Seeds", "Lime Juice"],
+                instructions: "Fill papaya cavity with Greek yogurt. Sprinkle pumpkin seeds and squeeze fresh lime."
+            },
+
+            // ==========================================
+            // 4. HEALTHY RECIPES - BREAKFAST (10 RECIPES)
+            // ==========================================
+            {
+                id: 401, title: "Overnight Chia & Oat Parfait", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1517673400267-0251440c45dc"), prepTime: "5 mins", calories: "310 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Slow-digesting complex carbohydrates and healthy fats for sustained morning energy.",
+                ingredients: ["1/2 cup Rolled Oats", "1 tbsp Chia Seeds", "3/4 cup Oat Milk", "Greek Yogurt", "Sliced Strawberries"],
+                instructions: "Mix oats, chia, and oat milk in a jar. Refrigerate overnight. Layer with Greek yogurt and strawberries."
+            },
+            {
+                id: 402, title: "Avocado Poached Egg Sourdough", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1525351484163-7529414344d8"), prepTime: "10 mins", calories: "350 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Nutrient-dense morning classic combining healthy fats and bioavailable egg protein.",
+                ingredients: ["1 Slice Artisan Sourdough", "1/2 Ripe Avocado", "2 Organic Poached Eggs", "Chili Flakes & Everything Seasoning"],
+                instructions: "Toast sourdough slice. Mash avocado with lemon. Top toast with avocado, poached eggs, and seasonings."
+            },
+            {
+                id: 403, title: "Protein Berry Power Pancakes", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1517673400267-0251440c45dc"), prepTime: "15 mins", calories: "390 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Fluffy oat flour pancakes packed with vanilla protein and fresh berries.",
+                ingredients: ["1 cup Oat Flour", "1 Scoop Protein Powder", "1 Egg", "1/2 cup Almond Milk", "Fresh Blueberries"],
+                instructions: "Whisk oat flour, protein, egg, and milk. Fold in blueberries. Cook on skillet for 2 mins per side."
+            },
+            {
+                id: 404, title: "Spinach & Feta Egg Scramble", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1525351484163-7529414344d8"), prepTime: "8 mins", calories: "280 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Quick Mediterranean breakfast scramble rich in iron and vitamin K.",
+                ingredients: ["3 Whole Eggs", "1 cup Baby Spinach", "2 tbsp Crumbled Feta Cheese", "1 tsp Olive Oil"],
+                instructions: "Sauté spinach in olive oil until soft. Whisk eggs, pour into skillet, scramble gently, and top with feta."
+            },
+            {
+                id: 405, title: "Tropical Acai Smoothie Bowl", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1553530666-ba11a7da3888"), prepTime: "10 mins", calories: "340 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Thick antioxidant acai bowl topped with banana slices, granola, and coconut flakes.",
+                ingredients: ["1 Unsweetened Acai Packet", "1 Frozen Banana", "1/2 cup Coconut Water", "Granola & Shredded Coconut"],
+                instructions: "Blend acai and frozen banana with coconut water until thick. Pour into bowl and add toppings."
+            },
+            {
+                id: 406, title: "Smoked Salmon & Whole Wheat Toast", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1525351484163-7529414344d8"), prepTime: "7 mins", calories: "320 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Savoury breakfast rich in omega fats and complex fiber.",
+                ingredients: ["2 Slices Whole Grain Toast", "75g Smoked Salmon", "2 tbsp Light Cream Cheese", "Capers & Red Onion"],
+                instructions: "Spread cream cheese over toasted bread. Top with smoked salmon slices, capers, and thin red onion."
+            },
+            {
+                id: 407, title: "Nut Butter Banana Chia Toast", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1525351484163-7529414344d8"), prepTime: "5 mins", calories: "330 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Quick pre-workout morning meal providing potassium and steady energy release.",
+                ingredients: ["1 Slice Whole Grain Toast", "2 tbsp Almond/Peanut Butter", "1 Sliced Banana", "1 tsp Chia Seeds"],
+                instructions: "Spread almond butter on warm toast. Arrange banana slices and sprinkle chia seeds."
+            },
+            {
+                id: 408, title: "Baked Egg Spinach Ramekins", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1525351484163-7529414344d8"), prepTime: "20 mins", calories: "260 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Oven-baked individual egg cups cooked with tomatoes and herbs.",
+                ingredients: ["2 Large Eggs", "1/2 cup Spinach", "2 tbsp Diced Tomatoes", "Parmesan Cheese"],
+                instructions: "Grease ramekin, add spinach and tomatoes. Crack eggs on top, bake at 190°C for 15 minutes."
+            },
+            {
+                id: 409, title: "Apple Cinnamon Quinoa Breakfast Bowl", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1517673400267-0251440c45dc"), prepTime: "15 mins", calories: "310 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Warm protein-dense grain alternative to traditional oatmeal.",
+                ingredients: ["1/2 cup Cooked Quinoa", "1/2 Diced Red Apple", "1 cup Almond Milk", "1/2 tsp Cinnamon", "Pecan Nuts"],
+                instructions: "Warm cooked quinoa in almond milk with diced apples and cinnamon for 5 minutes. Top with pecans."
+            },
+            {
+                id: 4010, title: "Green Goddess Wellness Smoothie", category: "Healthy Recipes", subcat: "Breakfast",
+                image: img("1553530666-ba11a7da3888"), prepTime: "5 mins", calories: "240 kcal", tag: "Breakfast", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Revitalizing breakfast drink loaded with spinach, green apple, and cucumber.",
+                ingredients: ["1 cup Spinach", "1/2 Green Apple", "1/2 Cucumber", "1 cup Coconut Water", "1 tbsp Lemon Juice"],
+                instructions: "Blend all fresh ingredients with ice until completely smooth."
+            },
+
+            // ==========================================
+            // 5. HEALTHY RECIPES - LUNCH (10 RECIPES)
+            // ==========================================
+            {
+                id: 501, title: "Grilled Chicken & Rainbow Wrap", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1509722747041-616f39b57569"), prepTime: "15 mins", calories: "410 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Whole wheat wrap packed with lean grilled protein and crisp colorful vegetables.",
+                ingredients: ["1 Large Whole Wheat Tortilla", "150g Grilled Chicken Breast", "Shredded Carrots & Spinach", "2 tbsp Hummus"],
+                instructions: "Spread hummus over tortilla. Layer grilled chicken, spinach, and carrots. Roll tightly and slice in half."
+            },
+            {
+                id: 502, title: "Quinoa Veggie Harvest Power Bowl", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "20 mins", calories: "380 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Complete plant-based protein bowl with sweet potato, kale, and pumpkin seeds.",
+                ingredients: ["1 cup Cooked Quinoa", "1/2 Roasted Sweet Potato", "1 cup Massaged Kale", "1 tbsp Pumpkin Seeds", "Tahini Lime Dressing"],
+                instructions: "Assemble cooked quinoa, roasted sweet potato, and massaged kale in a bowl. Drizzle tahini lime dressing."
+            },
+            {
+                id: 503, title: "Mediterranean Tuna Nicoise Salad", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "15 mins", calories: "360 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Classic French salad featuring pole-caught tuna, boiled eggs, and green beans.",
+                ingredients: ["1 Can Tuna", "1 Hard-Boiled Egg", "1 cup Steamed Green Beans", "Kalamata Olives", "Vinaigrette"],
+                instructions: "Arrange greens, tuna, halved egg, green beans, and olives. Toss with light vinaigrette."
+            },
+            {
+                id: 504, title: "Turkey & Avocado Club Sandwich", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1509722747041-616f39b57569"), prepTime: "10 mins", calories: "420 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Stacked whole grain sandwich with sliced turkey breast, ripe avocado, and tomato.",
+                ingredients: ["2 Slices Sprouted Grain Bread", "120g Roasted Turkey Breast", "1/2 Avocado", "Tomato & Romaine Lettuce"],
+                instructions: "Layer sliced turkey, mashed avocado, tomato, and lettuce between toasted sprouted grain bread."
+            },
+            {
+                id: 505, title: "Asian Sesame Tofu Noodle Salad", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1543339308-43e59d6b73a6"), prepTime: "18 mins", calories: "370 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Chilled buckwheat soba noodles tossed with baked tofu and sesame dressing.",
+                ingredients: ["100g Soba Noodles", "150g Baked Tofu", "Julienned Bell Peppers", "Sesame Soy Ginger Dressing"],
+                instructions: "Cook soba noodles and rinse in cold water. Toss noodles, tofu, and bell peppers in sesame soy dressing."
+            },
+            {
+                id: 506, title: "Roasted Red Pepper Lentil Soup", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1547592166-23ac45744acd"), prepTime: "25 mins", calories: "310 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Hearty and warming red lentil soup blended with fire-roasted peppers.",
+                ingredients: ["1 cup Red Lentils", "2 Roasted Red Peppers", "1 Onion & Garlic", "4 cups Vegetable Stock"],
+                instructions: "Sauté onion and garlic. Add lentils, peppers, and stock. Simmer for 20 mins and blend until creamy."
+            },
+            {
+                id: 507, title: "Shrimp Avocado Mango Salad", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "12 mins", calories: "340 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Refreshing zesty lunch salad with grilled shrimp and fresh mango cubes.",
+                ingredients: ["150g Grilled Shrimp", "1/2 Diced Mango", "1/2 Diced Avocado", "Mix Greens", "Cilantro Lime Dressing"],
+                instructions: "Combine greens, mango, avocado, and grilled shrimp. Drizzle with cilantro lime dressing."
+            },
+            {
+                id: 508, title: "Black Bean & Corn Burrito Bowl", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "15 mins", calories: "390 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Tex-Mex inspired bowl rich in dietary fiber and plant protein.",
+                ingredients: ["1/2 cup Black Beans", "1/2 cup Sweet Corn", "1 cup Brown Rice", "Salsa & Cilantro"],
+                instructions: "Layer warm brown rice, black beans, and sweet corn. Top with fresh salsa and chopped cilantro."
+            },
+            {
+                id: 509, title: "Greek Lemon Chicken Orzo Bowl", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "22 mins", calories: "430 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Marinated oregano lemon chicken over whole wheat orzo pasta.",
+                ingredients: ["150g Lemon Oregano Chicken", "1/2 cup Whole Wheat Orzo", "Cucumbers", "Crumbled Feta"],
+                instructions: "Grill chicken breast. Serve over cooked orzo pasta with chopped cucumber and feta cheese."
+            },
+            {
+                id: 510, title: "Caprese Pesto Chicken Sandwich", category: "Healthy Recipes", subcat: "Lunch",
+                image: img("1509722747041-616f39b57569"), prepTime: "12 mins", calories: "440 kcal", tag: "Lunch", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Italian basil pesto layered with fresh mozzarella, sliced tomato, and chicken.",
+                ingredients: ["Ciabatta Roll", "120g Grilled Chicken", "1 tbsp Basil Pesto", "Slice Fresh Mozzarella", "Tomato"],
+                instructions: "Spread pesto inside ciabatta. Layer grilled chicken, mozzarella, and tomato. Toast until cheese melts."
+            },
+
+            // ==========================================
+            // 6. HEALTHY RECIPES - DINNER (10 RECIPES)
+            // ==========================================
+            {
+                id: 601, title: "Baked Cod with Lemon Asparagus", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1519708227418-c8fd9a32b7a2"), prepTime: "25 mins", calories: "360 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Light and digestible evening protein source served with roasted green asparagus spears.",
+                ingredients: ["200g Wild Cod Fillet", "1 Bunch Asparagus", "1 tbsp Olive Oil", "Garlic & Lemon Slices"],
+                instructions: "Place cod fillet and asparagus on baking sheet. Top with olive oil, minced garlic, and lemon slices. Bake at 200°C for 15 mins."
+            },
+            {
+                id: 602, title: "Herb Roasted Turkey Breast & Sweet Potato", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1540420773420-3366772f4999"), prepTime: "35 mins", calories: "420 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Balanced evening meal rich in tryptophan and complex carbohydrates for restorative sleep.",
+                ingredients: ["200g Turkey Breast", "1 Medium Sweet Potato Cubed", "Steamed Green Beans", "Rosemary & Thyme"],
+                instructions: "Roast turkey breast and sweet potato cubes with herbs at 190°C for 30 mins. Serve with green beans."
+            },
+            {
+                id: 603, title: "Grass-Fed Steak & Garlic Broccoli", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1544025162-d76694265947"), prepTime: "20 mins", calories: "480 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Nutrient-dense dinner supplying bioavailable iron, zinc, and cruciferous vitamins.",
+                ingredients: ["180g Grass-Fed Sirloin Steak", "2 cups Broccoli Florets", "2 Cloves Minced Garlic", "1 tbsp Butter/Ghee"],
+                instructions: "Sear steak in cast iron skillet for 3-4 mins per side. Sauté broccoli in garlic and ghee."
+            },
+            {
+                id: 604, title: "Lentil & Veggie Shepherd's Pie", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1543339308-43e59d6b73a6"), prepTime: "40 mins", calories: "370 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Comforting plant-based casserole topped with velvety mashed cauliflower and potato.",
+                ingredients: ["1.5 cups Brown Lentils", "Carrots, Peas & Onions", "2 cups Cauliflower/Potato Mash"],
+                instructions: "Simmer lentils and veggies in broth gravy. Transfer to baking dish, spread mash on top, bake at 200°C for 20 mins."
+            },
+            {
+                id: 605, title: "Sesame Baked Tofu & Cauliflower Rice", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "25 mins", calories: "320 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Light plant-based dinner drizzled with tamari sesame marinade.",
+                ingredients: ["200g Firm Tofu Cubes", "2 cups Cauliflower Rice", "1 tbsp Tamari & Sesame Oil", "Snap Peas"],
+                instructions: "Bake marinated tofu until crisp. Stir-fry cauliflower rice with snap peas in sesame oil."
+            },
+            {
+                id: 606, title: "Stuffed Bell Peppers with Lean Beef", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1540420773420-3366772f4999"), prepTime: "30 mins", calories: "390 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Colorful sweet bell peppers stuffed with extra lean beef, brown rice, and herbs.",
+                ingredients: ["2 Large Bell Peppers", "150g Lean Ground Beef", "1/2 cup Cooked Brown Rice", "Tomato Sauce"],
+                instructions: "Halve peppers. Brown beef with rice and tomato sauce. Stuff peppers and bake at 190°C for 25 mins."
+            },
+            {
+                id: 607, title: "Pan-Seared Sea Bass with Wild Rice", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1519708227418-c8fd9a32b7a2"), prepTime: "22 mins", calories: "410 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Elegant white fish dish accompanied by nutty wild rice and sautéed spinach.",
+                ingredients: ["180g Sea Bass Fillet", "3/4 cup Wild Rice", "2 cups Spinach", "Lemon Butter Sauce"],
+                instructions: "Sear sea bass skin-side down for 4 mins. Serve over cooked wild rice and wilted spinach."
+            },
+            {
+                id: 608, title: "Mediterranean Baked Chicken & Veggie Sheet Pan", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1540420773420-3366772f4999"), prepTime: "30 mins", calories: "430 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Easy one-pan dinner with chicken thighs, zucchini, red onion, and cherry tomatoes.",
+                ingredients: ["2 Bone-in Chicken Thighs", "Zucchini, Red Onion, Cherry Tomatoes", "Olive Oil & Oregano"],
+                instructions: "Toss chicken and chopped veggies in olive oil and oregano. Roast on baking sheet at 200°C for 30 mins."
+            },
+            {
+                id: 609, title: "Wild Mushroom & Spinach Risotto", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1546069901-ba9599a7e63c"), prepTime: "30 mins", calories: "380 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Creamy arborio rice cooked gently with earthy wild mushrooms and spinach.",
+                ingredients: ["3/4 cup Arborio Rice", "1.5 cups Wild Mushrooms", "3 cups Warm Veggie Broth", "Spinach & Parmesan"],
+                instructions: "Sauté mushrooms. Gradually stir warm broth into rice until creamy. Fold in spinach and parmesan."
+            },
+            {
+                id: 610, title: "Zucchini Lasagna with Lean Ricotta", category: "Healthy Recipes", subcat: "Dinner",
+                image: img("1540420773420-3366772f4999"), prepTime: "40 mins", calories: "350 kcal", tag: "Dinner", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Grain-free comfort lasagna utilizing thin zucchini planks in place of pasta.",
+                ingredients: ["3 Large Zucchinis Planks", "1 cup Light Ricotta", "1 cup Marinara", "Part-Skim Mozzarella"],
+                instructions: "Salt and dry zucchini planks. Layer with ricotta, marinara, and mozzarella. Bake at 190°C for 30 mins."
+            },
+
+            // ==========================================
+            // 7. HEALTHY RECIPES - DESSERTS & SNACKS (10 RECIPES)
+            // ==========================================
+            {
+                id: 701, title: "Dark Chocolate Peanut Butter Bites", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1541781774459-bb2af2f05b55"), prepTime: "15 mins", calories: "180 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Guilt-free sweet treat with natural fats, cacao antioxidants, and minimal sugar.",
+                ingredients: ["85% Dark Chocolate", "Natural Peanut Butter", "Rolled Oats", "Raw Honey"],
+                instructions: "Mix peanut butter, oats, and honey. Roll into balls, dip in melted dark chocolate, freeze for 20 mins."
+            },
+            {
+                id: 702, title: "Baked Cinnamon Apple Slices", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1568571780765-9276ac8b75a2"), prepTime: "20 mins", calories: "140 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Warm, naturally sweet dessert rich in pectin soluble fiber.",
+                ingredients: ["2 Honeycrisp Apples", "1 tsp Ground Cinnamon", "1 tbsp Coconut Oil", "Walnut Pieces"],
+                instructions: "Core and slice apples. Toss in cinnamon and melted coconut oil. Bake at 180°C for 18 minutes."
+            },
+            {
+                id: 703, title: "Greek Yogurt Berry Bark", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1488477181946-6428a0291777"), prepTime: "10 mins", calories: "150 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Refreshing frozen yogurt dessert studded with fresh berries and pistachios.",
+                ingredients: ["2 cups Plain Greek Yogurt", "1 tbsp Honey", "1/2 cup Mixed Berries", "2 tbsp Chopped Pistachios"],
+                instructions: "Spread Greek yogurt mixed with honey onto baking sheet. Top with berries and pistachios. Freeze for 2 hours and break into bark."
+            },
+            {
+                id: 704, title: "Avocado Dark Chocolate Mousse", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1541781774459-bb2af2f05b55"), prepTime: "8 mins", calories: "210 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Silky chocolate pudding made with healthy avocado fats.",
+                ingredients: ["2 Ripe Avocados", "1/2 cup Unsweetened Cacao Powder", "1/4 cup Maple Syrup", "1 tsp Vanilla Extract"],
+                instructions: "Blend ripe avocados, cacao powder, maple syrup, and vanilla in food processor until completely smooth."
+            },
+            {
+                id: 705, title: "Roasted Spicy Chickpea Crunch", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1512621776951-a57141f2eefd"), prepTime: "30 mins", calories: "160 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Crunchy high-protein savory snack alternative to potato chips.",
+                ingredients: ["1 can Chickpeas, Dried", "1 tbsp Olive Oil", "1/2 tsp Smoked Paprika & Cumin", "Sea Salt"],
+                instructions: "Dry chickpeas thoroughly. Toss with olive oil and spices. Roast at 200°C for 25 mins until super crunchy."
+            },
+            {
+                id: 706, title: "Chia Seed Berry Jam Toast", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1517673400267-0251440c45dc"), prepTime: "10 mins", calories: "170 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Sugar-free homemade jam utilizing chia seeds for natural gelling.",
+                ingredients: ["1 cup Raspberries", "1 tbsp Chia Seeds", "1 Slice Whole Grain Toast"],
+                instructions: "Mash raspberries in pot over warm heat. Stir in chia seeds and set for 10 mins. Spread on toast."
+            },
+            {
+                id: 707, title: "Almond Butter Stuffed Medjool Dates", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1541781774459-bb2af2f05b55"), prepTime: "5 mins", calories: "190 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Caramel-like natural dates filled with creamy almond butter and sea salt.",
+                ingredients: ["4 Medjool Dates, Pitted", "2 tbsp Raw Almond Butter", "Flaky Sea Salt", "Dark Chocolate Chips"],
+                instructions: "Slice dates open, stuff with almond butter, top with flaky sea salt and dark chocolate chips."
+            },
+            {
+                id: 708, title: "Matcha Coconut Energy Balls", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1536256263959-770b48d82b0a"), prepTime: "12 mins", calories: "140 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "No-bake green tea energy bites for afternoon focus.",
+                ingredients: ["1 cup Shredded Coconut", "1 tbsp Matcha Powder", "1/2 cup Almond Flour", "2 tbsp Honey"],
+                instructions: "Combine all ingredients in bowl. Roll into small bite-sized balls and chill in fridge."
+            },
+            {
+                id: 709, title: "Frozen Banana Peanut Butter Pops", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1568571780765-9276ac8b75a2"), prepTime: "10 mins", calories: "160 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "Kid-friendly frozen banana lollies coated in peanut butter and crushed nuts.",
+                ingredients: ["2 Bananas, Halved", "2 tbsp Peanut Butter", "Crushed Almonds", "Popsicle Sticks"],
+                instructions: "Insert sticks into banana halves. Coat with peanut butter, roll in crushed almonds, freeze for 1 hour."
+            },
+            {
+                id: 710, title: "Cottage Cheese Berry Whip", category: "Healthy Recipes", subcat: "Dessert/Snacks",
+                image: img("1488477181946-6428a0291777"), prepTime: "5 mins", calories: "150 kcal", tag: "Dessert/Snack", color: "bg-peony/30 text-slate-800 border-peony",
+                description: "High-protein whipped dessert resembling cheesecake filling.",
+                ingredients: ["1 cup Cottage Cheese", "1/2 cup Frozen Blueberries", "1 tsp Vanilla Extract", "1 tbsp Maple Syrup"],
+                instructions: "Blend cottage cheese, blueberries, vanilla, and maple syrup in food processor until ultra-smooth."
+            },
+
+            // ==========================================
+            // 8. SPORT WORKOUTS - STRENGTH & HYPERTROPHY (10 PLANS)
+            // ==========================================
+            {
+                id: 801, title: "Barbell Lower Body Power Routine", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "45 mins", calories: "Burn ~380 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Heavy compound resistance routine aimed at building leg hypertrophy and core stability.",
+                ingredients: ["Barbell Back Squats (4 Sets x 8 Reps)", "Romanian Deadlifts (4 Sets x 10 Reps)", "Walking Lunges (3 Sets x 12 Reps)", "Calf Raises (4 Sets x 15 Reps)"],
+                instructions: "Warm up with dynamic leg swings. Focus on strict depth and progressive overload across sets with 90 seconds rest."
+            },
+            {
+                id: 802, title: "Upper Body Push Heavy Session", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1581009146145-b5ef050c2e1e"), prepTime: "40 mins", calories: "Burn ~340 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Targets chest, anterior deltoids, and triceps with compound pressing.",
+                ingredients: ["Barbell Bench Press (4 Sets x 6 Reps)", "Incline Dumbbell Press (3 Sets x 10 Reps)", "Overhead Shoulder Press (4 Sets x 8 Reps)", "Tricep Dips (3 Sets x 12 Reps)"],
+                instructions: "Maintain retraction of scapula during presses. Control the eccentric phase for 2 seconds."
+            },
+            {
+                id: 803, title: "Pull & Back Hypertrophy Routine", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1534438327276-14e5300c3a48"), prepTime: "45 mins", calories: "Burn ~360 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Build lat width, upper back thickness, and bicep strength.",
+                ingredients: ["Conventional Deadlifts (3 Sets x 5 Reps)", "Lat Pulldowns / Pull-Ups (4 Sets x 8 Reps)", "Seated Cable Rows (3 Sets x 12 Reps)", "Barbell Bicep Curls (3 Sets x 10 Reps)"],
+                instructions: "Engage lats before pulling. Keep spine neutral during deadlifts."
+            },
+            {
+                id: 804, title: "Dumbbell Full-Body Compound Blast", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1581009146145-b5ef050c2e1e"), prepTime: "35 mins", calories: "Burn ~310 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Efficient full-body session utilizing dumbbell movements.",
+                ingredients: ["Dumbbell Goblet Squats (4 x 10)", "Dumbbell Renegade Rows (3 x 8/side)", "Dumbbell Floor Press (4 x 10)", "Dumbbell Thrusters (3 x 12)"],
+                instructions: "Perform exercises with controlled cadence. Rest 60 seconds between sets."
+            },
+            {
+                id: 805, title: "Glute & Hamstring Posterior Builder", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "40 mins", calories: "Burn ~330 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Specialized posterior chain routine targeting glutes and hip extension.",
+                ingredients: ["Barbell Hip Thrusts (4 Sets x 10 Reps)", "Bulgarian Split Squats (3 Sets x 8/leg)", "Hamstring Curl Machine (3 Sets x 12)", "Glute Cable Kickbacks (3 Sets x 15)"],
+                instructions: "Squeeze glutes at peak contraction for 1 full second on hip thrusts."
+            },
+            {
+                id: 806, title: "Shoulder & Arm Sculpting Session", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1581009146145-b5ef050c2e1e"), prepTime: "35 mins", calories: "Burn ~280 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Isolates deltoids, biceps, and triceps for structural balance.",
+                ingredients: ["Dumbbell Lateral Raises (4 x 15)", "Arnold Press (3 x 10)", "Hammer Curls (3 x 12)", "Skull Crushers (3 x 10)"],
+                instructions: "Avoid swinging momentum. Use moderate weight with strict isolation technique."
+            },
+            {
+                id: 807, title: "Core & Abdominal Hypertrophy", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~200 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Weighted core exercises to build functional spinal strength.",
+                ingredients: ["Hanging Leg Raises (4 x 12)", "Cable Woodchoppers (3 x 12/side)", "Weighted Ab Crunches (4 x 15)", "Ab Wheel Rollouts (3 x 10)"],
+                instructions: "Exhale sharply on muscle contraction. Maintain pelvic tilt."
+            },
+            {
+                id: 808, title: "Kettlebell Power & Strength Circuit", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~320 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Ballistic strength training using single and double kettlebells.",
+                ingredients: ["Kettlebell Swings (4 x 20)", "Kettlebell Clean & Press (3 x 8/arm)", "Goblet Sumo Squats (4 x 12)"],
+                instructions: "Drive power through hip hinge rather than pulling with upper arms during swings."
+            },
+            {
+                id: 809, title: "Leg Press & Calf Density Workout", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "40 mins", calories: "Burn ~350 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Machine-based hypertrophy routine safe for heavy quad volume.",
+                ingredients: ["45-Degree Leg Press (4 x 12)", "Hack Squat Machine (3 x 10)", "Seated Calf Raises (5 x 15)"],
+                instructions: "Do not lock knees at top of leg press movement. Keep continuous tension."
+            },
+            {
+                id: 810, title: "Chest & Back Antagonistic Supersets", category: "Sports", subcat: "Strength & Hypertrophy",
+                image: img("1534438327276-14e5300c3a48"), prepTime: "45 mins", calories: "Burn ~400 kcal", tag: "Strength", color: "bg-fern/20 text-slate-800 border-fern",
+                description: "Paired opposing muscle groups for maximal pump and upper body density.",
+                ingredients: ["Bench Press superset with Bent-Over Rows (4 x 8)", "Dumbbell Flyes superset with Lat Pulldowns (3 x 12)"],
+                instructions: "Perform exercise A then immediately transition to exercise B before taking 90s rest."
+            },
+
+            // ==========================================
+            // 9. SPORT WORKOUTS - CARDIO & HIIT (10 PLANS)
+            // ==========================================
+            {
+                id: 901, title: "20-Minute Tabata Burner", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~280 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "20 seconds maximum effort work followed by 10 seconds complete rest.",
+                ingredients: ["Jumping Jacks", "Burpees", "Mountain Climbers", "High Knees"],
+                instructions: "Execute 8 cycles of 20s work / 10s rest for each exercise before advancing to next movement."
+            },
+            {
+                id: 902, title: "Sprints & Agility Ladder Interval Routine", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~350 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Field-based cardiovascular interval training improving speed and agility.",
+                ingredients: ["100m All-Out Sprints (8 Reps)", "Agility Ladder Footwork Drills (10 mins)", "Skater Jumps (3 x 45s)"],
+                instructions: "Rest 60 seconds fully between sprint intervals to maintain high velocity output."
+            },
+            {
+                id: 903, title: "Rowing Ergometer Pyramid Interval", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~310 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Low-impact full-body conditioning building cardiovascular stamina.",
+                ingredients: ["250m Row", "500m Row", "750m Row", "500m Row", "250m Row"],
+                instructions: "Maintain steady stroke rate (26-28 SPM). Rest 1 minute between distance tiers."
+            },
+            {
+                id: 904, title: "Bodyweight Cardio Ladder Circuit", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~260 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Descending repetition ladder keeping heart rate in anaerobic zones.",
+                ingredients: ["Jump Squats (10 to 1 Reps)", "Push-Ups (10 to 1 Reps)", "Burpees (10 to 1 Reps)"],
+                instructions: "Perform 10 reps of each, then 9, then 8 down to 1 with minimal rest."
+            },
+            {
+                id: 905, title: "Assault Bike VO2 Max Intervals", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~330 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Fan bike interval protocol designed to expand maximum oxygen uptake capacity.",
+                ingredients: ["30s Max Wattage Sprint", "30s Light Recovery Spin"],
+                instructions: "Repeat 30s sprint / 30s recovery for 15-20 total rounds."
+            },
+            {
+                id: 906, title: "Jump Rope Cardio Endurance Blast", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~250 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Enhances footwork, calf endurance, and rhythm.",
+                ingredients: ["Basic Bounce (2 mins)", "Alternate Foot Step (2 mins)", "Double Unders Interval (1 min x 5)"],
+                instructions: "Keep elbows glued to ribs and rotate rope with wrists."
+            },
+            {
+                id: 907, title: "Stairmaster Fat-Burn Progression", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~320 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Step climber routine shifting speeds to optimize lipolysis.",
+                ingredients: ["5 min Warmup (Level 5)", "15 min Intervals (1 min Level 10 / 1 min Level 6)", "5 min Cool Down"],
+                instructions: "Avoid leaning heavily on handrails to maximize core engagement."
+            },
+            {
+                id: 908, title: "Box Jump & Plyometric Circuit", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~270 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Explosive lower body plyometrics building fast-twitch muscle fiber response.",
+                ingredients: ["24-inch Box Jumps (4 x 10)", "Lateral Bound Jumps (3 x 12)", "Broad Jumps (3 x 8)"],
+                instructions: "Land softly with bent knees to absorb impact seamlessly."
+            },
+            {
+                id: 909, title: "Boxing Heavy Bag Combo HIIT", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~360 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "3-minute heavy bag striking rounds combining punches and duck movements.",
+                ingredients: ["Round 1: Jab-Cross Combos", "Round 2: Hooks & Upper Cut", "Round 3: Freestyle striking"],
+                instructions: "Wrap hands securely. Throw combinations in 3-minute continuous rounds."
+            },
+            {
+                id: 910, title: "Outdoor Hill Sprint Intervals", category: "Sports", subcat: "Cardio & HIIT",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~300 kcal", tag: "Cardio/HIIT", color: "bg-honey/30 text-slate-800 border-honey",
+                description: "Incline sprinting reduces hamstring impact stress while maximizing cardiovascular output.",
+                ingredients: ["50-meter Steep Hill Sprints (10 Reps)", "Walk Down Recovery"],
+                instructions: "Sprint uphill at 95% effort, walk down slowly for active recovery before next sprint."
+            },
+
+            // ==========================================
+            // 10. SPORT WORKOUTS - FLEXIBILITY & YOGA (10 PLANS)
+            // ==========================================
+            {
+                id: 1001, title: "Morning Sun Salutation Flow", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "20 mins", calories: "Burn ~110 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Classic Vinyasa flow awakening spinal flexibility and hamstring length.",
+                ingredients: ["Downward Dog Hold", "Cobra Pose", "Warrior I & II", "Forward Fold"],
+                instructions: "Link movement with breath. Inhale on expansion, exhale on folds. Hold poses for 5 full breaths."
+            },
+            {
+                id: 1002, title: "Hip Opening Deep Tissue Release", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "25 mins", calories: "Burn ~90 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Targets tight hip flexors, piriformis, and lower back tension from prolonged sitting.",
+                ingredients: ["Pigeon Pose (2 mins/side)", "Frog Pose Stretch", "Lizard Lunge", "Happy Baby Pose"],
+                instructions: "Sink deep into passive holds using gravity. Avoid forcing muscle pain."
+            },
+            {
+                id: 1003, title: "Thoracic Spine & Shoulder Mobility", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "20 mins", calories: "Burn ~80 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Improves posture, overhead shoulder range of motion, and mid-back mobility.",
+                ingredients: ["Thread the Needle Pose", "Puppy Dog Stretch", "Cat-Cow Flow", "Doorway Chest Stretch"],
+                instructions: "Perform slowly, focusing on breathing into ribcage expansion."
+            },
+            {
+                id: 1004, title: "Full Hamstring & Lower Back Decompression", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "20 mins", calories: "Burn ~85 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Relieves lumbar compression and lengthens posterior leg muscle fascia.",
+                ingredients: ["Seated Forward Bend", "Supine Single-Leg Hamstring Stretch with Strap", "Child's Pose"],
+                instructions: "Keep knees slightly soft if hamstrings are tight. Maintain long spine."
+            },
+            {
+                id: 1005, title: "Post-Workout Full Body Cooldown", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "15 mins", calories: "Burn ~70 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Restores resting muscle length and parasympathetic nervous system recovery post-exercise.",
+                ingredients: ["Standing Quad Stretch", "Chest Opener", "Seated Spinal Twist", "Legs Up The Wall Pose"],
+                instructions: "Hold each static stretch for 45-60 seconds while taking slow nasal breaths."
+            },
+            {
+                id: 1006, title: "Ankle & Calf Dorsiflexion Mobility", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "15 mins", calories: "Burn ~60 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Crucial ankle mobilization protocol for deeper squat technique and runner ankle health.",
+                ingredients: ["Knee-to-Wall Ankle Mobilization", "Downward Dog Calf Pumps", "Soleus Wall Stretch"],
+                instructions: "Perform 15 gentle dynamic knee glides per ankle before static holding."
+            },
+            {
+                id: 1007, title: "Yin Yoga Deep Fascial Hold Routine", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "30 mins", calories: "Burn ~100 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Long-duration passive holds targeting connective tissues and joint capsules.",
+                ingredients: ["Dragon Pose (3 mins)", "Butterfly Pose (4 mins)", "Sphinx Pose (3 mins)"],
+                instructions: "Use yoga blocks or pillows for support. Remain still and breathe naturally."
+            },
+            {
+                id: 1008, title: "Wrist & Forearm Mobility for Athletes", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "10 mins", calories: "Burn ~40 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Protects wrists against pain during front squats, push-ups, and handstands.",
+                ingredients: ["Quadruped Wrist Rotations", "Forearm Flexor Stretch", "Finger Extension Spreads"],
+                instructions: "Gently shift weight back and forth over palms on floor."
+            },
+            {
+                id: 1009, title: "Dynamic PNF Stretching Routine", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "20 mins", calories: "Burn ~90 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Proprioceptive Neuromuscular Facilitation technique to rapidly gain range of motion.",
+                ingredients: ["Contract-Relax Hamstring Stretch", "Contract-Relax Chest Stretch"],
+                instructions: "Stretch muscle, contract against resistance for 6 seconds, relax, and stretch deeper."
+            },
+            {
+                id: 1010, title: "Bedtime Restorative Relaxation Flow", category: "Sports", subcat: "Flexibility & Yoga",
+                image: img("1544367567-0f2fcb009e0b"), prepTime: "15 mins", calories: "Burn ~50 kcal", tag: "Flexibility", color: "bg-pistachio/40 text-slate-800 border-pistachio",
+                description: "Gentle bed-side stretching preparing brain and body for deep sleep.",
+                ingredients: ["Reclining Bound Angle Pose", "Supine Twist", "Savasana / Meditative Breathing"],
+                instructions: "Perform under dim lighting with slow 4-second inhales and 7-second exhales."
+            },
+
+            // ==========================================
+            // 11. SPORT WORKOUTS - ATHLETIC ENDURANCE (10 PLANS)
+            // ==========================================
+            {
+                id: 1101, title: "Zone 2 Base Aerobic Running Plan", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "45 mins", calories: "Burn ~450 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Sustained low-intensity aerobic running building mitochondrial density.",
+                ingredients: ["45 min Steady Jog (Keep HR in Zone 2 / 60-70% Max HR)"],
+                instructions: "Maintain a conversational pace where you can comfortably speak full sentences."
+            },
+            {
+                id: 1102, title: "Cycling Threshold Cadence Builder", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "50 mins", calories: "Burn ~520 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Sustained high-cadence effort pushing lactate threshold parameters.",
+                ingredients: ["10 min Warmup", "3 x 10 min Threshold Efforts (90 RPM)", "5 min Cool Down"],
+                instructions: "Keep pedal stroke fluid and smooth. Rest 3 minutes spinning lightly between sets."
+            },
+            {
+                id: 1103, title: "Swimming Distance & Stroke Efficiency", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "45 mins", calories: "Burn ~400 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Pool workout focusing on stroke count reduction and cardiovascular stamina.",
+                ingredients: ["200m Warmup", "10 x 100m Freestyle (30s rest)", "200m Kickboard Drills", "100m Cool Down"],
+                instructions: "Focus on long glide phase and core rotation per stroke."
+            },
+            {
+                id: 1104, title: "Triathlon Brick Conditioning Workout", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "60 mins", calories: "Burn ~650 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Back-to-back cycling and running transition workout.",
+                ingredients: ["15 km Moderate Cycling", "Immediate 3 km Tempo Run"],
+                instructions: "Practice fast footwear transition. Adapt stride quickly during initial running kilometer."
+            },
+            {
+                id: 1105, title: "5K Tempo Pace Running Progression", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "35 mins", calories: "Burn ~380 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Sustained comfortably hard pace preparing for competitive distance race.",
+                ingredients: ["1 km Easy Warmup", "3 km Comfortably Hard Tempo Pace", "1 km Cool Down"],
+                instructions: "Aim for consistent split times across all 3 tempo kilometers."
+            },
+            {
+                id: 1106, title: "Rucking Weight-Carrying Endurance", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "60 mins", calories: "Burn ~500 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Walking with a weighted backpack builds functional leg and core endurance.",
+                ingredients: ["5 km Outdoor Ruck Walk with 10-15kg Rucksack"],
+                instructions: "Maintain upright posture, avoid leaning forward excessively."
+            },
+            {
+                id: 1107, title: "Rowing 5000m Endurance Test", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~320 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Standard benchmark distance test for rowing stamina.",
+                ingredients: ["Continuous 5000-meter Row"],
+                instructions: "Pace pace split time evenly. Increase power output in final 500 meters."
+            },
+
+            {
+                id: 1108, title: "Cross-Country Ski / Elliptical Long Session", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "45 mins", calories: "Burn ~420 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Full-body low-impact aerobic conditioning utilizing upper and lower limbs.",
+                ingredients: ["45 mins Continuous Elliptical / Ski-Erg Training"],
+                instructions: "Push actively with arms as much as driving with legs."
+            },
+            {
+                id: 1109, title: "Trail Running Elevation Endurance", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "50 mins", calories: "Burn ~550 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "Off-road terrain running challenging stabilizer muscles and stamina.",
+                ingredients: ["6 km Off-Road Trail Run with Variable Terrain Elevation"],
+                instructions: "Watch foot placement carefully over rocks and root systems."
+            },
+            {
+                id: 1110, title: "Jump Rope 30-Minute Marathon", category: "Sports", subcat: "Athletic Endurance",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~380 kcal", tag: "Endurance", color: "bg-bluebell/30 text-slate-800 border-bluebell",
+                description: "High volume endurance jump rope session maintaining steady cadence.",
+                ingredients: ["10 x 3 Minute Skipping Rounds with 30s rest"],
+                instructions: "Stay light on ball of feet. Switch foot patterns to prevent calf fatigue."
+            },
+
+            // ==========================================
+            // 12. SPORT WORKOUTS - HOME & BODYWEIGHT (10 PLANS)
+            // ==========================================
+            {
+                id: 1201, title: "No-Equipment Full Body Calisthenics", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~250 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Complete resistance routine using gravity and body weight alone.",
+                ingredients: ["Push-Ups (4 Sets x 15 Reps)", "Bodyweight Air Squats (4 Sets x 20 Reps)", "Inverted Chair Dips (3 Sets x 12 Reps)", "Plank Hold (3 Sets x 60s)"],
+                instructions: "Focus on slow time-under-tension control (3 seconds descending phase)."
+            },
+            {
+                id: 1202, title: "Living Room Core Stabilization", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~160 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Zero-gear core strengthening routine suitable for compact living spaces.",
+                ingredients: ["Deadbugs (3 x 12/side)", "Bird-Dogs (3 x 12/side)", "Side Planks (3 x 45s/side)", "Bicycle Crunches (3 x 20)"],
+                instructions: "Press lower back firmly into floor during deadbug reps."
+            },
+            {
+                id: 1203, title: "Doorframe Pull & Push Home Session", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~220 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Creative upper body conditioning utilizing sturdy home furniture.",
+                ingredients: ["Doorframe Rows (4 x 12)", "Pike Push-Ups (3 x 10)", "Floor Arm Swimmers (3 x 15)"],
+                instructions: "Ensure doorframe support is stable before pulling weight."
+            },
+            {
+                id: 1204, title: "Bodyweight Lower Body Burner", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~240 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "High repetition leg workout building muscular endurance without weights.",
+                ingredients: ["Alternating Backward Lunges (4 x 16)", "Glute Bridges (4 x 20)", "Single-Leg Calf Raises (3 x 15)"],
+                instructions: "Squeeze glutes at top of bridges."
+            },
+            {
+                id: 1205, title: "Quiet Apartment Friendly Cardio", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~180 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Low-impact jumping-free cardio workout that won't disturb downstairs neighbors.",
+                ingredients: ["Shadow Boxing (3 mins)", "Speed Skater Taps (3 x 45s)", "Standing Knee-to-Elbows (3 x 1 min)"],
+                instructions: "Keep movements fluid without hard floor impacts."
+            },
+            {
+                id: 1206, title: "Handstand & Shoulder Progression", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "30 mins", calories: "Burn ~200 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Calisthenics shoulder stability training targeting wall handstands.",
+                ingredients: ["Wall Walks (4 Reps)", "Wall-Supported Handstand Hold (3 x 30s)", "Pike Hold (3 x 45s)"],
+                instructions: "Keep core locked and press ground away actively."
+            },
+            {
+                id: 1207, title: "Towel Resistance Home Workout", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~170 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Using smooth floor sliding towels for hamstring and core isometric tension.",
+                ingredients: ["Towel Hamstring Curls (4 x 12)", "Towel Bodyweight Slides (3 x 10)"],
+                instructions: "Perform on hardwood or tile floor with hand towels under feet."
+            },
+            {
+                id: 1208, title: "Single-Leg Pistol Squat Progression", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "25 mins", calories: "Burn ~210 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Master advanced unilateral lower body strength skills at home.",
+                ingredients: ["Assisted Pistol Squats using Chair (4 x 6/leg)", "Step-Ups on Sturdy Chair (3 x 10/leg)"],
+                instructions: "Lower yourself under control to avoid dropping onto chair."
+            },
+            {
+                id: 1209, title: "Isometric Total Body Hold Challenge", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "20 mins", calories: "Burn ~190 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Static holding exercises strengthening tendons and core stability.",
+                ingredients: ["Wall Sit (3 x 60s)", "Plank (3 x 60s)", "Hollow Body Hold (3 x 30s)"],
+                instructions: "Breathe continuously through holds. Do not hold breath."
+            },
+            {
+                id: 1210, title: "Express 10-Minute Lunch Break Reset", category: "Sports", subcat: "Home & Bodyweight",
+                image: img("1517838277536-f5f99be501cd"), prepTime: "10 mins", calories: "Burn ~100 kcal", tag: "Bodyweight", color: "bg-cherry/30 text-slate-800 border-cherry",
+                description: "Quick energy booster between study/work sessions.",
+                ingredients: ["50 Air Squats", "25 Push-Ups", "1 Minute Plank"],
+                instructions: "Complete with good form to break up sedentary desk time."
             }
         ];
 
-        let currentSlide = 0;
-        let isLiked = false;
-        let isBookmarked = false;
-        let likesCount = 1428;
+        let activeMainPage = 'home';
+        let activeCategory = 'All';
+        let activeSubcategory = 'All';
+        let currentPage = 1;
+        const itemsPerPage = 6; // 6 cards matching wireframe sketch per page view
 
-        function renderCarousel() {
-            const issue = globalIssues[currentSlide];
-            document.getElementById('carousel-img').src = issue.image;
-            document.getElementById('slide-index').innerText = currentSlide + 1;
-            document.getElementById('slide-total').innerText = globalIssues.length;
-            document.getElementById('slide-tag').innerText = issue.category;
-            document.getElementById('slide-title').innerText = issue.title;
-            document.getElementById('slide-caption').innerText = issue.caption;
-            document.getElementById('slide-hashtags').innerText = issue.hashtags;
-
-            // Render Dots
-            const dotsContainer = document.getElementById('carousel-dots');
-            dotsContainer.innerHTML = '';
-            globalIssues.forEach((_, idx) => {
-                const dot = document.createElement('div');
-                dot.className = `w-2 h-2 rounded-full transition-all duration-300 ${idx === currentSlide ? 'bg-white w-5' : 'bg-white/50'}`;
-                dotsContainer.appendChild(dot);
+        window.onload = function() {
+            lucide.createIcons();
+            renderCatalog();
+            
+            // Search Bar Input Event Listener
+            document.getElementById('catalog-search').addEventListener('input', function(e) {
+                currentPage = 1;
+                renderCatalog(e.target.value);
             });
-        }
+        };
 
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % globalIssues.length;
-            renderCarousel();
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + globalIssues.length) % globalIssues.length;
-            renderCarousel();
-        }
-
-        function toggleLike() {
-            isLiked = !isLiked;
-            likesCount += isLiked ? 1 : -1;
-            document.getElementById('likes-count').innerText = likesCount.toLocaleString();
-            
-            const likeIcon = document.getElementById('like-icon');
-            if (isLiked) {
-                likeIcon.setAttribute('class', 'w-6 h-6 text-peony fill-peony');
-            } else {
-                likeIcon.setAttribute('class', 'w-6 h-6 text-slate-700');
-            }
-            lucide.createIcons();
-        }
-
-        function toggleBookmark() {
-            isBookmarked = !isBookmarked;
-            const bookmarkIcon = document.getElementById('bookmark-icon');
-            if (isBookmarked) {
-                bookmarkIcon.setAttribute('class', 'w-6 h-6 text-fern fill-fern');
-            } else {
-                bookmarkIcon.setAttribute('class', 'w-6 h-6 text-slate-700');
-            }
-            lucide.createIcons();
-        }
-
-        function sharePost() {
-            const issue = globalIssues[currentSlide];
-            const textToCopy = `Check out this global health focus on "${issue.title}": ${issue.caption}`;
-            
-            // Clipboard copy implementation with iframe safety fallback
-            if (navigator.clipboard && window.isSecureContext) {
-                navigator.clipboard.writeText(textToCopy);
-            } else {
-                const textArea = document.createElement("textarea");
-                textArea.value = textToCopy;
-                document.body.appendChild(textArea);
-                textArea.select();
-                document.execCommand('copy');
-                document.body.removeChild(textArea);
-            }
-            
-            // Temporary feedback notification
-            const btn = event.currentTarget;
-            btn.classList.add('text-fern');
-            setTimeout(() => btn.classList.remove('text-fern'), 1200);
-        }
-
-        // --- NAVIGATION & ROUTING LOGIC ---
+        // NAVIGATION LOGIC
         function navigateTo(pageId) {
+            activeMainPage = pageId;
             document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
-            const target = document.getElementById(`page-${pageId}`);
-            if (target) {
-                target.classList.remove('hidden');
+            
+            if (pageId === 'home') {
+                document.getElementById('page-home').classList.remove('hidden');
+            } else if (pageId === 'about') {
+                document.getElementById('page-about').classList.remove('hidden');
             }
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        function navigateToCategory(type, category) {
-            navigateTo('catalog');
+        function navigateToCategory(mainCat, subCat) {
+            activeMainPage = 'catalog';
+            activeCategory = mainCat;
+            activeSubcategory = subCat;
+            currentPage = 1;
+
+            document.querySelectorAll('.page-section').forEach(sec => sec.classList.add('hidden'));
+            document.getElementById('page-catalog').classList.remove('hidden');
+
+            // Header titles update
             const titleEl = document.getElementById('catalog-title');
-            const subtitleEl = document.getElementById('catalog-subtitle');
-            
-            if (type === 'Specialized Diets') {
-                titleEl.innerText = `Specialized Diets: ${category}`;
-                subtitleEl.innerText = `Targeted nutritional plans for ${category.toLowerCase()} balance.`;
-            } else if (type === 'Healthy Recipes') {
-                titleEl.innerText = `Healthy Recipes: ${category}`;
-                subtitleEl.innerText = `Delicious and balanced meal options for ${category.toLowerCase()}.`;
+            const subTitleEl = document.getElementById('catalog-subtitle');
+
+            if (mainCat === 'Sports') {
+                titleEl.innerText = "Sport Workout Plans";
+                subTitleEl.innerText = `Targeted physical training programs for ${subCat === 'All' ? 'Strength, Cardio, Yoga, Endurance, and Home Calisthenics' : subCat}.`;
+            } else if (mainCat === 'Specialized Diets') {
+                titleEl.innerText = "Specialized Diets";
+                subTitleEl.innerText = `Evidence-backed dietary routines for ${subCat === 'All' ? 'Anti-Inflammatory, Weight Loss, and Gut Health' : subCat}.`;
             } else {
-                titleEl.innerText = `Sport Workouts: ${category}`;
-                subtitleEl.innerText = `Structured routine for ${category.toLowerCase()} training.`;
+                titleEl.innerText = "General Healthy Recipes";
+                subTitleEl.innerText = `Nutritious meals crafted for ${subCat === 'All' ? 'Breakfast, Lunch, Dinner, and Snacks' : subCat}.`;
             }
-            
-            renderCatalogItems(type, category);
+
+            renderFilterPills();
+            renderCatalog();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // RENDER FILTER SUBTAB PILLS
+        function renderFilterPills() {
+            const container = document.getElementById('filter-pills');
+            container.innerHTML = '';
+
+            let subcats = [];
+            if (activeCategory === 'Specialized Diets') {
+                subcats = ['All', 'Anti-Inflammatory', 'Weight Loss', 'Gut Health'];
+            } else if (activeCategory === 'Healthy Recipes') {
+                subcats = ['All', 'Breakfast', 'Lunch', 'Dinner', 'Dessert/Snacks'];
+            } else if (activeCategory === 'Sports') {
+                subcats = ['All', 'Strength & Hypertrophy', 'Cardio & HIIT', 'Flexibility & Yoga', 'Athletic Endurance', 'Home & Bodyweight'];
+            } else {
+                subcats = ['All'];
+            }
+
+            subcats.forEach(sub => {
+                const btn = document.createElement('button');
+                btn.className = `px-4 py-1.5 rounded-full text-xs font-semibold transition border ${
+                    activeSubcategory === sub 
+                    ? 'bg-fern text-white border-fern shadow-sm' 
+                    : 'bg-slate-50 text-slate-600 border-fennel hover:bg-fennel/40 hover:text-slate-800'
+                }`;
+                btn.innerText = sub;
+                btn.onclick = () => {
+                    activeSubcategory = sub;
+                    currentPage = 1;
+                    renderFilterPills();
+                    renderCatalog();
+                };
+                container.appendChild(btn);
+            });
+        }
+
+        // RENDER CARD CATALOG WITH PAGINATION
+        function renderCatalog(searchQuery = '') {
+            const grid = document.getElementById('card-grid');
+            grid.innerHTML = '';
+
+            const filtered = database.filter(item => {
+                const matchesCat = (activeCategory === 'All') || (item.category === activeCategory);
+                const matchesSub = (activeSubcategory === 'All') || (item.subcat === activeSubcategory);
+                const query = searchQuery.toLowerCase();
+                const matchesSearch = item.title.toLowerCase().includes(query) || 
+                                      item.tag.toLowerCase().includes(query) ||
+                                      item.description.toLowerCase().includes(query);
+                return matchesCat && matchesSub && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full text-center py-16 text-slate-500">
+                        <i data-lucide="search-x" class="w-12 h-12 mx-auto mb-3 text-slate-300"></i>
+                        <p class="text-base font-semibold">No recipes or workouts found.</p>
+                        <p class="text-xs text-slate-400 mt-1">Try resetting your search query or selecting a different category pill.</p>
+                    </div>
+                `;
+                document.getElementById('pagination-controls').innerHTML = '';
+                lucide.createIcons();
+                return;
+            }
+
+            // Calculate pagination
+            const totalPages = Math.ceil(filtered.length / itemsPerPage);
+            if (currentPage > totalPages) currentPage = 1;
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const paginatedItems = filtered.slice(startIndex, startIndex + itemsPerPage);
+
+            paginatedItems.forEach(item => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl overflow-hidden border border-fennel/70 shadow-sm hover:shadow-md hover:border-fern transition duration-200 group flex flex-col justify-between cursor-pointer";
+                card.onclick = () => openModal(item.id);
+
+                card.innerHTML = `
+                    <div>
+                        <div class="h-48 overflow-hidden relative">
+                            <img src="${item.image}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" onerror="this.src='https://placehold.co/600x400/EBDEC0/768E78?text=Vitality+Item'">
+                            <span class="absolute top-3 left-3 text-[11px] font-bold px-3 py-1 rounded-full border ${item.color} backdrop-blur-md shadow-sm">
+                                ${item.tag}
+                            </span>
+                        </div>
+                        <div class="p-5 space-y-2">
+                            <h3 class="font-bold text-slate-800 text-base group-hover:text-fern transition line-clamp-1">${item.title}</h3>
+                            <p class="text-xs text-slate-500 line-clamp-2 leading-relaxed">${item.description}</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-3 border-t border-fennel/30 flex justify-between items-center text-xs text-slate-500 font-medium">
+                        <span class="flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-fern"></i> ${item.prepTime}</span>
+                        <span class="flex items-center gap-1.5"><i data-lucide="flame" class="w-3.5 h-3.5 text-peony"></i> ${item.calories}</span>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            renderPagination(totalPages);
+            lucide.createIcons();
+        }
+
+        // PAGINATION CONTROLLER
+        function renderPagination(totalPages) {
+            const container = document.getElementById('pagination-controls');
+            container.innerHTML = '';
+
+            if (totalPages <= 1) return;
+
+            // Prev button
+            const prevBtn = document.createElement('button');
+            prevBtn.className = `px-3 py-1.5 rounded-xl text-xs font-semibold border ${currentPage === 1 ? 'opacity-40 cursor-not-allowed bg-slate-100' : 'bg-white hover:bg-fennel/30'}`;
+            prevBtn.innerText = 'Previous';
+            prevBtn.disabled = currentPage === 1;
+            prevBtn.onclick = () => { if (currentPage > 1) { currentPage--; renderCatalog(); } };
+            container.appendChild(prevBtn);
+
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = `w-8 h-8 rounded-xl text-xs font-semibold border transition ${
+                    currentPage === i ? 'bg-fern text-white border-fern shadow-sm' : 'bg-white text-slate-600 border-fennel hover:bg-fennel/30'
+                }`;
+                pageBtn.innerText = i;
+                pageBtn.onclick = () => { currentPage = i; renderCatalog(); };
+                container.appendChild(pageBtn);
+            }
+
+            // Next button
+            const nextBtn = document.createElement('button');
+            nextBtn.className = `px-3 py-1.5 rounded-xl text-xs font-semibold border ${currentPage === totalPages ? 'opacity-40 cursor-not-allowed bg-slate-100' : 'bg-white hover:bg-fennel/30'}`;
+            nextBtn.innerText = 'Next';
+            nextBtn.disabled = currentPage === totalPages;
+            nextBtn.onclick = () => { if (currentPage < totalPages) { currentPage++; renderCatalog(); } };
+            container.appendChild(nextBtn);
+        }
+
+        // MODAL DRAWER POPUP LOGIC
+        function openModal(id) {
+            const item = database.find(i => i.id === id);
+            if (!item) return;
+
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <div class="space-y-6">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-60 object-cover rounded-2xl shadow-sm" onerror="this.src='https://placehold.co/600x400/EBDEC0/768E78?text=Vitality+Item'">
+                    <div>
+                        <span class="text-xs font-bold px-3 py-1 rounded-full border ${item.color}">${item.tag}</span>
+                        <h2 class="text-2xl font-bold text-slate-800 mt-2">${item.title}</h2>
+                        <p class="text-xs text-slate-500 mt-1 leading-relaxed">${item.description}</p>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 py-3 border-y border-fennel text-xs font-medium text-slate-700">
+                        <div class="flex items-center gap-2"><i data-lucide="clock" class="w-4 h-4 text-fern"></i> <span><strong>Duration / Prep:</strong> ${item.prepTime}</span></div>
+                        <div class="flex items-center gap-2"><i data-lucide="flame" class="w-4 h-4 text-peony"></i> <span><strong>Energy / Caloric Impact:</strong> ${item.calories}</span></div>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
+                            <i data-lucide="list-checks" class="w-4 h-4 text-fern"></i>
+                            ${item.category === 'Sports' ? 'Key Exercises / Movements' : 'Ingredients List'}
+                        </h4>
+                        <ul class="list-disc list-inside text-xs text-slate-600 space-y-1.5 pl-1">
+                            ${item.ingredients.map(ing => `<li>${ing}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h4 class="font-bold text-slate-800 text-sm mb-2 flex items-center gap-2">
+                            <i data-lucide="book-open" class="w-4 h-4 text-fern"></i>
+                            ${item.category === 'Sports' ? 'Execution & Form Guidelines' : 'Preparation & Cooking Steps'}
+                        </h4>
+                        <p class="text-xs text-slate-600 leading-relaxed bg-fennel/20 p-4 rounded-2xl border border-fennel/60">${item.instructions}</p>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('detail-modal').classList.remove('hidden');
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            document.getElementById('detail-modal').classList.add('hidden');
+        }
+
+        // FLOATING CHATBOT SIMULATION LOGIC
+        function toggleChatbot() {
+            const win = document.getElementById('chatbot-window');
+            win.classList.toggle('hidden');
+        }
+
+        function handleChatSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('chat-input');
+            const msg = input.value.trim();
+            if (!msg) return;
+
+            appendChatMessage('user', msg);
+            input.value = '';
+
+            // Simulated AI Intelligent Response
+            setTimeout(() => {
+                let botReply = "That's a fantastic wellness query! Our platform offers comprehensive advice on specialized nutrition and sports conditioning. Check our tabs for full details!";
+                const lower = msg.toLowerCase();
+                
+                if (lower.includes('anti-inflammatory') || lower.includes('inflammation')) {
+                    botReply = "Anti-inflammatory nutrition prioritizes foods rich in omega-3 fatty acids (salmon, mackerel), berries, turmeric, and dark leafy greens while avoiding processed sugars.";
+                } else if (lower.includes('gut') || lower.includes('digestion') || lower.includes('microbiome')) {
+                    botReply = "To optimize gut health, include fermented foods like kimchi, kefir, and sauerkraut along with prebiotic fibers from garlic, leeks, and artichokes.";
+                } else if (lower.includes('weight loss') || lower.includes('diet') || lower.includes('calorie')) {
+                    botReply = "For sustainable weight loss, prioritize high-protein meals (lean turkey, eggs, fish) and high-volume fiber vegetables that maintain satiety in a moderate caloric deficit.";
+                } else if (lower.includes('hiit') || lower.includes('cardio') || lower.includes('workout') || lower.includes('sport')) {
+                    botReply = "High-Intensity Interval Training (HIIT) boosts metabolic burn and cardiovascular health. Explore our Sport Workouts tab for 50 distinct workout routines!";
+                }
+
+                appendChatMessage('bot', botReply);
+            }, 500);
+        }
+
+        function sendQuickMessage(text) {
+            document.getElementById('chat-input').value = text;
+            handleChatSubmit(new Event('submit'));
+        }
+
+        function appendChatMessage(sender, text) {
+            const container = document.getElementById('chat-messages');
+            const msgDiv = document.createElement('div');
+            
+            if (sender === 'user') {
+                msgDiv.className = "flex items-start gap-2 justify-end";
+                msgDiv.innerHTML = `
+                    <div class="bg-fern text-white p-3 rounded-2xl shadow-sm max-w-[80%] text-slate-100 leading-relaxed">
+                        ${text}
+                    </div>
+                `;
+            } else {
+                msgDiv.className = "flex items-start gap-2";
+                msgDiv.innerHTML = `
+                    <div class="w-6 h-6 rounded-full bg-fern text-white flex items-center justify-center text-[10px] flex-shrink-0">Bot</div>
+                    <div class="bg-white p-3 rounded-2xl shadow-sm border border-fennel max-w-[80%] text-slate-700 leading-relaxed">
+                        ${text}
+                    </div>
+                `;
+            }
+            container.appendChild(msgDiv);
+            container.scrollTop = container.scrollHeight;
+        }
+
+        // CONTACT FORM SUBMISSION
+        function handleContactSubmit(e) {
+            e.preventDefault();
+            document.getElementById('contact-form').reset();
+            const alertBox = document.getElementById('contact-success');
+            alertBox.classList.remove('hidden');
+            setTimeout(() => alertBox.classList.add('hidden'), 4000);
+        }
+
+        // MOBILE NAVIGATION MENU TOGGLE
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Mock Catalog Rendering
-        function renderCatalogItems(type, category) {
-            const grid = document.getElementById('card-grid');
-            const filterPills = document.getElementById('filter-pills');
-            
-            // Sample Pills
-            filterPills.innerHTML = `
-                <button class="px-3.5 py-1.5 rounded-xl bg-fern text-white text-xs font-semibold">All Items</button>
-                <button class="px-3.5 py-1.5 rounded-xl bg-fennel/40 text-slate-700 text-xs font-semibold hover:bg-fennel">Beginner</button>
-                <button class="px-3.5 py-1.5 rounded-xl bg-fennel/40 text-slate-700 text-xs font-semibold hover:bg-fennel">Quick (< 20 mins)</button>
-            `;
-
-            // Sample Cards
-            grid.innerHTML = '';
-            for (let i = 1; i <= 6; i++) {
-                const card = document.createElement('div');
-                card.className = "bg-white rounded-3xl border border-fennel overflow-hidden shadow-sm hover:shadow-md transition flex flex-col justify-between";
-                card.innerHTML = `
-                    <div>
-                        <div class="h-44 bg-slate-200 relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover">
-                            <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-md text-xs font-bold px-2.5 py-1 rounded-full text-fern">
-                                ${category}
-                            </span>
-                        </div>
-                        <div class="p-5 space-y-2">
-                            <h3 class="font-bold text-slate-800 text-lg">${category} Guide #${i}</h3>
-                            <p class="text-xs text-slate-500 line-clamp-2">Carefully formulated protocol to boost wellness, optimize health metrics, and maintain balance.</p>
-                        </div>
-                    </div>
-                    <div class="px-5 pb-5 pt-2 border-t border-fennel/40 flex items-center justify-between">
-                        <span class="text-xs font-medium text-slate-400">15 min prep / run</span>
-                        <button class="text-xs font-bold text-fern hover:underline">View Details &rarr;</button>
-                    </div>
-                `;
-                grid.appendChild(card);
-            }
-        }
-
-        // Initialize Icons & Carousel on Load
-        window.onload = function() {
-            lucide.createIcons();
-            renderCarousel();
-            renderCatalogItems('Healthy Recipes', 'All');
-        };
+        document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
     </script>
 </body>
 </html>
