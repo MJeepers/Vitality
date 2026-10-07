@@ -1445,6 +1445,81 @@
             currentSlideIndex = index;
             updateCarousel();
         }
+        // Carousel state and slide data
+        let currentSlideIndex = 0;
+
+        const carouselSlides = [
+            {
+                tag: "Issue 01: Malnutrition & Inequality",
+                title: "The Dual Burden of Global Nutrition",
+                desc: "Over 800 million people lack access to sufficient food, while millions suffer from diet-related metabolic non-communicable diseases.",
+                img: "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                tag: "Issue 02: Physical Inactivity",
+                title: "Sedentary Lifestyles & Modern Health",
+                desc: "More than 80% of the world's adolescent population is insufficiently physically active, threatening long-term cardiovascular health.",
+                img: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                tag: "Issue 03: Processed Foods",
+                title: "The Rise of Ultra-Processed Diets",
+                desc: "Modern diets high in refined sugars and artificial additives contribute heavily to early-onset metabolic disorders globally.",
+                img: "https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=800&q=80"
+            },
+            {
+                tag: "Issue 04: Accessible Fitness",
+                title: "Democratizing Health & Wellbeing",
+                desc: "Bridging the gap by offering structured, free, and actionable fitness routines and nutrition strategies for everyone everywhere.",
+                img: "https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=800&q=80"
+            }
+        ];
+        // Carousel Navigation Functions
+        function updateCarousel() {
+            const slide = carouselSlides[currentSlideIndex];
+            
+            const imgEl = document.getElementById('carousel-img');
+            const tagEl = document.getElementById('carousel-tag');
+            const titleEl = document.getElementById('carousel-title');
+            const descEl = document.getElementById('carousel-desc');
+            const counterEl = document.getElementById('carousel-counter');
+
+            if (imgEl) imgEl.src = slide.img;
+            if (tagEl) tagEl.textContent = slide.tag;
+            if (titleEl) titleEl.textContent = slide.title;
+            if (descEl) descEl.textContent = slide.desc;
+            if (counterEl) counterEl.textContent = `${currentSlideIndex + 1} / ${carouselSlides.length}`;
+
+            renderCarouselDots();
+            if (window.lucide) lucide.createIcons();
+        }
+
+        function nextSlide() {
+            currentSlideIndex = (currentSlideIndex + 1) % carouselSlides.length;
+            updateCarousel();
+        }
+
+        function prevSlide() {
+            currentSlideIndex = (currentSlideIndex - 1 + carouselSlides.length) % carouselSlides.length;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentSlideIndex = index;
+            updateCarousel();
+        }
+
+        function renderCarouselDots() {
+            const dotsContainer = document.getElementById('carousel-dots');
+            if (!dotsContainer) return;
+
+            dotsContainer.innerHTML = carouselSlides.map((_, i) => `
+                <button onclick="goToSlide(${i})" class="w-2.5 h-2.5 rounded-full transition-all ${
+                    i === currentSlideIndex ? 'bg-fern w-6' : 'bg-fennel hover:bg-pistachio'
+                }"></button>
+            `).join('');
+        }
+        
         // NAVIGATION LOGIC
         function navigateTo(pageId) {
             activeMainPage = pageId;
@@ -1748,6 +1823,13 @@
         }
 
         document.getElementById('mobile-menu-btn').addEventListener('click', toggleMobileMenu);
+
+        // Re-initialize icons on window load
+        window.addEventListener('load', () => {
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    });
     </script>
 </body>
 </html>
